@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<ListConfig fetchSize="500" pageable="true" resultsHandle="PROC_ID" table="XXCSS_CT_BILLTO_SELECTOR_V" class="map" rowSelectType="App" id="billToSelector">
+  <Selection model="single" handle="PROC_ID"/>
+  <Column type="int" column="PROC_ID" userpreferencesId="1" property="procId">
+    <Presentation label="PROC ID" filterable="true" format="Default" visible="true" sortable="true" unique="true"/>
+  </Column>
+  <Column type="int" column="REF_INDEX" userpreferencesId="2" property="refIndex">
+    <Presentation label="REF INDEX" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="BILLTO_NAME" userpreferencesId="3" property="billtoName">
+    <Presentation label="BILLTO NAME" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="BILLTO_ID" userpreferencesId="4" property="billtoId">
+    <Presentation label="BILLTO ID" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="ADDRESS1" userpreferencesId="5" property="address1">
+    <Presentation label="ADDRESS1" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="ADDRESS2" userpreferencesId="6" property="address2">
+    <Presentation label="ADDRESS2" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="ADDRESS3" userpreferencesId="7" property="address3">
+    <Presentation label="ADDRESS3" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="CITY" userpreferencesId="8" property="city">
+    <Presentation label="CITY" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="STATE" userpreferencesId="9" property="state">
+    <Presentation label="STATE" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="COUNTRY" userpreferencesId="10" property="country">
+    <Presentation label="COUNTRY" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="POSTAL_CODE" userpreferencesId="11" property="postalCode">
+    <Presentation label="POSTAL CODE" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="STATUS" userpreferencesId="12" property="status">
+    <Presentation label="STATUS" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="BUSINESS_ENTITY" userpreferencesId="13" property="businessEntity">
+    <Presentation label="BUSINESS ENTITY" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="PARENT_GU" userpreferencesId="" property="parentGu">
+    <Presentation label="PARENT GU" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+</ListConfig>

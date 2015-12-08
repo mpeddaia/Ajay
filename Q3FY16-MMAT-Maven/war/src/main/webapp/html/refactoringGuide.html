@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Refactoring Guide for integrating UI 2 Standard components for
+CCI</title>
+</head>
+<body style="color: rgb(0, 0, 0); background-color: rgb(204, 255, 255);"
+ link="#000099" vlink="#990099" alink="#000099">
+<pre><font color="red">
+PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft 
+PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft 
+PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft 
+PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft 
+PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft 
+PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft 
+</font></pre>
+This refactoring guide is intended to help application developers
+refactor their existing applications for the purpose of adding the UI
+2.0 standard page layout wrapper around their application. Three
+layouts are available: 1, 2, and 3 column. The 2 and 3 column layouts
+utilize CEC standard navigation and require the use of <a
+ href="https://wwwin.cisco.com/webdev/intranet/design-2/hinav/">hiNav</a>
+from CEC. If you haven't created or published a hinav.xml file before,
+you may wish to refer to the <a
+ href="https://wwwin.cisco.com/webdev/intranet/design-2/hinav/hinav3.shtml">hinav
+coding instructions</a> or <span
+ style="font-weight: bold; background-color: rgb(255, 0, 0);">deploying
+hinav</span>.
+<br>
+Application refactoring to incorporate the UI 2.0 standard should be
+performed outside of a major release cycle if possible - perhaps during
+analysis of an upcoming release.
+<br>
+<h4>The following refactorings will be discussed:</h4>
+<ul>
+  <li>Servlet based - JSPs not used</li>
+  <li><a href="#jspsSimpleCase">JSPs - simple case</a></li>
+  <li><a href="#strutsWithJspView">Struts with JSP view</a></li>
+  <li>Struts with Velocity view</li>
+  <li>Turbine with Velocity view</li>
+  <li>Turbine with JSP view</li>
+  <li>Jetspeed with Velocity view</li>
+  <li>JSPs - other/proprietary framework case</li>
+  <li>Velocity - other framwork</li>
+</ul>
+<pre><font color="red">
+PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft 
+PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft 
+PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft 
+PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft 
+PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft 
+PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft 
+</font></pre>
+<h4>A Few Reference URLs:</h4>
+<dl>
+  <dt>Developing with Tiles, from the developer of Tiles</dt>
+  <dd><a href="https://www.developer.com/java/ent/article.php/2192411">https://www.developer.com/java/ent/article.php/2192411</a><br>
+    <a
+ href="https://www.developer.com/java/ent/article.php/10933_2192411_6">Migrating&nbsp;
+an application to tiles </a> (this is a subsection of the document
+above)</dd>
+  <dt>Very brief - Integrating tiles with existing JSPs </dt>
+  <dd><a
+ href="https://www.oracle.com/technology/oramag/oracle/04-may/o34dev_struts.html">https://www.oracle.com/technology/oramag/oracle/04-may/o34dev_struts.html</a></dd>
+  <dt>The Tiles User's Guide</dt>
+  <dd><a href="https://struts.apache.org/userGuide/dev_tiles.html">https://struts.apache.org/userGuide/dev_tiles.html</a></dd>
+  <dt>Struts with Velocity</dt>
+  <dd><a href="https://jakarta.apache.org/velocity/tools/struts/">https://jakarta.apache.org/velocity/tools/struts/</a></dd>
+  <dt>Using Velocity in JSPs</dt>
+  <dd><a href="https://jakarta.apache.org/velocity/veltag.html">https://jakarta.apache.org/velocity/veltag.html</a></dd>
+</dl>
+<pre><font color="red">
+PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft 
+PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft 
+PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft 
+PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft 
+PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft 
+PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft 
+</font></pre>
+<h4><a name="jspsSimpleCase"></a>JSPs - simple case</h4>
+Separate out the main body content of your application, with any
+header, footer, or navigation code removed.&nbsp; This body content
+will be defined as the __bodyContent within the tiles context and
+rendered using the selected UI2 standard layout template. <br>
+<br>
+This example uses in-line content to simulate an undecorated
+page.&nbsp;&nbsp; A simple jsp is created to demonstrate the 1, 2, and
+3 column templates using the
+sample war file provided with the uiComponents.<br>
+<div style="margin-left: 40px;">
+<ol>
+  <li>download and <a href="templateSetup.do">setup</a>
+(if you haven't already) the template sample application</li>
+  <li>in the <span style="font-weight: bold;">&lt;TOMCAT_HOME&gt;/webapps/uiComponents</span>
+directory, create a file named example.jsp, and insert the
+following content<br>
+    <div style="margin-left: 40px;"><code>&lt;%@ taglib
+uri="/tags/struts-tiles" prefix="tiles" %&gt;</code><br>
+    <code>&lt;tiles:insert definition=".def.1c.template"
+flush="true"&gt;</code><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <code>&lt;tiles:put
+name="__headTitle"&nbsp;&nbsp;&nbsp;
+value="Hello World Example" type="string" /&gt;</code><br>
+    <code>&nbsp;&nbsp;&nbsp; &lt;tiles:put name="__bodyContent"&nbsp;
+value="Hello World!"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+type="string" /&gt;</code><br>
+    <code>&lt;/tiles:insert&gt;</code><br>
+    </div>
+  </li>
+  <li> Access it at
+https://localhost/uiComponents/example.jsp.&nbsp; <br>
+You'll notice several instances of "attribute not defined".&nbsp; In a
+real jsp, these attributes would be defined similar to the way you've
+defined "__bodyContent" in example.jsp above.<br>
+  </li>
+  <li>Change def.1c.template to def.2c.template and def.3c.template and
+refresh your browser to see the numguess example wrapped in the 2 and 3
+column template layouts respectively.</li>
+</ol>
+</div>
+The previous example used value="Hello World!" type="string" to in-line
+the __bodyContent.&nbsp; This example demonstrates the ease of
+decorating&nbsp; an existing JSP with the UI standard template.&nbsp; <br>
+<div style="margin-left: 40px;">
+<ol>
+  <li>download and <a href="templateSetup.do">setup</a>
+(if you haven't already) the template sample application</li>
+  <li>in the <span style="font-weight: bold;">&lt;TOMCAT_HOME&gt;/webapps/uiComponents</span>
+directory, create a file named examplePage.jsp, and insert the
+following content<br>
+    <div style="margin-left: 40px;"><code>&lt;%@ taglib
+uri="/tags/struts-tiles" prefix="tiles" %&gt;</code><br>
+    <code>&lt;tiles:insert definition=".def.1c.template"
+flush="true"&gt;</code><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <code>&lt;tiles:put
+name="__headTitle"&nbsp;&nbsp;&nbsp;
+value="Hello World Example" type="string" /&gt;</code><br>
+    <code>&nbsp;&nbsp;&nbsp; &lt;tiles:put name="__bodyContent"&nbsp;
+value="/exampleJSP.jsp" /&gt;</code><br>
+    <code>&lt;/tiles:insert&gt;</code><br>
+    </div>
+  </li>
+  <li>in the <span style="font-weight: bold;">&lt;TOMCAT_HOME&gt;/webapps/uiComponents</span>
+directory, create a file named exampleJSP.jsp, and insert the
+following content<br>
+    <div style="margin-left: 40px;">&lt;h2&gt;Hello JSP
+World!&lt;/h2&gt;<code></code></div>
+  </li>
+  <li>Access it at
+https://localhost/uiComponents/examplePage.jsp.&nbsp; <br>
+You'll notice several instances of "attribute not defined".&nbsp; In a
+real jsp, these attributes would be defined similar to the way you've
+defined "__bodyContent" in example.jsp above.<br>
+  </li>
+  <li>Change def.1c.template to def.2c.template and def.3c.template and
+refresh your browser to see the numguess example wrapped in the 2 and 3
+column template layouts respectively.</li>
+</ol>
+</div>
+Please see the <a href="#reactoringSteps">refactoring
+steps</a> for guidance on converting your application.<br>
+<pre><font color="red">PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft <br>PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft <br>PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft <br>PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft <br>PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft <br>PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft </font></pre>
+<h4><a name="strutsWithJspView"></a>Struts with JSP view</h4>
+For those of you using a pre 1.1 version of Struts,&nbsp; an upgrade to
+v1.1 will be required in order to use the templates.&nbsp; In this
+case, you may already be using Tiles and have the body content
+separate from any header, footer, etc. sections.&nbsp; If so, great, if
+not, you will need to remove such decorations from each JSP page in use.<br>
+<pre><font color="red">PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft <br>PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft <br>PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft <br>PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft <br>PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft <br>PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft </font></pre>
+<h4><a name="reactoringSteps"></a>
+Refactoring steps</h4>
+<ol>
+  <li>If your code is not in cvs (or maybe even if so) create a local
+backup of&nbsp; your code.</li>
+  <li>Start with a single JSP and work through the refactoring process,
+stripping out the header, footer, and navigation sections of a single
+page and perform a complete conversion of it to the UI2 standard
+templates before attempting another page.</li>
+</ol>
+<pre><font color="red">PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft <br>PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft <br>PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft <br>PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft <br>PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft <br>PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft PRE-DRAFT pre-draft</font></pre>
+<br>
+</body>
+</html>

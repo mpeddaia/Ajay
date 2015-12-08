@@ -1,0 +1,36 @@
+.apptitle {font-family:Helvetica,sans-serif;font-size:29px;color:#000000;text-decoration:none;font-weight:bold;}
+.apptitlechild {position:relative;top:4px;font-family:Helvetica,sans-serif;font-size:20px;color:#003333;text-decoration:none;font-weight:bold;}
+.apphinavpeer {font-family:Helvetica,sans-serif;font-size:13px;color:#000000;text-decoration:none;font-weight:normal;}
+.apphinavchild {font-family:Helvetica,sans-serif;font-size:13px;color:#000000;text-decoration:none;font-weight:normal;}
+.apphinavinactive {font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#666666;text-decoration:none;font-weight:normal;}
+.apphinavchildlink {font-family:Helvetica,sans-serif;font-size:13px;color:#000000;text-decoration:underline;font-weight:normal;}
+.appnavbutton {font-family:Helvetica,sans-serif;font-size:13px;color:#000000;text-decoration:none;font-weight:normal;}
+.appnavbuttoninactive {font-family:Helvetica,sans-serif;font-size:13px;color:#666666;text-decoration:none;font-weight:normal;}
+.appnavbuttonalt {font-family:Helvetica,sans-serif;font-size:13px;color:#000000;text-decoration:none;font-weight:normal;}
+.appnavbuttonlink {font-family:Helvetica,sans-serif;font-size:13px;color:#ffffff;text-decoration:underline;font-weight:normal;}
+.appnavcurrent {font-family:Helvetica,sans-serif;font-size:16px;color:#000000;text-decoration:none;font-weight:bold;}
+.appnavtext {font-family:Helvetica,sans-serif;font-size:13px;color:#000000;text-decoration:none;font-weight:normal;}
+.appnavtextalt {font-family:Helvetica,sans-serif;font-size:13px;color:#003399;text-decoration:none;font-weight:normal;}
+.appnavlink {font-family:Helvetica,sans-serif;font-size:13px;color:#003399;text-decoration:underline;font-weight:normal;}
+.applink {font-family:Helvetica,sans-serif;font-size:13px;color:#003399;text-decoration:underline;font-weight:normal;}
+.applabel {font-family:Helvetica,sans-serif;font-size:13px;color:#000000;text-decoration:none;font-weight:normal;}
+.apptitlerevlink {font-family:Helvetica,sans-serif;font-size:13px;color:#ffffff;text-decoration:underline;font-weight:bold;}
+
+.apps_tablecolor { background-color:#669999; }
+.apps_tableheader { background-color:#336666; }
+.apps_buttonprev { background-color:#669999; }
+.apps_button_top { background-color:#99cccc; }
+.apps_button_btm { background-color:#003333; }
+.apps_buttonnext { background-color:#cccccc; }
+
+.appstablecolor { background-color:#669999; }
+.appstablecolornav { background-color:#669999; }
+.appstablecolorinactive { background-color:#999999; }
+.appstablecoloralt { background-color:#336666; }
+.appstablecolorsecondary { background-color:#99cccc; }
+.appstablecolortertiary { background-color:#cccccc; }
+.appstableheader { background-color:#336666; }
+.appsbuttonprev { background-color:#669999; }
+.appsbuttontop { background-color:#99cccc; }
+.appsbuttonbtm { background-color:#003333; }
+.appsbuttonnext { background-color:#cccccc; }

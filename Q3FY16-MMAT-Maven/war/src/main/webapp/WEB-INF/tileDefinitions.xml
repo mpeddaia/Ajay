@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE tiles-definitions PUBLIC
+  "-//Apache Software Foundation//DTD Tiles Configuration//EN"
+  "http://jakarta.apache.org/struts/dtds/tiles-config.dtd">
+
+<tiles-definitions>
+    <definition name="baseDef" path="/WEB-INF/jsp/layout/Layout.jsp">
+        <put name="header" value="/WEB-INF/jsp/layout/Header.jsp"/>
+        <put name="footer" value="/WEB-INF/jsp/layout/Footer.jsp"/>
+        <put name="body" value=""/>
+    </definition>
+    <definition name="landingDef" extends="baseDef">
+        <put name="body" value="/WEB-INF/jsp/Landing.jsp"/>
+        <put type="string" name="title" value="Service Sales IT [MyApp]: Welcome " />
+    </definition>
+    <definition name="start" extends="baseDef">
+        <put name="body" value="/WEB-INF/jsp/MyJsp.jsp"/>
+        <put type="string" name="title" value="Service Sales IT: Welcome " />
+    </definition>
+    <definition name="errorPageDef" extends="baseDef">
+        <put name="body" value="/WEB-INF/jsp/ErrorPage.jsp"/>
+        <put type="string" name="title" value="Service Sales IT [MyApp]: Error Occurred! " />
+    </definition>
+</tiles-definitions>
+
+

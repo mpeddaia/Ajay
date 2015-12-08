@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<ListConfig fetchSize="500" pageable="true" resultsHandle="UPLD_REQUEST_ID" table="CIB_MAT_TERM_ERR_V" class="map" id="MAT_TERMINATE">
+  <Selection model="single" handle="reference_index"/>
+  <Column type="int" column="UPLD_REQUEST_ID" property="upldRequestId">
+    <Presentation label="UPLD REQUEST ID" filterable="false" format="Default" visible="false" sortable="false"/>
+  </Column>
+  <Column type="int" column="ORIG_ROW_NUMBER" property="origRowNumber">
+    <Presentation label="upload.mat.column.orig_row_number" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="CONTRACT_NUMBER" property="contractNumber">
+    <Presentation label="upload.mat.column.contract_number" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="SERIAL_NUMBER" property="serialNumber">
+    <Presentation label="upload.mat.column.serial_number" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="ITEM_NAME" property="itemName">
+    <Presentation label="upload.mat.column.item_name" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="TERMINATION_DATE" property="terminationDate">
+    <Presentation label="upload.mat.column.termination_date" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="REASON_CODE" property="reasonCode">
+    <Presentation label="upload.mat.column.reason_code" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="ERROR_MESSAGE" property="errorMessage">
+    <Presentation label="upload.mat.column.error_message" filterable="false" format="Default" visible="true" sortable="false"/>
+  </Column>
+  <Column type="String" column="STATUS" property="status">
+    <Presentation label="upload.mat.column.status" filterable="false" format="Default" visible="false" sortable="false"/>
+  </Column>
+</ListConfig>

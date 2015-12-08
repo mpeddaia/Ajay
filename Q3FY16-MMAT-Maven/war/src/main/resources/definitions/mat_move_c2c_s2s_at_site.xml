@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UploadDefinition AbortOnError="false" allowCMjob="true" ID="MAT_MOVE_C2C_S2S_AT_SITE" HeaderRowsCount="1">
+    <Column Name="Source_Contract_Number" AllowNull="false">
+        <DataType Type="String" Length="120" />
+    </Column>
+    <Column Name="Source_Service_Level" AllowNull="true">
+        <DataType Type="String" Length="200" />
+    </Column>
+    <Column Name="Source_Site_Location" AllowNull="false">
+        <DataType Type="String" Length="40" />
+    </Column>
+    <Column Name="Target_Contract_Number" AllowNull="false">
+        <DataType Type="String" Length="120" />
+    </Column>
+    <Column Name="Target_Site_Location" AllowNull="false">
+        <DataType Type="String" Length="40" />
+    </Column>
+    <Column Name="Reason_Code" AllowNull="true">
+        <DataType Type="String" Length="40" />
+    </Column>
+	<Column Name="Cs_Case_Number" AllowNull="true">
+        <DataType Type="String" Length="30" />
+    </Column> 
+</UploadDefinition>

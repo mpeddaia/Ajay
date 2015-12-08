@@ -1,0 +1,10 @@
+table.new_primary_enabled { padding: 0; margin: 1px 1px; height: 20px; vertical-align: top; border:none; float: right; }
+table.new_primary_enabled .button   { color: #ffffff; font-size: 10px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; background-image: url("../images/global/buttons_and_icons/buttons/btn_primary_md.gif"); background-repeat: repeat-x; white-space: nowrap; cursor: pointer; margin: 0; padding: 0 1px; width: 100%; height: 20px; border: none }
+table.new_primary_enabled .button_left   { background-image: url("../images/global/buttons_and_icons/buttons/btn_primary_lf.gif"); background-repeat: no-repeat; cursor: pointer; width: 12px }
+table.new_primary_enabled .button_right   { background-image: url("../images/global/buttons_and_icons/buttons/btn_primary_rt.gif"); background-repeat: no-repeat; cursor: pointer; width: 12px }
+
+
+table.new_secondary_enabled { padding: 0; height: 20px; vertical-align: top; margin: 1px 1px; border:none; float: left; }
+table.new_secondary_enabled .button    { color: #ffffff; font-size: 10px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; background-image: url("../images/global/buttons_and_icons/buttons/btn_secondary_md.gif"); background-repeat: repeat-x; white-space: nowrap; cursor: pointer; margin: 0; padding: 0 1px; width: 100%; height: 20px; border: none }
+table.new_secondary_enabled .button_left    { background-image: url("../images/global/buttons_and_icons/buttons/btn_secondary_lf.gif"); background-repeat: no-repeat; cursor: pointer; width: 12px }
+table.new_secondary_enabled .button_right    { background-image: url("../images/global/buttons_and_icons/buttons/btn_secondary_rt.gif"); background-repeat: no-repeat; cursor: pointer; width: 12px }

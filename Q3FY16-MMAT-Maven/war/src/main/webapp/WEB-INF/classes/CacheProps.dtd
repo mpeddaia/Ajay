@@ -1,0 +1,6 @@
+<!ELEMENT Cache (CacheObject+)>
+
+<!ELEMENT CacheObject (#PCDATA)>
+<!-- Refresh Interval is in seconds -->
+<!ATTLIST CacheObject refreshInterval CDATA #IMPLIED>
+<!ATTLIST CacheObject objectType CDATA #REQUIRED>

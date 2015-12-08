@@ -1,0 +1,54 @@
+a {color: #326a6a; font-size: 11px; font-family: Arial, Helvetica, sans-serif; }
+a.cisco { color: #336666; text-decoration: none; }
+
+h1  { color: #ffffff; font-size: 11px; font-family: Arial, Helvetica, sans-serif; line-height: 17px; background-color: #699; background-image: url("../images/global/module/head_pop_lt.gif"); background-repeat: no-repeat; background-position: 0 0; white-space: nowrap; margin: 0; padding-left: 23px }
+h2 { color: #669999; font-size: 11px; font-family: Arial, Helvetica, sans-serif; padding: 0 0 10px 0; margin: 0; }
+h2 span { font-weight: normal; }
+h4 { color: #666666; font-size: 11px; font-family: Arial, Helvetica, sans-serif; margin: 0; padding: 0px 25px 5px 15px; font-weight: normal; }
+h2.output { font-size: 14px; color:#000000; font-family: Arial, Helvetica, sans-serif;  }
+
+.mod_pop { margin: 14px 14px 40px 14px; }
+.mod_pop_tab { margin: 0px 14px 40px 14px; } 
+.module_tabs { margin: 14px 14px 0 14px; }
+#popModuleContainerId {width: 960px; }
+
+div.button_block_sm { background-color: #ffffff; background-image: url("../images/global/buttons_and_icons/buttons/btn_triangle_left.gif"); background-repeat: no-repeat; background-position: 0 0; width: 305px; height: 28px; padding-left: 35px; float: right; }
+div.button_block_small { background-color: #ffffff; background-image: url("../images/global/buttons_and_icons/buttons/btn_triangle_left.gif"); background-repeat: no-repeat; background-position: 0 0; width: 405px; height: 28px; padding-left: 35px; float: right; }
+div.button_block_med { background-color: #ffffff; background-image: url("../images/global/buttons_and_icons/buttons/btn_triangle_left.gif"); background-repeat: no-repeat; background-position: 0 0; width: 450px; height: 28px; padding-left: 35px; float: right; }
+div.button_block_medium { background-color: #ffffff; background-image: url("../images/global/buttons_and_icons/buttons/btn_triangle_left.gif"); background-repeat: no-repeat; background-position: 0 0; width: 550px; height: 28px; padding-left: 35px; float: right; }
+
+div.marque { border: 1px solid #7f7f7f; background-color: #ffffff; padding: 10px 10px 10px 30px; }
+div.marque_mess { border: none; background-color: #dae6ef; padding: 10px 10px 10px 30px; }
+div.marque_grid { border: 1px solid #7f7f7f; background-color: #ffffff; }
+div.marque_grid h3 { font-size: 11px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; margin: 0; color: #9c0000; padding: 10px 10px 5px 15px;  }
+div.output {border: 0px solid #7f7f7f;  }
+
+h3 { font-size: 11px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #9c0000; margin: 0; padding: 5px 0 2px 0; }
+h3 span { font-weight: normal; color: #777777; }
+img.twistIcon { margin: 5px 7px 0 0; cursor: pointer; }
+img.twistIconAlt { margin: 10px -10px 0 15px; cursor: pointer; }
+
+.pop_display_block { margin-top: 10px; }
+.sub_block_hr_light { padding: 0 0 7px 0; border-bottom: 1px solid #cccccc; }
+.checkbox { margin: 0 5px; }
+
+div.header_white { background-color: #ffffff; padding: 10px 0 0 30px; }
+div.header_grey { background-color: #dedddd; }
+
+div.title_alt { line-height: 26px; color: #ffffff; background-color: #669999; width: 100%; height: 26px; padding-top: 3px; background-image: url("../images/global/module/head_pop_lt.gif"); background-repeat: repeat-y; background-position: 0 0; white-space: nowrap; margin: 0; }
+div.title_alt .mh_title { color: #ffffff; font-size: 11px; font-weight: bold; line-height: 12px; white-space: nowrap; margin: 4px 0 0 23px; padding: 0; float: left; }
+div.title_alt .mh_filter { float: left; }
+div.title_alt .mh_action { margin-right: 20px; float: right; }
+div.title_alt .mh_info { margin-right: 10px; float: right; }
+div.title_alt .mh_page { margin-right: 10px; float: right; }
+div.title_alt a {color: #fff; font-weight: bold; text-decoration: none }
+div.title_alt td  { color: #fff; font-size: 11px; font-family: Arial, Helvetica, sans-serif; white-space: nowrap; }
+
+
+tr.watermelon { background-color: #e7e7e7; }
+
+/** pref left nav */
+ul.seconday_left { margin: 0 0 150px 0; padding: 0; }
+ul.seconday_left li { color: #aaaaaa; font-size: 11px; font-family: Arial, Helvetica, sans-serif; line-height: 20px; margin: 0; list-style-type: none; }
+ul.seconday_left li a { text-decoration: none; color: #67999a; width: 150px; display: block; padding: 0 0 0 12px; }
+ul.seconday_left li a.active { text-decoration: none; color: #9c0000; background-color: #ffffff; }

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<UploadDefinition AbortOnError="false" ID="JKM-Upload FrameWork Testing">
+    <Column Name="RowNumber" AllowNull="true">
+        <DataType Type="Integer"/>
+    </Column>
+    <Column Name="PRODUCT_NUMBER" AllowNull="true">
+        <DataType Type="String"/>
+    </Column>
+    <Column Name="SERIAL_NUMBER" AllowNull="true">
+        <DataType Type="String"/>
+    </Column>
+    <Column Name="CONTRACT_NUMBER" AllowNull="true">
+        <DataType Type="String"/>
+    </Column>
+    <Column Name="CONTRACT_STATUS" AllowNull="true">
+        <DataType Type="String"/>
+    </Column>
+    <Column Name="CCO_USERID" AllowNull="true">
+        <DataType Type="String"/>
+    </Column>
+</UploadDefinition>
+

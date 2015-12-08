@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<ListConfig fetchSize="200" pageable="true" resultsHandle="CCO_UID" table="XXCSS_SCM_EXT_BILLTO_ADDBOOK" class="map" rowSelectType="App" id="BillToAddBookExt">
+  <Selection model="single" handle="CCO_UID"/>
+  <Column type="String" column="CCO_UID" userpreferencesId="" property="ccoUid">
+    <Presentation label="CCO UID" filterable="true" format="Default" visible="true" sortable="true" unique="true"/>
+  </Column>
+  <Column type="String" column="CUSTOMER_NAME" userpreferencesId="" property="customerName">
+    <Presentation label="CUSTOMER NAME" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="BUSINESS_ENTITY" userpreferencesId="" property="businessEntity">
+    <Presentation label="BUSINESS ENTITY" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="BILLTO_SITE_ID" userpreferencesId="" property="billtoSiteId">
+    <Presentation label="BILLTO SITE ID" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="COUNTRY" userpreferencesId="" property="country">
+    <Presentation label="COUNTRY" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="ADDRESS1" userpreferencesId="" property="address1">
+    <Presentation label="ADDRESS1" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="ADDRESS2" userpreferencesId="" property="address2">
+    <Presentation label="ADDRESS2" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="ADDRESS3" userpreferencesId="" property="address3">
+    <Presentation label="ADDRESS3" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="CITY" userpreferencesId="" property="city">
+    <Presentation label="CITY" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="STATE" userpreferencesId="" property="state">
+    <Presentation label="STATE" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="POSTAL_CODE" userpreferencesId="" property="postalCode">
+    <Presentation label="POSTAL CODE" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="PARENT_COMPANY" userpreferencesId="" property="parentCompany">
+    <Presentation label="PARENT COMPANY" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="Date" column="DATE_ADDED" userpreferencesId="" property="dateAdded">
+    <Presentation label="DATE ADDED" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="STATUS" userpreferencesId="" property="status">
+    <Presentation label="STATUS" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="ATTRIBUTE1" userpreferencesId="" property="attribute1">
+    <Presentation label="ATTRIBUTE1" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="ATTRIBUTE2" userpreferencesId="" property="attribute2">
+    <Presentation label="ATTRIBUTE2" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="ATTRIBUTE3" userpreferencesId="" property="attribute3">
+    <Presentation label="ATTRIBUTE3" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="ATTRIBUTE4" userpreferencesId="" property="attribute4">
+    <Presentation label="ATTRIBUTE4" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="ATTRIBUTE5" userpreferencesId="" property="attribute5">
+    <Presentation label="ATTRIBUTE5" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="ATTRIBUTE6" userpreferencesId="" property="attribute6">
+    <Presentation label="ATTRIBUTE6" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="ATTRIBUTE7" userpreferencesId="" property="attribute7">
+    <Presentation label="ATTRIBUTE7" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="ATTRIBUTE8" userpreferencesId="" property="attribute8">
+    <Presentation label="ATTRIBUTE8" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="ATTRIBUTE9" userpreferencesId="" property="attribute9">
+    <Presentation label="ATTRIBUTE9" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="ATTRIBUTE10" userpreferencesId="" property="attribute10">
+    <Presentation label="ATTRIBUTE10" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="Date" column="CREATION_DATE" userpreferencesId="" property="creationDate">
+    <Presentation label="CREATION DATE" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="int" column="CREATED_BY" userpreferencesId="" property="createdBy">
+    <Presentation label="CREATED BY" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="Date" column="LAST_UPDATE_DATE" userpreferencesId="" property="lastUpdateDate">
+    <Presentation label="LAST UPDATE DATE" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="int" column="LAST_UPDATED_BY" userpreferencesId="" property="lastUpdatedBy">
+    <Presentation label="LAST UPDATED BY" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="LATEST_ADDED_FLAG" userpreferencesId="" property="latestAddedFlag">
+    <Presentation label="LATEST ADDED FLAG" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+</ListConfig>

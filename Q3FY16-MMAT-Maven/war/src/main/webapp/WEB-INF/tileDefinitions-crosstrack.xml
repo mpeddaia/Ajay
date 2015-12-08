@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE tiles-definitions PUBLIC
+  "-//Apache Software Foundation//DTD Tiles Configuration//EN"
+  "http://jakarta.apache.org/struts/dtds/tiles-config.dtd">
+
+<tiles-definitions>
+    <definition name="baseDef" path="/WEB-INF/jsp/layout/Layout.jsp">
+		<put name="header" value="/WEB-INF/jsp/layout/Header.jsp"/>
+	    <put name="menu" value="/WEB-INF/jsp/layout/TabMenu.jsp"/>
+        <put name="footer" value="/WEB-INF/jsp/layout/Footer.jsp"/>
+        <put name="body" value=""/>
+    </definition>
+    <definition name="helpDef" path="/WEB-INF/jsp/layout/Layout.jsp">
+		<put name="header" value="/WEB-INF/jsp/layout/Header.jsp"/>
+	    <put name="menu" value="/WEB-INF/jsp/layout/TabMenu.jsp"/>
+        <put name="footer" value="/WEB-INF/jsp/layout/Footer.jsp"/>
+        <put name="body" value=""/>
+    </definition>
+    <definition name="landingDef" extends="baseDef">
+        <put name="body" value="/WEB-INF/jsp/Landing.jsp"/>
+        <put type="string" name="title" value="Cisco Service Contract Center : Welcome " />
+    </definition>
+	<!-- Opportunity Manager Page -->
+    <definition name="oppDemo" extends="baseDef">
+        <put name="body" value="/WEB-INF/jsp/SOMOpportunityManager.jsp"/>
+        <put type="string" name="title" value="Cisco Service Contract Center: Welcome " />
+    </definition>
+
+    <!-- Opportunity Advanced Search Page -->
+	<definition name="oppAdvSearchDemo" extends="baseDef">
+		<put name="body" value="/WEB-INF/jsp/OpportunityAdvancedSearch.jsp"/>
+	    <put type="string" name="title" value="Cisco Service Contract Center: Welcome " />
+    </definition>
+    
+    
+    <definition name="renDemo" extends="baseDef">
+            <put name="body" value="/WEB-INF/jsp/RenewalType.jsp"/>
+            <put type="string" name="title" value="Cisco Service Contract Center: Welcome " />
+    </definition>
+
+ 	<definition name="resMgrDemo" extends="baseDef">
+            <put name="body" value="/WEB-INF/jsp/ReassignmentManager.jsp"/>
+            <put type="string" name="title" value="Cisco Service Contract Center: Welcome " />
+    </definition>
+
+ 	<definition name="reportsScreen" extends="baseDef">
+            <put name="body" value="/WEB-INF/jsp/SOMReports.jsp"/>
+            <put type="string" name="SOM Reports" value="Cisco Service Contract Center: Welcome " />
+    </definition>
+
+ 	<definition name="accessMgmtScreen" extends="baseDef">
+            <put name="body" value="/WEB-INF/jsp/ShareAccessMgmt.jsp"/>
+            <put type="string" name="Access Management" value="Cisco Service Contract Center: Welcome " />
+    </definition>
+    
+    <definition name="dashboardScreen" extends="baseDef">
+            <put name="body" value="/crosstrack/cis_CROSS_dash_1tier_A.jsp"/>
+            <put type="string" name="title" value="Cisco Service Contract Center: Welcome " />
+    </definition>
+
+    <definition name="requestStatusScreen" extends="baseDef">
+            <put name="body" value="/crosstrack/cis_CROSS_req_status.jsp"/>
+            <put type="string" name="title" value="Cisco Service Contract Center: Welcome " />
+    </definition>
+    
+    <definition name="crosstrackReportsScreen" extends="baseDef">
+            <put name="body" value="/jsp/crosstrackReports.jsp"/>
+            <put type="string" name="title" value="Cisco Service Contract Center: Welcome " />
+    </definition>
+
+ 	<definition name="smcHelpPage" extends="helpDef">
+            <put name="body" value="/crosstrack/SMCHelp.jsp"/>
+            <put type="string" name="title" value="Cisco Service Contract Center: Welcome " />
+    </definition>
+    
+   <definition name="errorPageDef" extends="baseDef">
+        <put name="body" value="/WEB-INF/jsp/ErrorPage.jsp"/>
+        <put type="string" name="title" value="Cisco Service Contract Center : Error Occurred! " />
+   </definition>    
+   
+</tiles-definitions>
+
+

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<ListConfig fetchSize="200" pageable="true" resultsHandle="CCO_UID" table="XXCSS_CM_VIEW_INT_SHIP_BOOK_V" class="map" rowSelectType="App" id="ShipToAddBookInt">
+  <Selection model="single" handle="CCO_UID"/>
+  <Column type="String" column="CCO_UID" userpreferencesId="" property="ccoUid">
+    <Presentation label="CCO UID" filterable="true" format="Default" visible="true" sortable="true" unique="true"/>
+  </Column>
+  <Column type="String" column="PARTY_NAME" userpreferencesId="" property="partyName">
+    <Presentation label="PARTY NAME" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="ATTRIBUTE1" userpreferencesId="" property="attribute1">
+    <Presentation label="ATTRIBUTE1" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="LOCATION" userpreferencesId="" property="location">
+    <Presentation label="LOCATION" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="COUNTRY" userpreferencesId="" property="country">
+    <Presentation label="COUNTRY" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="ADDRESS1" userpreferencesId="" property="address1">
+    <Presentation label="ADDRESS1" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="ADDRESS2" userpreferencesId="" property="address2">
+    <Presentation label="ADDRESS2" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="ADDRESS3" userpreferencesId="" property="address3">
+    <Presentation label="ADDRESS3" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="ADDRESS4" userpreferencesId="" property="address4">
+    <Presentation label="ADDRESS4" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="CITY" userpreferencesId="" property="city">
+    <Presentation label="CITY" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="STATE" userpreferencesId="" property="state">
+    <Presentation label="STATE" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="PROVINCE" userpreferencesId="" property="province">
+    <Presentation label="PROVINCE" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="POSTAL_CODE" userpreferencesId="" property="postalCode">
+    <Presentation label="POSTAL CODE" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="COMPANY_NAME" userpreferencesId="" property="companyName">
+    <Presentation label="COMPANY NAME" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="Date" column="DATE_ADDED" userpreferencesId="" property="dateAdded">
+    <Presentation label="DATE ADDED" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="STATUS" userpreferencesId="" property="status">
+    <Presentation label="STATUS" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="RECENT_FLAG" userpreferencesId="" property="recentFlag">
+    <Presentation label="RECENT FLAG" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+</ListConfig>

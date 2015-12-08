@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UploadDefinition AbortOnError="false" allowCMjob="true" ID="MAT_T4C" HeaderRowsCount="1">
+    <Column Name="CONTRACT_NUMBER" AllowNull="false" upldFileColName="Contract Number">
+        <DataType Type="String" Length="120" />
+    </Column>
+    <Column Name="SERVICE_LEVEL" AllowNull="true" upldFileColName="Service Level">
+        <DataType Type="String" Length="40" />
+    </Column>
+    <Column Name="LINE_NUMBER" AllowNull="true" upldFileColName="Line Number">
+        <DataType Type="String" Length="150" />
+    </Column>
+    <Column Name="LINE_STATUS" AllowNull="true" upldFileColName="Line Status">
+       <DataType Type="String" Length="20" />
+       </Column>
+    <Column Name="INSTANCE_NUMBER" AllowNull="true" upldFileColName="Instance Number">
+       <DataType Type="String" Length="30" />
+    </Column> 
+    <Column Name="SERIAL_NUMBER" AllowNull="true" upldFileColName="Serial Number/PAK Number">
+        <DataType Type="String" Length="30" />
+    </Column>
+    <Column Name="ITEM_NAME" AllowNull="false" upldFileColName="Product Id">
+        <DataType Type="String" Length="40" />
+    </Column>
+    <Column Name="TERMINATION_DATE" AllowNull="false" upldFileColName="Termination Date">
+        <DataType Type="Date"/>
+    </Column>
+    <Column Name="REASON_CODE" AllowNull="false" upldFileColName="Reason Code">
+        <DataType Type="String" Length="40" />
+    </Column>
+    <Column Name="CS_CASE_NUMBER" AllowNull="false" upldFileColName="CS Case Number">
+        <DataType Type="String" Length="30" />
+    </Column> 
+    <Column Name="INVOICE_NUMBER" AllowNull="false" upldFileColName="Invoice Number">
+        <DataType Type="String" />
+    </Column>
+	<Column Name="BILL_TO_ID" AllowNull="true" upldFileColName="Bill-To ID">
+        <DataType Type="String" />
+    </Column>
+	
+    <Column Name="CREDIT_AMOUNT" AllowNull="false" upldFileColName="Credit Amount">
+        <DataType Type="String" />
+    </Column>
+    
+    <!-- Start Changes done by madhms for Q2FY15 -->
+    
+     <Column Name="SERVICE_CANCELLATION_FEE" AllowNull="true" upldFileColName="Service Cancellation Fee">
+        <DataType Type="String" />
+    </Column>
+    
+    <!-- End Changes done by madhms for Q2FY15 -->
+    
+    <Column Name="INVOICE_LINE_NUMBER" AllowNull="false" upldFileColName="Invoice Line Number">
+        <DataType Type="Integer" />
+    </Column>
+    <Column Name="EMAIL_ID" AllowNull="false" upldFileColName="Email Id">
+        <DataType Type="String" Length="150" />
+    </Column>
+    
+</UploadDefinition>

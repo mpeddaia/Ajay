@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Cache>
+	<!-- Refresh Interval is in seconds -->
+	<CacheObject
+		objectType="com.cisco.servicesales.cache.countrystate.CountryStateCache"
+		refreshInterval="30" />
+
+	<!-- Refresh Interval is in seconds -->
+	<CacheObject
+		objectType="com.cisco.servicesales.metrics.EventDefinitionCache"
+		refreshInterval="30" />
+</Cache>

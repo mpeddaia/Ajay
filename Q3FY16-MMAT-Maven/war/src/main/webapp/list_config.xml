@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<Config databaseConnectionSource="com.cisco.servicesales.db.ConnectionBrokerPlug">
+	<Load src="QuotePricing.xml" />
+	<Load src="UploadSummary.xml"/>
+    <Load src="UploadSummaryProxy.xml"/>
+    <Load src="Mat_Add.xml"/>
+    <Load src="Mat_Terminate.xml"/>
+    <Load src="Mat_T4C.xml" /> <!-- Added as part of Q1FY13 T4C Changes -->
+    <Load src="Mat_Move_C2C_At_Contract.xml"/>
+    <Load src="Mat_Move_C2C_At_Site.xml"/>
+    <Load src="Mat_Move_C2C_At_Product.xml"/>
+    <Load src="Mat_Move_C2C_S2S_At_Product.xml"/>
+    <Load src="Mat_Move_C2C_S2S_At_Site.xml"/>
+    <Load src="Mat_Move_S2S_At_Site.xml"/>
+    <Load src="Mat_Move_S2S_At_Product.xml"/>
+    <Load src="Mat_Create_Sites.xml"/>
+    <Load src="Mat_Search_Sites.xml"/>
+    <Load src="Mat_UE_Move_S2S_At_Product.xml"/>
+    <Load src="mat_contract_terminations.xml"/>
+    <Load src="expire_config.xml"/>
+    <Load src="Mat_Add_Result.xml"/>
+    <Load src="Mat_M_And_P_Entitlmnt_Add_Products_Result.xml"/>
+    <Load src="Mat_Move_C2C_At_Site_Result.xml"/>
+    <Load src="Mat_Move_C2C_S2S_At_Product_Result.xml"/>
+    <Load src="Mat_Move_C2C_S2S_At_Site_Result.xml"/>
+    <Load src="Mat_Move_S2S_At_Product_Result.xml"/>
+    <Load src="Mat_Move_S2S_At_Site_Result.xml"/>
+    <Load src="Mat_Date_Change_Product_Or_Line_Result.xml" /> <!-- Added as part of Q1FY13 TnC Changes -->
+    
+</Config>

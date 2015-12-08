@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UploadDefinition AbortOnError="false" allowCMjob="true" ID="MAT_UE_MOVE_S2S_PRODUCT" HeaderRowsCount="1">
+    <Column Name="SOURCE_SITE_ID" AllowNull="false">
+        <DataType Type="String" Length="200" />
+    </Column>
+    <Column Name="SERIAL_NUMBER" AllowNull="false">
+        <DataType Type="String" Length="30" />
+    </Column>
+    <Column Name="ITEM_NAME" AllowNull="false">
+        <DataType Type="String" Length="200" />
+    </Column>
+    <Column Name="TARGET_SITE_ID" AllowNull="false">
+        <DataType Type="String" Length="200" />
+    </Column>
+    <!-- ALLOW NULL CRITERIA CHANGED AS PART OF Q2FY13 REL -->
+    <Column Name="CS_CASE_NUMBER" AllowNull="true">
+        <DataType Type="String" Length="100" />
+    </Column>
+    <!-- END OF CHANGES FOR Q2FY13 REL -->
+</UploadDefinition>

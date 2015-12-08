@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<ListConfig fetchSize="500" pageable="true" resultsHandle="UPLD_REQUEST_ID" table="CIB_MAT_MP_ADD_ERR_V" class="map" id="M_AND_P_ENTITLMNT_ADD_PRODUCTS">
+  <Selection model="single" handle="reference_index"/>
+  <Column type="int" column="UPLD_REQUEST_ID" property="upldRequestId">
+    <Presentation label="UPLD REQUEST ID" filterable="false" format="Default" visible="false" sortable="false"/>
+  </Column>
+  <Column type="int" column="ORIG_ROW_NUMBER" property="origRowNumber">
+    <Presentation label="upload.mat.column.orig_row_number" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+   <Column type="String" column="CONTRACT_NUMBER" property="contractNumber">
+    <Presentation label="upload.mat.column.contract_number" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+	<Column type="String" column="SERVICE_LEVEL" property="serviceLevel">
+    <Presentation label="upload.mat.column.service_level" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="Date" column="BEGIN_DATE" property="beginDate">
+    <Presentation label="upload.mat.column.begin_date" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="Date" column="END_DATE" property="endDate">
+    <Presentation label="upload.mat.column.end_date" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="Date" column="BILL_TO_ID" property="bill_To_Id">
+    <Presentation label="upload.mat.column.bill_to_id" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+   <Column type="Date" column="NET_PRICE" property="net_Price">
+    <Presentation label="upload.mat.column.net_price" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+    <Column type="Date" column="PO_SO_Billing" property="poSoBilling">
+    <Presentation label="upload.mat.column.po_so_billing" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>	
+   <Column type="Date" column="MAINTENANCE_PO" property="maintenancePo">
+    <Presentation label="upload.mat.column.maintenance_po" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+   <Column type="String" column="SERIAL_NUMBER" property="serialNumber">
+      <Presentation label="upload.mat.column.serial_number" filterable="true" format="Default" visible="true" sortable="true"/>
+    </Column>
+	 <Column type="String" column="PRODUCT_ID" property="productId">
+      <Presentation label="upload.mat.column.product_id" filterable="true" format="Default" visible="true" sortable="true"/>
+    </Column>    
+     <Column type="String" column="SITE_LOCATION" property="siteLocation">
+      <Presentation label="upload.mat.column.site_location" filterable="true" format="Default" visible="true" sortable="true"/>
+    </Column>
+	 <Column type="String" column="INSTANCE_NUMBER" property="instanceNumber">
+      <Presentation label="upload.mat.column.instance_number" filterable="true" format="Default" visible="true" sortable="true"/>
+    </Column>
+	<Column type="String" column="PRODUCT_PO_SO" property="productPoSo">
+      <Presentation label="upload.mat.column.product_po_so" filterable="true" format="Default" visible="true" sortable="true"/>
+    </Column>
+	<Column type="String" column="QUANTITY" property="quantity">
+      <Presentation label="upload.mat.column.quantity" filterable="true" format="Default" visible="true" sortable="true"/>
+    </Column>
+    <Column type="String" column="SOFTLINE" property="softline">
+      <Presentation label="upload.mat.column.softline" filterable="true" format="Default" visible="true" sortable="true"/>
+    </Column>   
+    <Column type="String" column="REASON_CODE" property="reasonCode">
+    <Presentation label="upload.mat.column.reason_code" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="CS_CASE_NUMBER" property="csCaseNumber">
+    <Presentation label="upload.mat.column.cs_case_number" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column> 
+  <Column type="String" column="REASON_CODE" property="reasonCode">
+    <Presentation label="upload.mat.column.reason_code" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="ERROR_MESSAGE" property="errorMessage">
+    <Presentation label="upload.mat.column.error_message" filterable="false" format="Default" visible="true" sortable="false"/>
+  </Column>
+</ListConfig>

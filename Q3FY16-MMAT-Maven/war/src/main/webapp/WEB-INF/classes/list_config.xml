@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<Config databaseConnectionSource="com.cisco.servicesales.db.ConnectionBrokerPlug">
+	<Load src="QuotePricing.xml" />
+	<Load src="RequestDetails.xml" />
+	<Load src="RequestStatusList.xml" />
+	<Load src="installsiteselector.xml" />
+	<Load src="InstallSiteSelectorAddressBook.xml" />
+	<Load src="CustomerSelector.xml" />
+	<Load src="BillToSelector.xml"/>
+	<Load src="BillToAddBookExt.xml" />
+	<Load src="BillToAddBookInt.xml" />
+	<Load src="SalesRegions.xml" />
+	<Load src="userIdSelector.xml" />
+	<Load src="ServiceLevelSelector.xml" />
+	<Load src="ContractSelectorDec.xml" />
+	<Load src="ManageNotes.xml" />
+	<Load src="productsSelector.xml" />
+	<!-- added for td integration -->
+	<Load src="UploadSummary.xml"/>
+    <Load src="UploadSummaryProxy.xml"/>
+	</Config>

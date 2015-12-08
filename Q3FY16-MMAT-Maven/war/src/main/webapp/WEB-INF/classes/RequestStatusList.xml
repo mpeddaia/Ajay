@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+
+<ListConfig fetchSize="500" pageable="true" resultsHandle="" table="XXCSS_CT_REQUESTS_V" class="map" rowSelectType="App" id="RequestStatus">
+  <Selection model="single" handle="REQUESTOR_ID"/>
+  <Column type="String" column="REQUESTOR_ID" userpreferencesId="" property="requestorId">
+    <Presentation label="REQUESTOR ID" filterable="true" format="Default" visible="true" sortable="true" unique="true"/>
+  </Column>
+  <Column type="Date" column="REQUEST_DATE" userpreferencesId="" property="requestDate">
+    <Presentation label="REQUEST DATE" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="BigDecimal" column="REQUEST_ID" userpreferencesId="" property="requestId">
+    <Presentation label="REQUEST ID" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="FUNCTION_TYPE" userpreferencesId="" property="functionType">
+    <Presentation label="FUNCTION TYPE" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="REQUEST_TYPE" userpreferencesId="" property="requestType">
+    <Presentation label="REQUEST TYPE" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="REQUEST_NAME" userpreferencesId="" property="requestName">
+    <Presentation label="REQUEST NAME" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="REFERENCE_ID" userpreferencesId="" property="referenceId">
+    <Presentation label="REFERENCE ID" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="STATUS" userpreferencesId="" property="status">
+    <Presentation label="STATUS" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="Date" column="COMPLETE_DATE" userpreferencesId="" property="completeDate">
+    <Presentation label="COMPLETE DATE" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+</ListConfig>

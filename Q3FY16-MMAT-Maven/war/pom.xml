@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>it.cvc.ciscocommerce.scm-mmat1.ys4mcm</groupId>
+		<artifactId>MMAT_Application</artifactId>
+		<version>2014.11-SNAPSHOT</version>
+	</parent>
+	<groupId>it.cvc.ciscocommerce.scm-mmat1.ys4mcm</groupId>
+	<artifactId>MMATWar</artifactId>
+	<name>MMATWar</name>
+	<packaging>war</packaging>
+	<version>2014.11-SNAPSHOT</version>
+	<description>MMAT Application</description>
+	<url>http://maven.apache.org</url>
+	<!-- Repository Details -->
+	<repositories>
+		<repository>
+			<id>central</id>
+			<name>Maven Repository Switchboard</name>
+			<layout>default</layout>
+			<url>http://repo1.maven.org/maven2/</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+	<!-- Dependency like classpath Details -->
+	<dependencies>
+		<dependency>
+			<groupId>it.cvc.ciscocommerce.scm-mmat1.ys4mcm</groupId>
+			<artifactId>MMATLIB</artifactId>
+			<version>2014.11-SNAPSHOT</version>
+			<type>pom</type>
+			<scope>compile</scope>
+		</dependency>
+		<!-- <dependency> <groupId>javax.servlet</groupId> <artifactId>jsp-api</artifactId> 
+			<version>2.0</version> <scope>provided</scope> </dependency> <dependency> 
+			<groupId>javax.servlet</groupId> <artifactId>servlet-api</artifactId> <version>2.4</version> 
+			<scope>provided</scope> </dependency> -->
+	</dependencies>
+
+	<!-- Build Details -->
+	<build>
+		<resources>
+			<resource>
+				<directory>${basedir}/src/main/resources</directory>
+				<includes>
+					<include>**/*.ccf</include>
+					<include>**/*.xml</include>
+					<include>**/*.properties</include>
+					<include>**/*.jar</include>
+					<include>**/*.keystore</include>
+
+				</includes>
+			</resource>
+		</resources>
+
+		<plugins>
+			<!-- Compress Js and css file and put in js-min and cs-min -->
+			<!-- <plugin> <groupId>net.alchim31.maven</groupId> <artifactId>yuicompressor-maven-plugin</artifactId> 
+				<version>1.4.0</version> <executions> <execution> <id>compressyuijs</id> 
+				<phase>process-resources</phase> <goals> <goal>compress</goal> </goals> <configuration> 
+				<nosuffix>true</nosuffix> <linebreakpos>300</linebreakpos> <warSourceDirectory>${basedir}/src/main/webapps/js/compjs</warSourceDirectory> 
+				<webappDirectory>${project.build.directory}/${app.name}/js</webappDirectory> 
+				<jswarn>false</jswarn> </configuration> </execution> <execution> <id>compressyuicss</id> 
+				<phase>process-resources</phase> <goals> <goal>compress</goal> </goals> <configuration> 
+				<nosuffix>true</nosuffix> <linebreakpos>300</linebreakpos> <warSourceDirectory>${basedir}/src/main/webapps/css/</warSourceDirectory> 
+				<webappDirectory>${project.build.directory}/${app.name}/css</webappDirectory> 
+				<jswarn>false</jswarn> </configuration> </execution> </executions> </plugin> -->
+
+			<!-- Java compiler -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+
+					<!-- changes by ajay for testing -->
+					<!-- <compilerArguments> <bootclasspath>/apps/dftjenkins/local/java/jdk1.5.0_07/jre/lib/rt.jar</bootclasspath> 
+						<bootclasspath>/apps/dftjenkins/local/java/jdk1.5.0_22/jre/lib/rt.jar</bootclasspath> 
+						</compilerArguments> <encoding>UTF-8</encoding> -->
+					<!-- changes by ajay for testing -->
+
+				</configuration>
+			</plugin>
+
+			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-dependency-plugin</artifactId> 
+				<version>2.4</version> <executions> <execution> <id>copy</id> <phase>install</phase> 
+				<goals> <goal>copy-dependencies</goal> </goals> <configuration> <artifactItems> 
+				<artifactoryItem> <groupId>com.cisco.mmat_repo</groupId> <artifactoryId>corsstrack_jar</artifactoryId> 
+				<version>2.0</version> <type>jar</type> <outputDirectory> ${project.build.directory}/WEB-INF/lib 
+				</outputDirectory> <destFileName>crosstrack_jar-2.0.jar</destFileName> </artifactoryItem> 
+				</artifactItems> </configuration> </execution> </executions> </plugin> -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.3</version>
+
+				<configuration>
+					<!-- <warName>${jvm.name}</warName> -->
+					<webXml>src\main\webapp\WEB-INF\web.xml</webXml>
+					<!-- <packagingExcludes> WEB-INF/lib/classes12.jar WEB-INF/lib/ojdbc14.jar 
+						WEB-INF/lib/servlet-api.jar WEB-INF/lib/servlet.jar WEB-INF/lib/servicesales_lists.jar 
+						</packagingExcludes> -->
+					<!-- <packagingIncludes> WEB-INF/lib/crosstrack.jar </packagingIncludes> -->
+					<packagingExcludes>
+						WEB-INF/lib/ojdbc-1.0.jar,
+						WEB-INF/lib/servicesales_lists-1.0.jar,
+						WEB-INF/lib/classes12-1.0.jar,
+						WEB-INF/lib/servlet-5.0.jar,
+						WEB-INF/lib/servlet-api-1.0.jar,
+						WEB-INF/lib/junit-3.8.1.jar</packagingExcludes>
+					<outputDirectory>${project.build.directory}</outputDirectory>
+				</configuration>
+			</plugin>
+			<!-- Plugn for Skipping Unit test cases -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<skipTests>false</skipTests>
+					<include>**/Test**.java</include>
+
+				</configuration>
+
+			</plugin>
+
+
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.5.5.201112152213</version>
+				<configuration>
+					<destFile>${basedir}/target/jacoco-unit.exec</destFile>
+					<dataFile>${basedir}/target/jacoco-unit.exec</dataFile>
+				</configuration>
+				<executions>
+					<execution>
+						<id>jacoco-initialize</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<!-- <execution> <id>jacoco-site</id> <phase>package</phase> <goals> 
+						<goal>report</goal> </goals> </execution> -->
+				</executions>
+			</plugin>
+
+
+		</plugins>
+		<finalName>mcm</finalName>
+	</build>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<sonar.dynamicAnalysis><![CDATA[false]]></sonar.dynamicAnalysis>
+
+		<sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
+
+	</properties>
+</project>

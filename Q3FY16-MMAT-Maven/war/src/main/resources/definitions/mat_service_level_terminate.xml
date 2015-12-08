@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UploadDefinition AbortOnError="false" allowCMjob="true" ID="MAT_TERMINATE_SERVICE_LVL" HeaderRowsCount="1">
+    <Column Name="CONTRACT_NUMBER" AllowNull="false">
+        <DataType Type="String" Length="120" />
+    </Column>
+    <Column Name="SERVICE_LEVEL" AllowNull="false" ErrorMsg="Service Level Error: Service Level must be Entered">
+       <DataType Type="String" Length="200" />
+    </Column> 
+    <Column Name="TERMINATION_DATE" AllowNull="false">
+        <DataType Type="Date"/>
+    </Column>
+    <Column Name="REASON_CODE" AllowNull="false">
+        <DataType Type="String" Length="40" />
+    </Column>
+    <Column Name="CS_CASE_NUMBER" AllowNull="false">
+        <DataType Type="String" Length="30" />
+    </Column>
+</UploadDefinition>

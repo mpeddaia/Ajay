@@ -1,0 +1,469 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>templateSetup</title>
+</head>
+<body>
+<div id="onThisPageFloat">
+<div id="onThisPage"> <span class="subhead2gray">Topics On This Page:</span>
+<ul class="onthispagelist">
+  <li><a href="#1">Introduction</a></li>
+  <li><a href="#2">Libraries Used</a></li>
+  <li><a href="#3">Selecting a package</a></li>
+  <li><a href="#4">Updating an existing web application</a></li>
+  <li><a href="#5">Page Templates</a></li>
+  <li><a href="#6">Types of Templates</a></li>
+  <li><a href="#7">Template Attributes</a></li>
+  <li><a href="#8">Hinav components</a></li>
+  <li><a href="#9">Frequently Seen Errors</a></li>
+</ul>
+</div>
+</div>
+<a name="1"></a>
+<h2 class="first">Introduction</h2>
+This document describes how to use the predefined UI templates to build
+a CCI application using the intranet standard layout
+templates.&nbsp;&nbsp; This guide is targeted at the local desk/laptop
+developer environment, with jdk1.4 or later, tomcat 4.x (servlet 2.3
+spec) or later, and ant 1.6.x or later already installed and working.<br>
+<a name="2"></a>
+<h2>Libraries Used<br>
+</h2>
+Using versions of these libraries other than those listed below
+requires additional testing to verify compatibility with the template
+implementation. <br>
+The UI templates are currently using the following libraries: <br>
+<ul>
+  <li>Struts 1.1, including Tiles JSP tag library</li>
+  <ul>
+    <li>commons-beanutils.jar&nbsp;</li>
+    <li>commons-collections.jar&nbsp;</li>
+    <li>commons-digester.jar&nbsp;</li>
+    <li>commons-fileupload.jar</li>
+    <li>commons-lang.jar&nbsp;</li>
+    <li>commons-logging.jar&nbsp;</li>
+    <li>commons-validator.jar&nbsp;</li>
+    <li>jakarta-oro.jar struts.jar </li>
+  </ul>
+</ul>
+<ul>
+  <li>JSTL 1.0.5 from jakarta.apache.org - only the JSTL core library
+is required <br>
+  </li>
+  <ul>
+    <li>jstl.jar </li>
+    <li>standard.jar</li>
+  </ul>
+</ul>
+<ul>
+  <li>Supporting velocity integration<br>
+  </li>
+  <ul>
+    <li>commons-httpclient.jar</li>
+  </ul>
+</ul>
+
+<a name="3"></a>
+<h2>Selecting a package</h2>
+The UI templates are available as a WAR, ZIP, or Velocity.ZIP
+package.&nbsp; The <span style="font-weight: bold;">WAR</span> package
+provides a UI template demonstration for the local developer
+desk/laptop or CCI.&nbsp; The <span style="font-weight: bold;">ZIP</span>
+package may be used as either the basic framework from which to begin
+development of a new CCI application or to allow integration of the
+Cisco Intranet UI Standard with existing CCI applications.&nbsp; The <span
+ style="font-weight: bold;">Velocity.ZIP</span> package is designed to
+support those developers using Velocity outside of Struts.&nbsp; If
+your team uses Struts 1.1+ with Velocity, then you should choose the <span
+ style="font-weight: bold;">ZIP</span> package instead. <br>
+<h3>WAR package deployment<br>
+</h3>
+<div style="margin-left: 40px;">The WAR package provides a sample web
+application which demonstrates
+the usage, features, and attributes of the UI templates. It is
+contained within a single file - uiComponents.war.&nbsp; It provides a
+working Struts-based example from which application teams can explore
+how to use the UI templates.<br>
+<br>
+To deploy this package - add uiComponents.war to the webapps directory
+under tomcat.&nbsp;&nbsp; If&nbsp; the tomcat server is running it will
+expand the war file and add a uiComponents context to your server.xml
+file.&nbsp; You should then be able to access the demonstration at
+https://localhost/uiComponents/ as well as review the sample JSPs
+included under /webapp/WEB-INF/pages (<em>JSPs which use the templates</em>)
+and
+/webapp/WEB-INF/pages/contents (<em>JSPs which contain the body
+contents of
+rendered pages, as well as a static hinav sample</em>).<br>
+</div>
+<h3>ZIP package installation<br>
+</h3>
+<div style="margin-left: 40px;">The ZIP package is provided as a
+framework for your own web
+applications.&nbsp; It is contained within a single ZIP file -
+uiComponents.zip, and can be used as the basic directory structure for
+a new web application or its files extracted and included within an
+existing project.<br>
+</div>
+<h4 style="margin-left: 40px;">Installing the ZIP file for a new project</h4>
+<div style="margin-left: 40px;">Unzip the contents of the ZIP package
+into a suitable location,
+typically outside of your tomcat path - for example D:\cvs\foo would be
+a great location for a new web application named foo.<br>
+</div>
+<ul style="margin-left: 40px;">
+</ul>
+<h4 style="margin-left: 40px;">Initial installation of the ZIP file
+contents within an existing
+struts 1.1+ project</h4>
+<ol>
+  <ol>
+    <li>Expand the ZIP file into a temporary directory - which will
+create the following directories<br>
+      <div style="margin-left: 40px;">webapp/WEB-INF/ -&gt; Web info
+directory
+for
+configuration files<br>
+webapp/WEB-INF/lib/ -&gt; Library directory for templates<br>
+webapp/WEB-INF/tlds/ -&gt; Tag library descriptor files<br>
+      </div>
+    </li>
+    <li><em><span style="text-decoration: underline;">Add the jar files
+necessary for the UI template solution </span></em><br>
+Copy webapp/WEB-INF/lib/*.jar into your applications WEB-INF/lib
+directory <strong>for
+those jars not already present</strong></li>
+    <li><em><span style="text-decoration: underline;">Add UI template
+definitions file to your WEB-INF directory </span></em><br>
+Copy webapp/WEB-INF/ui-template-defs.xml into your application's
+WEB-INF
+directory<br>
+Add the contents of&nbsp; <a href="html/tiles-defs.xml.fragment">/webapp/html/tiles-defs.xml.fragment</a>
+to your
+tiles-defs.xml file<br>
+    </li>
+    <li><em><span style="text-decoration: underline;">Instruct the
+TilesPlugin to include the UI template definitions file</span> </em><br>
+Edit your WEB-INF/web.xml, making the following changes<cite><strong></strong></cite><span
+ style="font-weight: bold;"><br>
+Change</span><br style="font-weight: bold;">
+      <code>&lt;plug-in
+className="org.apache.struts.tiles.TilesPlugin" &gt;<br>
+      </code>
+      <div style="margin-left: 40px;"><code>&lt;set-property
+property="definitions-config" value="/WEB-INF/tiles-defs.xml" /&gt;<br>
+&lt;set-property property="moduleAware" value="true" /&gt;<br>
+&lt;set-property property="definitions-parser-validate" value="true"
+/&gt;<br>
+      </code></div>
+      <code>&lt;/plug-in&gt;</code><br>
+      <span style="font-weight: bold;">to</span><br
+ style="font-weight: bold;">
+      <code>&lt;plug-in
+className="org.apache.struts.tiles.TilesPlugin" &gt;<br>
+      </code>
+      <div style="margin-left: 40px;"><code>&lt;set-property
+property="definitions-config" value="/WEB-INF/tiles-defs.xml<span
+ style="color: rgb(0, 153, 0);">,/WEB-INF/ui-template-defs.xml</span>"
+/&gt;<br>
+&lt;set-property property="moduleAware" value="true" /&gt;<br>
+&lt;set-property property="definitions-parser-validate" value="true"
+/&gt;<br>
+      </code></div>
+      <code>&lt;/plug-in&gt;</code></li>
+    <li><cite><span style="text-decoration: underline;">Add the UI
+template JSP files <br>
+      </span></cite>Copy the webapp/WEB-INF/template/ directory and its
+contents to your application's
+/WEB-INF/template/ directory</li>
+    <li><em><span style="text-decoration: underline;">Add the "source
+protected" application JSP files location</span></em><br>
+Create the pages/ and pages/contents directories under your
+application's
+/WEB-INF/pages/ directory.&nbsp; You may wish to copy the sample pages
+from webapp/WEB-INF/pages
+(along with pages/contents) as reference examples.<br>
+      <p class="note" style="width: 90%;"><b>Note:</b>&nbsp; It is a
+good practice to
+locate all of the application's
+JSP files under WEB-INF as it prevents direct access to the JSP
+source.&nbsp; Doing so also helps maintain the MVC architecture, as it
+fosters handling of incoming requests by the controller - meaning that
+exposed urls such as /myApp/editFoo or /myApp/foo.do will require one
+or more entries in the struts controller configuration file -
+struts-config.xml.&nbsp; For example, in the sample web application,
+the Welcome.do action is mapped as follows:<br>
+      <class ="note" style="width: 100%; white-space: nowrap;"> <code>&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;action<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+path="/Welcome"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+type="org.apache.struts.actions.ForwardAction"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+parameter="/WEB-INF/pages/Welcome.jsp"/&gt;</code><class></class></class></p>
+    </li>
+    <li><em><span style="text-decoration: underline;">Add the required
+tld files to the application <br>
+      </span></em>Copy any tld files from webapp/WEB-INF/tlds directory
+to
+the
+application's
+/WEB-INF/tlds directory which aren't already present<em></em></li>
+    <li><em><span style="text-decoration: underline;">Define local uri
+locations of the required tld files </span></em><br>
+Edit WEB-INF/web.xml, making the following changes<span
+ style="font-weight: bold;"><big><br>
+Add</big> </span>the contents of&nbsp; <a
+ href="html/web.xml.jsp.tags.fragment">/webapp/html/web.xml.tags.fragment</a>
+within
+the &lt;web-app&gt; ...
+&lt;/web-app&gt; section after any &lt;servlet-mapping&gt; ...
+&lt;/servlet-mapping&gt; tags.<cite><strong></strong></cite></li>
+  </ol>
+</ol>
+<h3>Velocity.ZIP package installation</h3>
+<div style="margin-left: 40px;">The Velocity.ZIP package is a
+stand-alone implementation of the Cisco Standard UI Templates.&nbsp; It
+is provided for those Velocity developers working with an MVC framework
+other than Struts.&nbsp; The velocity package currenty uses the same
+attributes as the JSP package except for __bodyContent.&nbsp;
+__bodyContent is not used as the velocity implementation applies the
+requested layout as a wrapper around the content - 1cLayout.vm,
+2cLayout.vm or 3cLayout.vm.&nbsp; To the struts controller, foo.vm
+would be wrapped in the 2cLayout template like so: <span
+ style="font-style: italic;">&lt;forward name="success"
+path="/foo.vm?layout=2cLayout.vm"/&gt;</span>
+</div>
+<h4 style="margin-left: 40px;">Installing Velocity.ZIP file for an
+existing
+project</h4>
+<div style="margin-left: 40px;">
+<ol>
+  <li><span style="font-style: italic; text-decoration: underline;">Expand
+the ZIP file into a temporary directory</span><br>
+  </li>
+  <li><em><span style="text-decoration: underline;">Copy the
+uiComponents-velocity.jar file
+to your webapp's lib directory</span></em><br>
+Copy uiComponents-Velocity.jar into your application's WEB-INF/lib
+directory <br>
+  </li>
+  <li><span style="font-style: italic; text-decoration: underline;">Add
+the uiComponents configuration files to your webapp's WEB-INF directory</span><br>
+Copy /*.xml and /velocity.properties to /WEB-INF, or modify your existing velocity
+configuration files as needed</li>
+  <li><span style="font-style: italic; text-decoration: underline;">Copy
+the user modifiable macros to your webapp's WEB-INF/macros directory</span><br>
+Copy macros/* to /WEB-INF/macros<br>
+  </li>
+  <li><span style="font-style: italic; text-decoration: underline;">Update
+your web.xml file to use the uiComponents Velocity templates and macros</span><br>
+Add the web.xml.velocity.*.fragment files content to your
+WEB-INF/web.xml file in the appropriate location.<br>
+  </li>
+</ol>
+</div>
+<a name="4"></a>
+<h2>Updating an existing web application
+which already uses UI Templates</h2>
+Please review the release notes for the given release for specific
+changes.&nbsp; Minor release upgrades will typically consist of
+replacing the existing WEB-INF/templates directory with the
+WEB-INF/templates directory from the latest version.<font color="red"><br>
+</font>
+<a name="5"></a>
+<h2>Page Templates<br>
+</h2>
+The Intranet user experience is built through a system of consistent
+templates. The Intranet templates have been created to allow your team
+localized control of content while freeing them from having to worry
+about sitewide elements in the user interface.
+<p class="note" style="width: 90%;"><strong>Template
+Acquisition Process</strong><br>
+Application templates are
+currently in development. If you are developing on CCI or another
+application
+server please check the status of their development by sending an email
+to <a href="mailto:cec-design@cisco.com">cec-design@cisco.com</a></p>
+<a name="6"></a>
+<h2 id="1">Types of Templates</h2>
+<p>There are several templates to choose from. The templates are
+independent of
+the page type, meaning that different template types can be used on
+different
+type of pages within a site, such as a root page, organization page, or
+application. For example a Two Column (2c) template can be used in
+building a
+root page, sub-page or an application. With the more granular page
+descriptions, you will find a list of componets that should be used on
+that
+page type, the rules for their use, and code samples for each object.</p>
+<!-- COMPONENT SNIPPET Name:    392_org_navigation Date:    Thu Jun 10 14:39:27
+2004 -->
+<div class="sectionNav">
+<div class="sectionNavRight"> <img src="https://wwwin-dev-new/webdev/intranet/design-2/template/i/thumb-1c.gif" width="105"
+ height="123" class="picture_l"><b>1c
+Application (One Column)</b><br>
+The template is to be used exclusively for
+applications. This template contains a single link back to its parent
+page (no
+HiNav), a reduced utility navigation bar (containing only directory),
+an
+expanded tool kit (includes UserID and prefernces), and a single
+content area
+that takes the entire page width. </div>
+<div class="sectionNavLeft"> <img src="https://wwwin-dev-new/webdev/intranet/design-2/template/i/thumb-2c.gif" width="105"
+ height="123" class="picture_l"><b>2c (Two
+Column)</b><br>
+This template contains HiNav (local page navigation) and a
+single content area in the body. This is the base template for the
+intranet.
+</div>
+</div>
+<div class="sectionNav">
+<div class="sectionNavRight"> <img src="https://wwwin-dev-new/webdev/intranet/design-2/template/i/thumb-popup.gif" width="105"
+ height="123" class="picture_l"><b>Standard Pop-up (no
+navigation)</b><br>
+This one template allows for all
+sizes (small, medium, large) and content types (standard, simple and
+multi).
+<br style="color: rgb(255, 0, 0);">
+<strong style="color: rgb(255, 0, 0);">This Template is Not Yet
+Available for CCI Developers</strong>
+</div>
+<div class="sectionNavLeft"> <img src="https://wwwin-dev-new/webdev/intranet/design-2/template/i/thumb-3c.gif" width="105"
+ height="123" class="picture_l"><b>3c (Three Column)</b><br>
+This template
+contains HiNav (local page navigation), a content area in the body, and
+a right
+column. </div>
+</div>
+<div class="sectionNav">
+<div class="sectionNavRight"><img src="https://wwwin-dev-new/webdev/intranet/design-2/template/i/thumb-popup-nav.gif" width="105"
+ height="123" class="picture_l"><b><a
+ href="/webdev/intranet/design-2/template/support.shtml">Support/Feedback
+Pop-up
+</a></b>(with navigation)<br>
+The template is used exclusively for Help content.
+It contains predefined facilities for help, including HiNav. <br>
+<strong style="color: rgb(255, 0, 0);">This Template is Not Yet
+Available for CCI Developers</strong></div>
+<div class="sectionNavLeft"> <img src="https://wwwin-dev-new/webdev/intranet/design-2/template/i/thumb-2-3c.gif" width="105"
+ height="123" class="picture_l"><b>2c-3c (Two-Three Column)</b><br>
+This template contains
+HiNav (local page navigation), a top half of the body area laid out as
+a 2c
+(containing a content area in the body), and a lower half laid out as a
+3c
+format (containing a content area in the body, and a right column).
+This
+template is only available for use at a site's root level.
+<br style="color: rgb(255, 0, 0);">
+<strong style="color: rgb(255, 0, 0);">This Template is Not Yet
+Available for CCI Developers</strong>
+</div>
+</div>
+<a name="7"></a>
+<h2>Template Attributes<br>
+</h2>
+Attributes provide text values, block of codes and possibly control
+logics that have been predefined by the templates. For example:
+<br>
+<ol>
+  <li>__bodyTitle: This mandatory attribute defines the page title in
+the
+page header. </li>
+  <li>__headCode: This optional attribute defines any block of
+acceptable
+HTML code that can be included in the HTML tag. </li>
+</ol>
+To avoid naming conflict between template vs application attributes, a
+naming convention is used to reserve template attribute names.
+Currently, there are 3 classes of attributes which have different
+prefixes:
+<br>
+<ol>
+  <li>Private template attribute: Reserved by template team and should
+be
+ignored by application team. Prefixed and suffixed with "__"
+(underscore) </li>
+  <li>Public template attribute: Reserved and predefined by template
+team for use by the application team. Prefix is "__" string </li>
+  <li>Application attribute: Anything not reserved by template team </li>
+</ol>
+The list of available public template attributes used by each template
+(and variant) are available from the sample attributes pages - within
+your local sample sample template webapp at <a href="1cpa.do">1 column
+attributes page</a>, <a href="2cpa.do">2 column attributes page</a>,
+and <a href="3cpa.do">3 column attributes page</a>.&nbsp; These pages
+also indicate the location at which each attribute is placed within the
+rendered page.<br>
+<br>
+Attribute values may be set where appropriate for your application -
+that may be in the model layer in your java Action classes, or in your
+view layer.&nbsp; <br>
+<ul>
+  <li>In the model layer, you might set an attribute value like so: <br>
+    <code>&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">request.setAttribute("__applicationVersion","2.5.01");</span></code></li>
+  <li>In the view layer using JSP, you might set an attribute value in
+this way: (defined in page scope within the tiles context) <br>
+    <code>&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">&lt;tiles:put
+name="__applicationVersion" value="2.5.01"/&gt;</span></code></li>
+  <li>In the view layer using Velocity, you might set an attribute
+thusly: (default scope is request) <br>
+    <code>&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">#set
+($__applicationVersion = "2.5.01")</span></code></li>
+</ul>
+<a name="8"></a>
+<h2>Hinav components<br>
+</h2>
+The two and three column templates use the hinav component.  For these layout templates, 
+applications can select between 2 choices:
+<br>
+<ol>
+  <li>Statically included hinav: A jsp/html file that displays the
+appropriate
+Hinav for the application can be included when creating the page
+instance. The sample webapp includes pages which use a statically
+included hinav - one such page is TwoColumnPage.jsp located in the
+pages directory.&nbsp; To use a static hinav page such as
+"/html/staticHinav.html" you would set:
+<ul>
+  <li>In the model layer, you might set an attribute value like so: <br>
+    <code>&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">request.setAttribute("__hinavContent","/html/staticHinav.html");</span></code></li>
+  <li>In the view layer using JSP, you might set an attribute value in
+this way: (defined in page scope within the tiles context) <br>
+    <code>&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">&lt;tiles:put
+name="__hinavContent" value="/html/staticHinav.html"/&gt;</span></code></li>
+  <li>In the view layer using Velocity, you might set an attribute
+thusly: (default scope is request) <br>
+    <code>&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">#set
+($__hinavContent = "/html/staticHinav.html")</span></code></li>
+</ul>
+  </li>
+  <li>Dynamically retrieved hinav: Before retrieving any remote hinav, the desired hinav must be 
+  	<a href="https://wwwin.cisco.com/webdev/intranet/design-2/hinav/">created on CEC</a>. The attributes used by the two and three column layout templates to 
+  	dynamically retrieve a hinav from CEC are __hinavURI and __hinavXmlPath.  Only __hinavURI
+  	need be provided if __hinavXmlPath is the same value.  __hinavURI would be set like so:
+<ul>
+  <li>In the model layer, you might set an attribute value like so: <br>
+    <code>&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">request.setAttribute("__hinavURI","/webdev/intranet/");</span></code></li>
+  <li>In the view layer using JSP, you might set an attribute value in
+this way: (defined in page scope within the tiles context) <br>
+    <code>&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">&lt;tiles:put
+name="__hinavURI" value="/webdev/intranet/"/&gt;</span></code></li>
+  <li>In the view layer using Velocity, you might set an attribute
+thusly: (default scope is request) <br>
+    <code>&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">#set
+($__hinavURI = "/webdev/intranet/")</span></code></li>
+</ul>
+<p class="note" style="width: 90%;"><b>Note:</b>&nbsp; If __hinavContent is defined, __hinavURI
+and __hinavXmlPath will be ignored.</note>
+  </li>
+</ol>
+<a name="9"></a>
+<h2>Frequently Seen Errors<br>
+</h2>
+(To be added)
+</body>
+</html>

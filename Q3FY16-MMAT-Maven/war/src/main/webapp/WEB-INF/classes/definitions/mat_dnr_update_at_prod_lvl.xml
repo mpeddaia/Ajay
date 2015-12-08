@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UploadDefinition AbortOnError="false" allowCMjob="true" ID="MAT_DNR_PRODUCT_LVL" HeaderRowsCount="1">
+   <Column Name="CONTRACT_NUMBER" AllowNull="false">
+        <DataType Type="String" Length="120" />
+    </Column>
+    <Column Name="SERVICE_LEVEL" AllowNull="true">
+       <DataType Type="String" Length="40" />
+     </Column>
+    <Column Name="LINE_NUMBER" AllowNull="true">
+        <DataType Type="String" Length="150" />
+    </Column>
+     <Column Name="SERIAL_NUMBER" AllowNull="true">
+        <DataType Type="String" Length="30" />
+    </Column>
+     <Column Name="INSTANCE_NUMBER" AllowNull="true">
+        <DataType Type="String" Length="30" />
+    </Column>
+     <Column Name="ITEM_NAME" AllowNull="false">
+        <DataType Type="String" Length="40" />
+    </Column>
+    <Column Name="DNR_FLAG" AllowNull="false">
+        <DataType Type="String" Length="15" />
+    </Column>
+    <Column Name="REASON_CODE" AllowNull="false">
+        <DataType Type="String" Length="70" />
+    </Column>
+    <Column Name="CS_CASE_NUMBER" AllowNull="false">
+        <DataType Type="String" Length="150" />
+    </Column>    
+ </UploadDefinition>
+ 

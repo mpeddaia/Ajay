@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UploadDefinition AbortOnError="false" allowCMjob="true" ID="PORTABLE_SOLUTIONS" HeaderRowsCount="1">
+    <Column Name="SOL_CAT_NUMBER" AllowNull="true">
+        <DataType Type="String" Length="30" />
+    </Column>
+    <Column Name="ACTION" AllowNull="false">
+        <DataType Type="String" Length="30" />
+    </Column>
+    <Column Name="ROW_NUMBER" AllowNull="true">
+        <DataType Type="String" Length="30" />
+    </Column>
+    <Column Name="EFFECTIVE_DATE" AllowNull="true">
+        <DataType Type="String" Length="30"/>
+    </Column>
+    <Column Name="INSTANCE_NUMBER" AllowNull="true">
+        <DataType Type="String" Length="30"/>
+    </Column>
+    
+    <!-- Start Changes done by amalekar for Q4FY14 July MR changed length from 30 to 150 -->
+    <Column Name="SERIAL_NUMBER" AllowNull="true">
+        <DataType Type="String" Length="150"/>
+    </Column>
+    <!-- End Changes done by amalekar for Q4FY14 July MR changed length from 30 to 150 -->
+    
+    <Column Name="ITEM_NAME" AllowNull="true">
+        <DataType Type="String" Length="40"/>
+    </Column>
+    <Column Name="CONTRACT_NUMBER" AllowNull="true">
+        <DataType Type="String" Length="120" />
+    </Column>
+    <Column Name="CP_LINE_NUMBER" AllowNull="true">
+        <DataType Type="String" Length="150" />
+    </Column>
+    <Column Name="NEW_CONTRACT_NUMBER" AllowNull="true">
+        <DataType Type="String" Length="120" />
+    </Column>
+    <Column Name="TARGET_SERVICE_LINE_ID" AllowNull="true">
+       <DataType Type="String" Length="150" />
+    </Column> 
+    <Column Name="CPL_START_DATE" AllowNull="true">
+        <DataType Type="String" Length="30" />
+    </Column>
+    <Column Name="CPL_END_DATE" AllowNull="true">
+        <DataType Type="String" Length="30" />
+    </Column>
+    <Column Name="MAINT_LIST_PRICE" AllowNull="true">
+        <DataType Type="String" Length="30"/>
+    </Column>
+    <Column Name="MAINT_NET_PRICE" AllowNull="true">
+        <DataType Type="String" Length="30" />
+    </Column>
+    <Column Name="MAINT_SO_NUMBER" AllowNull="true">
+        <DataType Type="String" Length="30" />
+    </Column>
+    <Column Name="MAINT_PO_NUMBER" AllowNull="true">
+        <DataType Type="String" Length="30" />
+    </Column>
+    
+    <!-- Added "Distributor Bill To Id" Column by jjohnche for 2TNG, 31-MAR-2011 -->
+    <Column Name="DISTI_BILL_TO_ID" AllowNull="true">
+        <DataType Type="String" Length="30" />
+    </Column>
+    <!-- End of changes by jjohnche for 2TNG, 31-MAR-2011 -->    
+    
+    <Column Name="COPY_TO_INST_NUMBER" AllowNull="true">
+        <DataType Type="String" Length="30" />
+    </Column>
+    <Column Name="COPY_TO_SERIAL_NUMBER" AllowNull="true">
+        <DataType Type="String" Length="30" />
+    </Column>
+    <Column Name="COPY_TO_ITEM_NAME" AllowNull="true">
+        <DataType Type="String" Length="40" />
+    </Column>
+    <Column Name="TERMINATE_COVERAGE" AllowNull="true">
+        <DataType Type="String" Length="3" />
+    </Column>
+    <Column Name="TERMINATE_INSTANCE" AllowNull="true">
+        <DataType Type="String" Length="3"/>
+    </Column>
+    
+    <!-- Start Changes done by amalekar for Q4FY14 July MR changed length from 30 to 150 -->
+    <Column Name="NEW_SERIAL_NUMBER" AllowNull="true">
+        <DataType Type="String" Length="150" />
+    </Column>
+    <!-- End Changes done by amalekar for Q4FY14 July MR changed length from 30 to 150 -->
+    
+    <Column Name="NEW_ITEM_NAME" AllowNull="true">
+        <DataType Type="String" Length="40" />
+    </Column>
+    <!-- Adding Quantity column as  part of TnC Q3FY12 - Vijay B K -->
+    <Column Name="QUANTITY" AllowNull="true">
+        <DataType Type="String" Length="50"/>
+    </Column> 
+    
+    <Column Name="NEW_INSTALL_LOCATION" AllowNull="true">
+        <DataType Type="String" Length="30" />
+    </Column>
+    <Column Name="NEW_SHIP_TO" AllowNull="true">
+        <DataType Type="String" Length="30"/>
+    </Column>
+    <Column Name="NEW_BILL_TO" AllowNull="true">
+        <DataType Type="String" Length="30"/>
+    </Column>
+    <Column Name="NEW_SHIPPED_DATE" AllowNull="true">
+        <DataType Type="String" Length="30"/>
+    </Column>
+    <Column Name="NEW_PROD_PO_NUM" AllowNull="true">
+        <DataType Type="String" Length="150" />
+    </Column>
+    <Column Name="NEW_PROD_PO_TYPE" AllowNull="true">
+        <DataType Type="String" Length="150" />
+    </Column>
+    <Column Name="NEW_PROD_SO_NUM" AllowNull="true">
+        <DataType Type="String" Length="150" />
+    </Column>
+    <Column Name="NEW_PROD_LIST_PRICE" AllowNull="true">
+        <DataType Type="String" Length="30" />
+    </Column>
+    <Column Name="NEW_PROD_PO_PRICE" AllowNull="true">
+        <DataType Type="String" Length="30" />
+    </Column>
+    <Column Name="NEW_WARRANTY_END_DATE" AllowNull="true">
+        <DataType Type="String" Length="30" />
+    </Column>
+    <Column Name="NEW_WARRANTY_TYPE" AllowNull="true">
+        <DataType Type="String" Length="30" />
+    </Column>    
+    <Column Name="NEW_IB_STATUS" AllowNull="true">
+            <DataType Type="String" Length="50" />
+    </Column>
+    <!--start added for q4fy14 PS sourcefire -->
+	        <Column Name="MAC_ID" AllowNull="true">
+            <DataType Type="String" Length="240" />
+    </Column>
+        <Column Name="MIGRATED_FLAG" AllowNull="true">
+            <DataType Type="String" Length="30" />
+    </Column>
+        <Column Name="EXTERNAL_REFERENCE" AllowNull="true">
+            <DataType Type="String" Length="350" />
+    </Column>
+     <!--end added for q4fy14 PS sourcefire -->
+     
+    <!-- add in Q3FY15 LDOS Validation add new column "Extended support Number" -->
+     <Column Name="EXTENDED_SUPP_NUM" AllowNull="true">
+            <DataType Type="String" Length="150" />
+    </Column>
+    <!-- add in Q3FY15 LDOS Validation add new column "Extended support Number" -->
+    
+        <Column Name="NEW_PARENT_INST_NUM" AllowNull="true">
+            <DataType Type="String" Length="30" />
+    </Column>
+        <Column Name="NEW_PARENT_SN" AllowNull="true">
+            <DataType Type="String" Length="30" />
+    </Column>
+        <Column Name="NEW_PARENT_ITEM_NAME" AllowNull="true">
+            <DataType Type="String" Length="40" />
+    </Column>
+        <Column Name="NEW_PARENT_COPY_COVERAGE" AllowNull="true">
+            <DataType Type="String" Length="3" />
+    </Column>
+        <Column Name="NEW_PARENT_COPY_SITE_ID" AllowNull="true">
+            <DataType Type="String" Length="3" />
+    </Column>
+	
+	
+</UploadDefinition>

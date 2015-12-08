@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE application PUBLIC '-//Sun Microsystems, Inc.//DTD J2EE Application 1.3//EN' 'http://java.sun.com/dtd/application_1_3.dtd'>
+
+<application id="mcm">
+  <display-name>CCX WAS Boilerplate Application</display-name>
+  <module id="WebModule_mcm">
+    <web>
+      <web-uri>mcm.war</web-uri>
+      <context-root>/YS4MCM/</context-root> 
+<!--        <context-root>/CustAdv/ServiceSales/mcm/</context-root>   -->
+    </web>
+  </module>
+   <security-role id="AllAuthenticatedUsers">
+    <role-name>AllAuthenticatedUsers</role-name>
+  </security-role>
+  
+</application>
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<ListConfig fetchSize="500" pageable="true" resultsHandle="PROC_ID" table="XXCSS_CT_CUST_SLTR_DATA_V " class="map" rowSelectType="App" id="custSelector">
+  <Selection model="single" handle="PROC_ID"/>
+  <Column type="int" column="PROC_ID" userpreferencesId="1" property="procId">
+    <Presentation label="PROC ID" filterable="true" format="Default" visible="true" sortable="true" unique="true"/>
+  </Column>
+  <Column type="int" column="REF_INDEX" userpreferencesId="2" property="refIndex">
+    <Presentation label="REF INDEX" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="CUSTOMER_NUMBER" userpreferencesId="3" property="customerNumber">
+    <Presentation label="CUSTOMER NUMBER" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="CUSTOMER_NAME" userpreferencesId="" property="customerName">
+    <Presentation label="CUSTOMER NAME" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+</ListConfig>

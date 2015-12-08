@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UploadDefinition AbortOnError="false"  allowCMjob="true"  ID="M_AND_P_ENTITLMNT_ADD_PRODUCTS" HeaderRowsCount="1">
+    <Column Name="CONTRACT_NUMBER" AllowNull="true">
+        <DataType Type="String" Length="120" />
+    </Column>
+    <Column Name="SERVICE_LEVEL" AllowNull="false" ErrorMsg="Service Level Error: Service Level must be Entered">
+        <DataType Type="String" Length="50" />
+    </Column>
+	<Column Name="BEGIN_DATE" AllowNull="true">
+        <DataType Type="Date"/>
+    </Column>
+    <Column Name="END_DATE" AllowNull="true">
+        <DataType Type="Date"/>
+    </Column>
+     <Column Name="BILL_TO_ID" AllowNull="true">
+        <DataType Type="String" Length="240" />
+    </Column>
+    <!-- Made changes for making Net price column "MANDATORY" as for defect#57662 by iyellapr -->
+    <Column Name="NET_PRICE" AllowNull="false">
+        <DataType Type="Integer"/>
+    </Column>        
+    <Column Name="PO_SO_BILLING" AllowNull="true">
+        <DataType Type="String" Length="150" />
+    </Column>
+	<Column Name="MAINTENANCE_PO" AllowNull="true">
+        <DataType Type="String" Length="150" />
+    </Column>
+    
+<!-- Added "Distributor_Bill_To_Id" by jjohnche for 2TNG, Q1FY12 -->
+
+    <Column Name="Disti_Bill_To_Id" AllowNull="true">
+        <DataType Type="String" Length="150" />
+    </Column>
+
+<!-- End of code changes by jjohnche for 2TNG, Q1FY12 -->
+    
+	<Column Name="SERIAL_NUMBER" AllowNull="true">
+        <DataType Type="String" Length="30" />
+    </Column>
+<!-- Start of changes for Q3FY15 -->
+	<Column Name="CARTON_ID" AllowNull="true">
+        <DataType Type="String" Length="40" />
+    </Column>
+<!-- End of changes for Q3FY15 -->
+    <Column Name="ITEM_NAME" AllowNull="false">  <!-- Product Id in the template -->
+        <DataType Type="String" Length="40" />
+    </Column>
+    <Column Name="SITE_LOCATION" AllowNull="false">
+        <DataType Type="String" Length="40" />
+    </Column>
+    <Column Name="INSTANCE_NUMBER" AllowNull="true">
+        <DataType Type="String" Length="100" />
+    </Column>
+    <Column Name="PRODUCT_PO_SO" AllowNull="true">
+        <DataType Type="String" Length="240" />
+    </Column>
+    <!-- Added Min Duration Flag Column as part of CR 827 -->
+    <Column Name="Min_Duration_Flag" AllowNull="true">
+	<DataType Type="String" Length="10" />
+	</Column>
+    <!-- Modified Data type from Integer to String,added Length restriction to 10 Digits, and Error messsage  as part of T&C Q3FY12  by vibk -->  
+    <Column Name="QTY" AllowNull="false"  ErrorMsg="Quantity  greater than 10 digit value not allowed">
+       <DataType Type="String" Length="10" />
+    </Column>
+  <!-- End of code changes by vibk for T&C, Q3FY12 -->
+    <Column Name="SOFTLINE_FLAG" AllowNull="false">
+        <DataType Type="String" Length="3"/>
+    </Column>
+	 <Column Name="Net_Factor" AllowNull="true">
+        <DataType Type="Integer"/>
+    </Column>
+    <Column Name="REASON_CODE" AllowNull="false"> 
+        <DataType Type="String" Length="40" />
+    </Column>
+	<Column Name="CS_CASE_NUMBER" AllowNull="false">
+        <DataType Type="String" Length="50" />
+    </Column>
+</UploadDefinition>

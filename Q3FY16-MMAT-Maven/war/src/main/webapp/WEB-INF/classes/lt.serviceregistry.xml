@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ServiceRegistry
+	xmlns="http://www.cisco.com/serviceframework/serviceregistry"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.cisco.com/serviceframework/serviceregistry/serviceregistry.xsd">
+	
+	<SLAConfig>
+	<!--  Allowed params DB, JMS  and FILE -->
+		<Parameter name="USAGE_TRACKING_UPDATE" value="DB"></Parameter>
+	  	<Parameter name="NOTIFY_SEQUENCE" value="DB,FILE"></Parameter>
+	  	<Parameter name="NOTIFY_FLUSH_TIME" value="120000"></Parameter> <!-- in seconds, default = 120 seconds-->
+	  	<Parameter name="NOTIFY_FLUSH_SIZE" value="200"></Parameter>
+	  	<Parameter name="NOTIFY_QUEUE_NAME" value="xxsdfsla.queue"></Parameter>
+	</SLAConfig>
+	<!-- START of Processor definitions -->
+
+	<!--  END of Processor definitions -->
+
+	<!-- START of Service Defintions -->
+	
+	<!-- SOAP over http invocation -->
+	<!-- This is pojo service exposed in http protocal will also be used for local service invocation  -->
+
+	<ServiceMeta serviceName="SelectorAccelerationServiceClient" type="wsProxy" domainName="BusinessService"  enableSchemaValidation="false" enableSLA="true" dataBinding="xmlbeans">
+			<ClassName>com.cisco.servicesales.cm.qas.crosstrack.ISelectorAccelerationService</ClassName>
+			<Transport>http</Transport>
+			<SchemaLocation>META-INF/selectors.xsd</SchemaLocation>
+		    <!-- <SecurityDef enableAuthentication="false">
+				<AllowedUsers>anonymous</AllowedUsers>
+			</SecurityDef> -->
+			
+			<Parameter name="endpointUrl" value="http://wsgx-lt-ermo.cisco.com/cscc/qas-wxys2/billToSearch" />			
+			<Parameter name="doclitBare" value="true"/>
+			<Parameter name="HTTP_CONNECTION_TIMEOUT" value="480000"/>
+			<Parameter name="HTTP_SO_TIMEOUT" value="480000" />				
+	</ServiceMeta>	
+	
+	<ServiceMeta serviceName="BillToSelectorAccelerationServiceClient" type="wsProxy" domainName="BusinessService"  enableSchemaValidation="false" enableSLA="true" dataBinding="xmlbeans">
+			<ClassName>com.cisco.servicesales.cm.qas.crosstrack.ISelectorAccelerationService</ClassName>
+			<Transport>http</Transport>
+			<SchemaLocation>META-INF/selectors.xsd</SchemaLocation>
+		    <!-- <SecurityDef enableAuthentication="false">
+				<AllowedUsers>anonymous</AllowedUsers>
+			</SecurityDef> -->
+			
+			<Parameter name="endpointUrl" value="http://wsgx-lt-ermo.cisco.com/cscc/qas-wxys2/billToSearch" />	
+			<Parameter name="doclitBare" value="true"/>
+			<Parameter name="HTTP_CONNECTION_TIMEOUT" value="480000"/>
+			<Parameter name="HTTP_SO_TIMEOUT" value="480000" />				
+			<Parameter name="userName" value="cscc.gen" />
+			<Parameter name="password" value="c5ccg3n" />
+	</ServiceMeta>	
+
+	<ServiceMeta serviceName="ContractSelectorAccelerationServiceClient" type="wsProxy" domainName="BusinessService"  enableSchemaValidation="false" enableSLA="true" dataBinding="xmlbeans">
+			<ClassName>com.cisco.servicesales.cm.qas.crosstrack.ISelectorAccelerationService</ClassName>
+			<Transport>http</Transport>
+			<SchemaLocation>META-INF/selectors.xsd</SchemaLocation>
+		    <!-- <SecurityDef enableAuthentication="false">
+				<AllowedUsers>anonymous</AllowedUsers>
+			</SecurityDef> -->
+			
+			<Parameter name="endpointUrl" value="http://wsgx-lt-ermo.cisco.com/cscc/qas-wxys2/contractSearch" />	
+			<Parameter name="doclitBare" value="true"/>
+			<Parameter name="HTTP_CONNECTION_TIMEOUT" value="480000"/>
+			<Parameter name="HTTP_SO_TIMEOUT" value="480000" />				
+			<Parameter name="userName" value="cscc.gen" />
+			<Parameter name="password" value="c5ccg3n" />
+	</ServiceMeta>	
+
+	<ServiceMeta serviceName="InstallSiteSelectorAccelerationServiceClient" type="wsProxy" domainName="BusinessService"  enableSchemaValidation="false" enableSLA="true" dataBinding="xmlbeans">
+			<ClassName>com.cisco.servicesales.cm.qas.crosstrack.ISelectorAccelerationService</ClassName>
+			<Transport>http</Transport>
+			<SchemaLocation>META-INF/selectors.xsd</SchemaLocation>
+		    <!-- <SecurityDef enableAuthentication="false">
+				<AllowedUsers>anonymous</AllowedUsers>
+			</SecurityDef> -->
+			
+			<Parameter name="endpointUrl" value="http://wsgx-lt-ermo.cisco.com/cscc/qas-wxys2/installSiteSearch" />	
+			<Parameter name="doclitBare" value="true"/>
+			<Parameter name="HTTP_CONNECTION_TIMEOUT" value="480000"/>
+			<Parameter name="HTTP_SO_TIMEOUT" value="480000" />				
+			<Parameter name="userName" value="cscc.gen" />
+			<Parameter name="password" value="c5ccg3n" />
+	</ServiceMeta>	
+
+	<ServiceMeta serviceName="CustomerSelectorAccelerationServiceClient" type="wsProxy" domainName="BusinessService"  enableSchemaValidation="false" enableSLA="true" dataBinding="xmlbeans">
+			<ClassName>com.cisco.servicesales.cm.qas.crosstrack.ISelectorAccelerationService</ClassName>
+			<Transport>http</Transport>
+			<SchemaLocation>META-INF/selectors.xsd</SchemaLocation>
+		    <!-- <SecurityDef enableAuthentication="false">
+				<AllowedUsers>anonymous</AllowedUsers>
+			</SecurityDef> -->
+			
+			<Parameter name="endpointUrl" value="http://wsgx-lt-ermo.cisco.com/cscc/qas-wxys2/customerSearch" />	
+			<Parameter name="doclitBare" value="true"/>
+			<Parameter name="HTTP_CONNECTION_TIMEOUT" value="480000"/>
+			<Parameter name="HTTP_SO_TIMEOUT" value="480000" />				
+			<Parameter name="userName" value="cscc.gen" />
+			<Parameter name="password" value="c5ccg3n" />
+	</ServiceMeta>	
+
+
+</ServiceRegistry>
+	

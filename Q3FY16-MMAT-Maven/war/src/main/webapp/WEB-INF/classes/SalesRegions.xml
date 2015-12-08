@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<ListConfig fetchSize="500" pageable="true" resultsHandle="PROC_ID" table="xxcss_ct_sales_regions_v" class="map" rowSelectType="App" id="SalesRegionView">
+  <Selection model="single" handle="PROC_ID#REF_INDEX#HIER_NAME#SALES_REGION#STRUCTURE_NODE_NAME#NODE_STATUS#CREATED_BY#CREATION_DATE"/>
+  <Column type="int" column="PROC_ID" userpreferencesId="" property="procId">
+    <Presentation label="PROC ID" filterable="true" format="Default" visible="true" sortable="true" unique="true"/>
+  </Column>
+  <Column type="int" column="REF_INDEX" userpreferencesId="" property="refIndex">
+    <Presentation label="REF INDEX" filterable="true" format="Default" visible="true" sortable="true" unique="true"/>
+  </Column>
+  <Column type="String" column="HIER_NAME" userpreferencesId="" property="hierName">
+    <Presentation label="HIER NAME" filterable="true" format="Default" visible="true" sortable="true" unique="true"/>
+  </Column>
+  <Column type="String" column="SALES_REGION" userpreferencesId="" property="salesRegion">
+    <Presentation label="SALES REGION" filterable="true" format="Default" visible="true" sortable="true" unique="true"/>
+  </Column>
+  <Column type="String" column="STRUCTURE_NODE_NAME" userpreferencesId="" property="structureNodeName">
+    <Presentation label="STRUCTURE NODE NAME" filterable="true" format="Default" visible="true" sortable="true" unique="true"/>
+  </Column>
+  <Column type="String" column="NODE_STATUS" userpreferencesId="" property="nodeStatus">
+    <Presentation label="NODE STATUS" filterable="true" format="Default" visible="true" sortable="true" unique="true"/>
+  </Column>
+  <Column type="int" column="CREATED_BY" userpreferencesId="" property="createdBy">
+    <Presentation label="CREATED BY" filterable="true" format="Default" visible="true" sortable="true" unique="true"/>
+  </Column>
+  <Column type="Date" column="CREATION_DATE" userpreferencesId="" property="creationDate">
+    <Presentation label="CREATION DATE" filterable="true" format="Default" visible="true" sortable="true" unique="true"/>
+  </Column>
+</ListConfig>

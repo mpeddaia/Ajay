@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+  "-//Apache Software Foundation//DTD Tiles Configuration//EN"
+  "http://jakarta.apache.org/struts/dtds/tiles-config.dtd">
+
+<tiles-definitions>
+
+	<definition name="baseDef" path="/WEB-INF/jsp/layout/Layout.jsp" >
+	  	 <put name="header" value="/WEB-INF/jsp/layout/Header.jsp"/>
+		 <put name="body" value=""/>
+		 <put name="footer" value="/WEB-INF/jsp/layout/Footer.jsp"/>
+	</definition>
+	
+	<definition name="baseDefTabMenu" path="/WEB-INF/jsp/layout/LayoutTabMenu.jsp" >
+	  	 <put name="header" value="/WEB-INF/jsp/layout/Header.jsp"/>
+	  	 <put name="tabmenu" value="/WEB-INF/jsp/layout/TabMenu.jsp"/>
+		 <put name="body" value=""/>
+		 <put name="footer" value="/WEB-INF/jsp/layout/Footer.jsp"/>
+	</definition>
+	
+	<definition name="helpDef" path="/WEB-INF/jsp/layout/Layout.jsp">
+		<put name="header" value="/WEB-INF/jsp/layout/Header.jsp"/>
+	    <put name="menu" value="/WEB-INF/jsp/layout/TabMenu.jsp"/>
+        <put name="footer" value="/WEB-INF/jsp/layout/Footer.jsp"/>
+        <put name="body" value=""/>
+    </definition>
+	
+	<definition name="popUpBaseDef" path="/jsp/layout/PopUpLayout.jsp" >
+		 <put name="header" value="/WEB-INF/jsp/layout/Header.jsp"/>
+		 <put name="body" value=""/>
+	</definition>
+	
+	<definition name="mybaseDef" path="/WEB-INF/jsp/layout/STCLayout.jsp" >
+	  	 <put name="header" value="/WEB-INF/jsp/layout/Header.jsp"/>
+		 <put name="body" value=""/>
+		 <put name="footer" value="/WEB-INF/jsp/layout/Footer.jsp"/>
+	</definition>
+	<definition name="sampleWelcomePage" extends="baseDefTabMenu">
+		<put name="body" value="/jsp/SampleBody.jsp"/>
+		<put type="string" name="title" value="  Cisco Service Contract Center - Welcome Page" />
+	</definition>
+	 <definition name="MassMatUploadPage" extends="baseDefTabMenu">
+            <put name="body" value="/jsp/tiles/home2.jsp"/>
+            <put type="string" name="title" value="Cisco Service Contract Center" />
+    </definition>
+    <definition name="errorPageWithOutTabmenu" extends="baseDef">
+            <put name="body" value="/jsp/tiles/errorPageTab.jsp"/>
+            <put type="string" name="title" value="Cisco Service Contract Center" />
+    </definition>
+    <definition name="errorPageWithTabmenu" extends="baseDefTabMenu">
+            <put name="body" value="/jsp/tiles/errorPageMCM.jsp"/>
+            <put type="string" name="title" value="Cisco Service Contract Center" />
+    </definition>
+     <definition name="StatusDetailView" extends="baseDefTabMenu">
+            <put name="body" value="/jsp/tiles/statusDetail.jsp"/>
+            <put type="string" name="title" value="Cisco Service Contract Center" />
+    </definition>
+    <definition name="ViewRequest" extends="baseDefTabMenu">
+            <put name="body" value="/jsp/tiles/requestStatus.jsp"/>
+            <put type="string" name="title" value="Cisco Service Contract Center" />
+    </definition>
+    <definition name="unauthUser" extends="baseDefTabMenu">
+            <put name="body" value="/jsp/tiles/home2_Error.jsp"/>
+            <put type="string" name="title" value="Cisco Service Contract Center" />
+    </definition>
+     <definition name="errorPageDef" extends="baseDefTabMenu">
+            <put name="body" value="/jsp/tiles/errorPage.jsp"/>
+            <put type="string" name="title" value="Cisco Service Contract Center" />
+    </definition>
+	 <definition name="SearchMigratedContracts" extends="mybaseDef">
+            <put name="body" value="/jsp/tiles/searchExportMigratedContractsNew.jsp"/>
+            <put type="string" name="title" value="Cisco Service Contract Center: Contract Migration " />
+    </definition>
+    <!--  Added as part of Q1FY13 Smart Care services changes by vibk -->
+    <definition name="mcmdownload" extends ="mybaseDef">
+    		<put name="body" value="/jsp/tiles/mcmdownloadreports.jsp"/>
+            <put type="string" name="title" value="Cisco Service Contract Center" />
+    </definition>
+</tiles-definitions>

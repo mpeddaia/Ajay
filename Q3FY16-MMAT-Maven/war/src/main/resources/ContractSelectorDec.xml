@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<ListConfig fetchSize="500" pageable="true" resultsHandle="PROC_ID" table="xxcss_ct_cont_sltr_data_v" class="map" rowSelectType="App" id="ContractSelectorDec">
+  <Selection model="single" handle="PROC_ID"/>
+  <Column type="int" column="PROC_ID" userpreferencesId="" property="procId">
+    <Presentation label="PROC ID" filterable="true" format="Default" visible="true" sortable="true" unique="true"/>
+  </Column>
+  <Column type="int" column="REF_INDEX" userpreferencesId="" property="refIndex">
+    <Presentation label="REF INDEX" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="CONTRACT_NUMBER" userpreferencesId="" property="contractNumber">
+    <Presentation label="CONTRACT NUMBER" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="SERVICE_LEVEL" userpreferencesId="" property="serviceLevel">
+    <Presentation label="SERVICE LEVEL" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="SERVICE_LEVEL_DESC" userpreferencesId="" property="serviceLevelDesc">
+    <Presentation label="SERVICE LEVEL DESC" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="BILL_TO_LOCATION" userpreferencesId="" property="billToLocation">
+    <Presentation label="BILL TO LOCATION" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="BILL_TO_NAME" userpreferencesId="" property="billToName">
+    <Presentation label="BILL TO NAME" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="CONTRACT_LABEL" userpreferencesId="" property="contractLabel">
+    <Presentation label="CONTRACT LABEL" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="STATUS_CODE" userpreferencesId="" property="statusCode">
+    <Presentation label="STATUS CODE" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="CURRENCY_CODE" userpreferencesId="" property="currencyCode">
+    <Presentation label="CURRENCY CODE" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="int" column="CONTRACT_ID" userpreferencesId="" property="contractId">
+    <Presentation label="CONTRACT ID" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="int" column="ESTIMATED_AMOUNT" userpreferencesId="" property="estimatedAmount">
+    <Presentation label="ESTIMATED AMOUNT" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="int" column="TOTAL_LINE_LIST_PRICE" userpreferencesId="" property="totalLineListPrice">
+    <Presentation label="TOTAL LINE LIST PRICE" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="Date" column="START_DATE" userpreferencesId="" property="startDate">
+    <Presentation label="START DATE" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="Date" column="END_DATE" userpreferencesId="" property="endDate">
+    <Presentation label="END DATE" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="Date" column="LAST_UPDATE_DATE" userpreferencesId="" property="lastUpdateDate">
+    <Presentation label="LAST UPDATE DATE" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+</ListConfig>

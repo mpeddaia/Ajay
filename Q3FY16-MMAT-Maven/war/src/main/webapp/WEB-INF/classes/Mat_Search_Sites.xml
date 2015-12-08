@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<ListConfig fetchSize="500" pageable="true" resultsHandle="UPLD_REQUEST_ID" table="CIB_MAT_SR_SITES_ERR_V" class="map" id="MAT_SEARCH_SITES">
+  <Selection model="single" handle="reference_index"/>
+  <Column type="int" column="UPLD_REQUEST_ID" property="upldRequestId">
+    <Presentation label="UPLD REQUEST ID" filterable="false" format="Default" visible="false" sortable="false"/>
+  </Column>
+  <Column type="int" column="ORIG_ROW_NUMBER" property="origRowNumber">
+    <Presentation label="upload.mat.column.orig_row_number" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="CUSTOMER_ID" property="customerId">
+    <Presentation label="upload.mat.column.custID" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="ADDRESS1" property="address1">
+    <Presentation label="upload.mat.column.address1" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="ADDRESS2" property="address2">
+    <Presentation label="upload.mat.column.address2" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+    <Column type="String" column="CITY" property="city">
+    <Presentation label="upload.mat.column.city" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="ZIP_CODE" property="zipCode">
+    <Presentation label="upload.mat.column.zipcode" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="STATE" property="state">
+    <Presentation label="upload.mat.column.state" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="COUNTRY" property="country">
+    <Presentation label="upload.mat.column.country" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <!--
+		TD4846;nisaran;26-APR-2007;added address3  
+	-->
+	<Column type="String" column="ADDRESS3" property="address3">
+    <Presentation label="upload.mat.column.address3" filterable="true" format="Default" visible="true" sortable="true"/>
+    </Column>
+	<!--
+		TD5609;nisaran;04-JUN-2007;added Province  
+	-->
+  <Column type="String" column="PROVINCE" property="province">
+    <Presentation label="upload.mat.column.province" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <!-- TD2492;saatmaku;16 oct 2007;adding cs case number -->
+   <Column type="String" column="CS_CASE_NUMBER" property="csCaseNumber">
+   <Presentation label="upload.mat.column.cs_case_number" filterable="true" format="Default" visible="true" sortable="true" />
+   </Column>
+  <Column type="String" column="ERROR_MESSAGE" property="errorMessage">
+    <Presentation label="upload.mat.column.error_message" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="SITE_ID" property="siteId">
+    <Presentation label="upload.mat.column.site_id" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="SITE_NAME" property="siteName">
+    <Presentation label="upload.mat.column.site_name" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+</ListConfig>

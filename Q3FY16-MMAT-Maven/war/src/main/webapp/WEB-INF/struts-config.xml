@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE 
+struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+"http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+	<data-sources />
+	<!-- ======================================== Form Bean Definitions -->
+	<form-beans>
+		<form-bean name="landingForm" type="com.cisco.servicesales.form.LandingForm" />
+		<form-bean name="listForm" type="com.cisco.servicesales.form.ListFrameworkForm" />
+		<!-- Mass Mat Integration Start       -->
+		<!--  <form-bean name="landingForm" type="com.cisco.servicesales.form.LandingForm"/>-->
+		<form-bean name="FormActionUpload" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="login" type="java.lang.String" />
+			<form-property name="password" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="McmIndexForm" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="email" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="McmProcessReportsForm" type="org.apache.struts.validator.DynaValidatorForm" />
+		<form-bean name="McmReportsForm" type="org.apache.struts.validator.DynaValidatorForm" />
+		<form-bean name="McmViewrequestForm" type="org.apache.struts.validator.DynaValidatorForm" />
+		<form-bean name="McmStatusDetailForm" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="email" type="java.lang.String" />
+		</form-bean>
+		<!-- form-bean name="McmUploadFormtest"  type="org.apache.struts.validator.DynaValidatorForm"/-->
+		<form-bean name="McmUploadForm" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="requestType" type="java.lang.String" />
+			<form-property name="selectTemplate" type="java.lang.String" />
+			<form-property name="mat_request_name" type="java.lang.String" />
+			<form-property name="fileLocate" type="org.apache.struts.upload.FormFile" />
+			<form-property name="notes" type="java.lang.String" />
+			<form-property name="email" type="java.lang.String" />
+			<!-- Td2492;12 oct 2007;start;Removed the entry for solcatId -->
+			<!-- Td5082;start;alonikar;13 jul 2007;Added the entry for solcatId -->
+			<!--  <form-property name="solcatId" type="java.lang.String"/>-->
+			<!-- Td2492;;12 oct 2007;end;Removed the entry for solcatId -->
+		</form-bean>
+		<!-- Mass Mat Integration End       -->
+		<!-- STC Impacted Contract Migration UI -->
+		<form-bean name="SearchMigratedContractsForm" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="customerName" type="java.lang.String" />
+			<form-property name="contractNumber" type="java.lang.String" />
+			<form-property name="billToId" type="java.lang.String" />
+			<form-property name="migrationStatus" type="java.lang.String" />
+		</form-bean>
+
+	</form-beans>
+	<global-exceptions>
+		<exception handler="com.cisco.servicesales.struts.ExceptionHandler" type="java.lang.Exception" key="errors.deadEnd" path="errorPageDef" />
+		<exception handler="com.cisco.servicesales.exception.ExceptionHandler" type="java.lang.RuntimeException" key="errors.deadEnd" path="errorPageDef" />
+		<exception handler="com.cisco.servicesales.exception.ExceptionHandler" type="com.cisco.servicesales.exception.BaseException" key="errors.deadEnd" path="errorPageDef" />
+		<exception handler="com.cisco.servicesales.exception.ExceptionHandler" type="com.cisco.servicesales.exception.BaseRuntimeException" key="errors.deadEnd" path="errorPageDef" />
+	</global-exceptions>
+	<global-forwards>
+		<forward name="errorPage" path="errorPageDef" />
+		<forward name="welcome" path="/Welcome.do" />
+		<!-- Mass Mat Integration Start       -->
+		<forward name="generalError" path="/error.jsp" />
+		<!-- Mass Mat Integration End       -->
+		<forward name="unauth" path="unauthUser" />
+	</global-forwards>
+	<action-mappings>
+		<!--List Framework Actions-->
+		<action name="listForm" path="/LFTest" type="com.cisco.servicesales.list.ListFrameworkAction" scope="session">
+			<forward name="success" path="/jsp/ListFramework.jsp" />
+			<forward name="next" path="/jsp/ShowSelection.jsp" />
+		</action>
+		<action path="/List" type="com.cisco.servicesales.list.ListPreferenceAction" scope="session">
+			<forward name="success" path="/LFTest.do" redirect="true" />
+			<forward name="reset" path="/jsp/ListPrefConfig.jsp" />
+		</action>
+		<!-- Mass Mat Integration Start       -->
+		<action name="landingForm" path="/landing" forward="landingDef" />
+		<action path="/start" forward="start" />
+		<action path="/error" forward="errorPageDef" />
+		<!--SSF actions-->
+		<!--  MCM ACTIONS BEGINS-->
+		<action path="/mcmindex" type="com.cisco.mcm.action.McmIndexAction" name="McmIndexForm" scope="request">
+			<!--  <forward name="success" path="/index.jsp"/> -->
+			<forward name="success" path="MassMatUploadPage" />
+			<!-- TD013;saatmaku;12-jun-08;Jsp name change -->
+			<forward name="successList" path="/jsp/tiles/home2_response.jsp" />
+			<forward name="errorPageWithOutTabmenu" path="errorPageWithOutTabmenu" />
+			<forward name="errorPageWithTabmenu" path="errorPageWithTabmenu" />
+		</action>
+		<action path="/mcmupload" type="com.cisco.mcm.action.McmUploadAction" name="McmUploadForm" scope="request" validate="true">
+			<forward name="success" path="/MyJsp.jsp" />
+		</action>
+		<action path="/mcmreports" type="com.cisco.mcm.action.McmReportsAction" name="McmReportsForm" scope="request" validate="true" parameter="methodName">
+			<forward name="MCMUtilizationByUser" path="/jsp/tiles/mcmutilizationbyuser.jsp" />
+			<forward name="MASSMCMUtilizationByTranType" path="/jsp/tiles/mcmutilizationbytransationtype.jsp" />
+			<forward name="MCMFailureBreakOutTrans" path="/jsp/tiles/mcmfailurebreakout.jsp" />
+			<forward name="MCMProcessingTimesOfReq" path="/jsp/tiles/mcmprocessingrequesttype.jsp" />
+			<forward name="ReasonCodeReport" path="/jsp/tiles/reasoncodereport.jsp" />
+			<forward name="MCMVOAuditReport" path="/jsp/tiles/mcmvoauditreport.jsp" />
+			<forward name="GPSAuditReport" path="/jsp/tiles/gpsauditreport.jsp" />
+			<forward name="reportsLanding" path="/jsp/tiles/reportTest.jsp" />
+			<forward name="MCMValidationOverrideReport" path="/jsp/tiles/mcmvalidationoverridereport.jsp" />
+   			<forward name="MCMMassProcessingReport" path="/jsp/tiles/mcmmassprocessingreport.jsp" />
+            <forward name="MCMMoveConfiguredMinorProducts" path="/jsp/tiles/massreconfigurationtransactionreport.jsp" />
+			
+		</action>
+		<action path="/mcmprocessreports" type="com.cisco.mcm.action.McmProcessReportsAction" name="McmProcessReportsForm" scope="request" validate="true">
+			<forward name="success" path="/reportSuccess.jsp" />
+			<forward name="failure" path="/reportFailure.jsp" />
+		</action>
+		<!-- Adding the below action as part of Q1FY13 SmartCare services requirement  to download the report in Zip format by vibk -->
+		<action path="/mcmdownloadreports"  type = "com.cisco.mcm.action.McmDownloadReportsAction" name="McmDownloadReportsForm" scope="request" validate="true">
+		<forward name="success" path="/jsp/tiles/outputReport.jsp" /> 
+		<!--  <forward name="success" path="mcmdownload" /> -->
+		</action>
+		<!--                        
+			<action path="/mcmprocessreports"
+			type="com.cisco.mcm.action.McmProcessReportsAction"
+			name="McmProcessReportsForm"
+			scope="request"     
+			validate="true">
+			<forward name="success" path="/McmReports.jsp"/>
+			
+			</action> 
+		-->
+		<action path="/mcmstatusdetailview" type="com.cisco.mcm.action.McmStatusDetailAction" name="McmStatusDetailForm" scope="request">
+			<forward name="success" path="StatusDetailView" />
+			<forward name="viewRequest" path="/jsp/tiles/requestStatusRedirect.jsp" />
+			<!-- <forward name="viewRequest" path="ViewRequest"/> -->
+			<forward name="successResponse" path="/jsp/tiles/statusDetailResponse.jsp" />
+		</action>
+		<action path="/custSelectorDispatch" type="com.cisco.crosstrack.selector.actions.CustomerSelectorDispatchAction" scope="request" parameter="methodName">
+			<forward name="customerSelectorResults" path="/jsp/CustomerSelectorPopupResults.jsp" />
+			<forward name="popup" path="/jsp/cis_CROSS_tools_customer.jsp" />
+		</action>
+		<action path="/userIdSelector" scope="request" parameter="methodName" type="com.cisco.crosstrack.selector.actions.UserIdSelectorDispatchAction">
+
+			<forward name="popup" path="/jsp/UserIdPopup.jsp" />
+			<forward name="success" path="/jsp/UserIdPopupTable.jsp" />
+			<forward name="error" path="/jsp/PopupError.jsp" />
+		</action>
+		<!-- Mass Mat Integration End       -->
+
+		<!-- STC Impacted Contract Migration UI -->
+
+		<action path="/searchContracts" scope="request" parameter="methodName" name="SearchMigratedContractsForm" type="com.cisco.mcm.action.McmSearchContractAction">
+
+			<forward name="popup" path="/jsp/UserIdPopup.jsp" />
+			<!-- <forward name="success" path="/jsp/tiles/searchExportMigratedContractsNew.jsp" /> searchMigratedContracts-->
+			<forward name="success" path="SearchMigratedContracts" />
+			<forward name="error" path="/jsp/PopupError.jsp" />
+		</action>
+		<action path="/helpPop" scope="request" type="com.cisco.crosstrack.actions.HelpPopupAction">
+           <forward name="sucess" path="/jsp/HelpLink.jsp"/>
+    	</action>
+	</action-mappings>
+	<!--
+		<controller
+		bufferSize="4096"
+		debug="0"
+		locale="false"
+		nocache="false"
+		inputForward="false"
+		processorClass="com.cisco.servicesales.struts.action.RequestProcessor"/> -->
+	<!--     
+		<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config"
+		value="/WEB-INF/tileDefinitions.xml"/>
+		<set-property property="moduleAware" value="true"/>
+		<set-property property="definitions-parser-validate" value="true"/>
+		</plug-in>
+	-->
+	<!-- Mass Mat Integration Start       -->
+	<controller bufferSize="4096" debug="0" locale="false" nocache="false" inputForward="false" processorClass="com.cisco.servicesales.struts.action.MCMRequestProcessor" />
+	<message-resources null="false" parameter="ApplicationResources" />
+	<message-resources null="false" parameter="UploadTemplateResources" key="UploadTemplResources" />
+	<message-resources null="false" parameter="DownloadTemplateResources" key="DownloadTemplResources" />
+	<message-resources null="false" parameter="LineLevelErrorResources" key="LineErrorResources" />
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/tiles-def.xml" />
+		<set-property property="moduleAware" value="true" />
+		<set-property property="definitions-parser-validate" value="true" />
+	</plug-in>
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/tileDefinitions.xml" />
+		<set-property property="moduleAware" value="true" />
+		<set-property property="definitions-parser-validate" value="true" />
+	</plug-in>
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames" value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml" />
+	</plug-in>
+	<!-- Mass Mat Integration End       -->
+</struts-config>

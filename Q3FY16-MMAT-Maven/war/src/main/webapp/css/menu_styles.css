@@ -1,0 +1,22 @@
+/* menu */
+#menu_container   { min-width: 980px; overflow: hidden }
+
+
+#menu td  { background-image: url("../images/components/mtabs/default/mtab_middle_normal.gif"); background-repeat: repeat-x }
+#menu td.active   { background-image: url("../images/components/mtabs/default/mtab_middle_selected.gif"); background-repeat: repeat-x }
+
+#level_two { margin-left: 1em; }
+#level_two div   { background-color: #b5cdcd; background-image: url("../images/components/mtabs/default/pixel_dae6e6.gif"); background-repeat: repeat-x; background-position: 0 top; display: none; position: absolute; left: 21px; width: 967px; border-right: 1px solid #7f7f7f; border-bottom: 1px solid #7f7f7f; border-left: 1px solid #7f7f7f }
+#level_two ul      { margin: 0 0 0 12px; padding: 0.2em 0; height: 20px }
+#level_two li      { color: #a2a2a2; background-image: url("../images/components/mtabs/default/pipe_black.gif"); background-repeat: no-repeat; background-position: 0 50%; list-style-type: none; display: inline; margin: 0; padding: 0 0.5em; float: left }
+#level_two li.first  { background-image: none; padding-left: 0 }
+
+#menu_container a  { color: #003031; font-size: 11px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; text-decoration: none; white-space: nowrap }
+#menu_container a span { padding: 0 5px }
+#menu_container div li a   { font-size: 11px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; padding: 0 0.4em;  }
+#menu_container td.active a { color: #9c0000 }
+#menu_container a:hover { color: #9c0000; text-decoration: none }
+
+
+div#tabs   { height: 20px; background-color: #7f7f7f; padding-top: 0px; padding-left: 22px; border: 0 }
+

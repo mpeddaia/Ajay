@@ -1,0 +1,59 @@
+// The following permissions apply to all the components under the application.
+grant codebase "file:${application}" {
+	permission java.net.SocketPermission "qat-dr-1.cisco.com:80", "resolve,connect";
+    permission java.net.SocketPermission "localhost", "resolve,connect";
+    //permission java.net.SocketPermission "wwwin-dev.cisco.com", "resolve,connect";
+    //permission java.net.SocketPermission "wwwin-stage.cisco.com", "resolve,connect";
+    permission java.net.SocketPermission "www.cisco.com", "resolve,connect";
+    permission java.net.SocketPermission    "tools-dev",              "resolve,connect";
+    permission java.net.SocketPermission    "tools-stage",            "resolve,connect";
+    permission java.net.SocketPermission    "tools",                  "resolve,connect";
+    permission java.net.SocketPermission    "tools-dev.cisco.com",    "resolve,connect";
+    permission java.net.SocketPermission    "tools-stage.cisco.com",  "resolve,connect";
+    permission java.net.SocketPermission    "tools.cisco.com",        "resolve,connect";    
+    permission java.net.SocketPermission    "qas-dev-01:80",          "resolve,connect";
+    permission java.net.SocketPermission    "qas-stg:80",             "resolve,connect";
+    permission java.net.SocketPermission    "qas-stg",                "resolve,connect";
+    permission java.net.SocketPermission    "qat-stg",                "resolve,connect";
+    permission java.net.SocketPermission    "qat-stg-1",              "resolve,connect";
+    permission java.net.SocketPermission    "qat-stg-2",              "resolve,connect";
+    permission java.net.SocketPermission    "qas-lt:80",              "resolve,connect";
+    permission java.net.SocketPermission    "qas-lt",                 "resolve,connect";
+    permission java.net.SocketPermission    "qat-lt",                 "resolve,connect";
+    permission java.net.SocketPermission    "qat-lt-1:80",            "resolve,connect";
+    permission java.net.SocketPermission    "qat-lt-1",               "resolve,connect";
+    permission java.net.SocketPermission    "qat-lt-2:80",            "resolve,connect";
+    permission java.net.SocketPermission    "qat-lt-2",               "resolve,connect";
+    permission java.net.SocketPermission    "qas-prd:80",             "resolve,connect";
+    permission java.net.SocketPermission    "qas-prd",                "resolve,connect";
+    permission java.net.SocketPermission    "qas-prd:80",             "resolve,connect";
+    permission java.net.SocketPermission    "qas-prd",                "resolve,connect";
+    permission java.net.SocketPermission    "qas-prd-1",              "resolve,connect";
+    permission java.net.SocketPermission    "qas-prd-2",              "resolve,connect";
+    permission java.net.SocketPermission    "wsgx-dev.cisco.com:443",     "resolve,connect";
+    permission java.net.SocketPermission    "wsgx.cisco.com:443",         "resolve,connect";
+    permission java.net.SocketPermission    "wsgx-stage.cisco.com:443",   "resolve,connect";
+    permission java.net.SocketPermission    "wsgx-lt.cisco.com:443",      "resolve,connect";
+    permission java.net.SocketPermission    "wsgi-dev.cisco.com:443",     "resolve,connect";
+    permission java.net.SocketPermission    "wsgi.cisco.com:443",         "resolve,connect";
+    permission java.net.SocketPermission    "wsgi-stage.cisco.com:443",   "resolve,connect";
+    permission java.net.SocketPermission    "wsgi-lt.cisco.com:443",      "resolve,connect";
+    permission java.net.SocketPermission    "qas-dev-01",             "resolve,connect";
+    permission java.net.SocketPermission    "171.68.138.155:80",      "resolve,connect";
+    permission java.net.SocketPermission    "171.68.138.155",         "resolve,connect";
+    permission java.net.SocketPermission    "64.100.50.105:80",       "resolve,connect";
+    permission java.net.SocketPermission    "64.100.50.105",          "resolve,connect";
+    permission java.lang.RuntimePermission "accessDeclaredMembers";
+    permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
+    permission java.lang.RuntimePermission "accessClassInPackage";
+    permission java.lang.RuntimePermission "accessClassInPackage.sun.beans.editors";
+    permission java.lang.RuntimePermission "accessClassInPackage.sun.util.logging.resources";
+    permission java.io.FilePermission "${was.install.root}/-", "read";
+    permission java.io.FilePermission "/opt/netegrity/siteminder/taiagent/TAI-1.0/-", "read";
+   
+};
+
+grant codebase "file:${connectorComponent}" {
+  // starting showing up after the Siterminder account was created
+  permission com.ibm.websphere.security.WebSphereRuntimePermission "ContextManager.getServerCredential";
+};

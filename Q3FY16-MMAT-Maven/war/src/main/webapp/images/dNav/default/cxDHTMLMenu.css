@@ -1,0 +1,62 @@
+.menu_container {
+	OVERFLOW: hidden;
+}
+.menu TD {
+	BACKGROUND-IMAGE: url(mtab_middle_normal.gif); BACKGROUND-REPEAT: repeat-x
+}
+.menu TD.active {
+	BACKGROUND-IMAGE: url(mtab_middle_selected.gif); BACKGROUND-REPEAT: repeat-x
+}
+.level_two {
+	MARGIN-LEFT: 1em
+}
+.level_two DIV {
+	BORDER-RIGHT: #7f7f7f 1px solid; BACKGROUND-POSITION: 0px top; DISPLAY: none; LEFT: 21px; BACKGROUND-IMAGE: url(pixel.gif); BORDER-LEFT: #7f7f7f 1px solid; BORDER-BOTTOM: #7f7f7f 1px solid; BACKGROUND-REPEAT: repeat-x; POSITION: absolute; BACKGROUND-COLOR: #b5cdcd; right:20px
+}
+.level_two UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0.2em; MARGIN: 0px 0px 0px 12px; PADDING-TOP: 0.2em; HEIGHT: 20px
+}
+.level_two LI {
+	PADDING-RIGHT: 0.5em; BACKGROUND-POSITION: 0px 50%; DISPLAY: inline; PADDING-LEFT: 0.5em; FLOAT: left; BACKGROUND-IMAGE: url(pipe_black.gif); PADDING-BOTTOM: 0px; MARGIN: 0px; COLOR: #a2a2a2; PADDING-TOP: 0px; BACKGROUND-REPEAT: no-repeat; LIST-STYLE-TYPE: none
+}
+.level_two LI.first {
+	PADDING-LEFT: 0px; BACKGROUND-IMAGE: none
+}
+.menu_container A {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #003031; FONT-FAMILY: Arial, Helvetica, sans-serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none
+}
+.menu_container A SPAN {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+.menu_container DIV LI A {
+	PADDING-RIGHT: 0.4em; PADDING-LEFT: 0.4em; FONT-WEIGHT: bold; FONT-SIZE: 11px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.menu_container TD.active A {
+	COLOR: #9c0000
+}
+.menu_container A:hover {
+	COLOR: #9c0000; TEXT-DECORATION: none
+}
+.menu_container TD.disabledLink A {
+	COLOR: #808080;
+}
+.menu_container TD.disabledLink A:hover {
+	COLOR: #808080;
+}
+A.disabledSubLink {
+	COLOR: #808080;
+}
+A.disabledSubLink:hover {
+	COLOR: #808080;
+}
+
+DIV.tabs {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 22px; BORDER-LEFT: 0px; PADDING-TOP: 9px; BORDER-BOTTOM: 0px; BACKGROUND-COLOR: #7f7f7f
+}
+
+.subMenu {
+	LEFT: 21px; BACKGROUND-IMAGE: url(pixel.gif); VISIBILITY: visible; POSITION: absolute; BACKGROUND-COLOR: #b5cdcd
+}
+.subMenuEmpty {
+	LEFT: 21px; BACKGROUND-IMAGE: url(pixel.gif); VISIBILITY: hidden; POSITION: absolute; BACKGROUND-COLOR: inherit
+}

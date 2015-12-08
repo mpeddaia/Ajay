@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<ListConfig fetchSize="500" pageable="true" resultsHandle="UPLD_REQUEST_ID" table="XXCSS_MAT_MOV_SS_CC_SITE_RES_V" class="map" rowSelectType="App" id="MAT_MOVE_C2C_S2S_AT_SITE_RES">
+  <Selection model="single" handle="reference_index"/>
+  <Column type="int" column="UPLD_REQUEST_ID" property="upldRequestId">
+    <Presentation label="UPLD REQUEST ID" filterable="false" format="Default" visible="false" sortable="false"/>
+  </Column>
+  <Column type="int" column="ORIG_ROW_NUMBER" property="origRowNumber">
+    <Presentation label="upload.mat.results.orig_row_number" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="STATUS" property="status">
+    <Presentation label="upload.mat.results.status" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="SOURCE_CONTRACT_NUMBER" property="sourceContractNumber">
+    <Presentation label="upload.mat.results.source_contract_number" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="TARGET_CONTRACT_NUMBER" property="targetContractNumber">
+    <Presentation label="upload.mat.results.target_contract_number" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="SOURCE_SITE_ID" property="sourceSiteId">
+    <Presentation label="upload.mat.results.source_site_id" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="TARGET_SITE_ID" property="targetSiteId">
+    <Presentation label="upload.mat.results.target_site_id" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="REASON_CODE" property="reasonCode">
+    <Presentation label="upload.mat.results.reason_code" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="CS_CASE_NUMBER" property="csCaseNumber">
+    <Presentation label="upload.mat.results.cs_case_number" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="IB_RUN_SEQUENCE_ID" property="ibRunSequenceId">
+    <Presentation label="upload.mat.results.ib_run_sequence_id" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="SA_RUN_SEQUENCE_ID" property="saRunSequenceId">
+    <Presentation label="upload.mat.results.sa_run_sequence_id" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="INSTANCE_ID" property="instanceId">
+    <Presentation label="upload.mat.results.instance_id" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="ITEM_NAME" property="itemName">
+    <Presentation label="upload.mat.results.item_name" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="SERIAL_NUMBER" property="serialNumber">
+    <Presentation label="upload.mat.results.serial_number" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="ERR_CODE" property="errCode">
+    <Presentation label="upload.mat.results.error_code" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="ERROR_MESSAGE" property="errorMessage">
+    <Presentation label="upload.mat.results.error_message" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="Date" column="CREATION_DATE" property="creationDate">
+    <Presentation label="upload.mat.results.creation_date" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="int" column="CREATED_BY" property="createdBy">
+    <Presentation label="upload.mat.results.created_by" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="Date" column="LAST_UPDATE_DATE" property="lastUpdateDate">
+    <Presentation label="upload.mat.results.last_update_date" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="int" column="LAST_UPDATED_BY" property="lastUpdatedBy">
+    <Presentation label="upload.mat.results.last_updated_by" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+</ListConfig>

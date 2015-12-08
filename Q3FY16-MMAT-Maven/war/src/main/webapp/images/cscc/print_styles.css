@@ -1,0 +1,105 @@
+BODY {
+	FONT-SIZE: 10pt; FONT-FAMILY: Arial, Helvetica, sans-serif; BACKGROUND-COLOR: white
+}
+#application_top TD {
+	FONT-SIZE: 10pt; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+#application_area TD {
+	FONT-SIZE: 10pt; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+TD {
+	FONT-SIZE: 10pt; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+#application_top TH {
+	FONT-WEIGHT: bold; FONT-SIZE: 10pt; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+#application_area TH {
+	FONT-WEIGHT: bold; FONT-SIZE: 10pt; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+TH {
+	FONT-WEIGHT: bold; FONT-SIZE: 10pt; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+#application_top A {
+	FONT-SIZE: 10pt! important
+}
+#application_area A {
+	FONT-SIZE: 10pt! important
+}
+A {
+	FONT-SIZE: 10pt! important
+}
+#application_top H1 {
+	FONT-SIZE: 14pt
+}
+#application_area H1 {
+	FONT-SIZE: 14pt
+}
+H1 {
+	FONT-SIZE: 14pt
+}
+#application_area H2 {
+	FONT-SIZE: 12pt! important
+}
+#application_area H3 {
+	FONT-SIZE: 12pt! important
+}
+#application_area H4 {
+	FONT-SIZE: 12pt! important
+}
+#application_area H5 {
+	FONT-SIZE: 12pt! important
+}
+#application_area H6 {
+	FONT-SIZE: 12pt! important
+}
+H2 {
+	FONT-SIZE: 12pt! important
+}
+H3 {
+	FONT-SIZE: 12pt! important
+}
+H4 {
+	FONT-SIZE: 12pt! important
+}
+H5 {
+	FONT-SIZE: 12pt! important
+}
+#application_nav {
+	DISPLAY: none
+}
+#search_scc {
+	DISPLAY: none
+}
+IMG {
+	DISPLAY: none
+}
+UNKNOWN {
+	DISPLAY: none
+}
+DIV.button_block {
+	DISPLAY: none
+}
+DIV.button_block_sm {
+	DISPLAY: none
+}
+.sub_button_block {
+	DISPLAY: none
+}
+UNKNOWN {
+	DISPLAY: none
+}
+.mh_filter {
+	DISPLAY: none
+}
+.mh_action {
+	DISPLAY: none
+}
+.mh_info {
+	DISPLAY: none
+}
+.mh_page {
+	DISPLAY: none
+}
+A.cisco {
+	DISPLAY: none
+}

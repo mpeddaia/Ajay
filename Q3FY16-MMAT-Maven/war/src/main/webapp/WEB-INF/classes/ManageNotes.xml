@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<ListConfig fetchSize="500" pageable="true" resultsHandle="" table="XXCSS_CT_NOTES_DATA_V" class="map" rowSelectType="App" id="ManageNotesListID">
+  <Selection model="single" handle="NOTE_ID"/>
+  <Column type="int" column="NOTE_ID" userpreferencesId="" property="noteId">
+    <Presentation label="NOTE ID" filterable="true" format="Default" visible="true" sortable="true" unique="true"/>
+  </Column>
+  <Column type="String" column="APPL_SHORT_NAME" userpreferencesId="" property="applShortName">
+    <Presentation label="APPL SHORT NAME" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="NOTE_CONTEXT" userpreferencesId="" property="noteContext">
+    <Presentation label="NOTE CONTEXT" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="NOTE_CONTEXT_ID" userpreferencesId="" property="noteContextId">
+    <Presentation label="NOTE CONTEXT ID" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="NOTE_TYPE_CODE" userpreferencesId="" property="noteTypeCode">
+    <Presentation label="NOTE TYPE CODE" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="DESCRIPTION" userpreferencesId="" property="description">
+    <Presentation label="DESCRIPTION" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="USER_ID" userpreferencesId="" property="userId">
+    <Presentation label="USER ID" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="USER_ROLE" userpreferencesId="" property="userRole">
+    <Presentation label="USER ROLE" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="USER_NAME" userpreferencesId="" property="userName">
+    <Presentation label="USER NAME" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="COMPANY_NAME" userpreferencesId="" property="companyName">
+    <Presentation label="COMPANY NAME" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="NOTE_TEXT" userpreferencesId="" property="noteText">
+    <Presentation label="NOTE TEXT" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="ACTIVE_FLAG" userpreferencesId="" property="activeFlag">
+    <Presentation label="ACTIVE FLAG" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="Date" column="CREATION_DATE" userpreferencesId="" property="creationDate">
+    <Presentation label="CREATION DATE" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+</ListConfig>

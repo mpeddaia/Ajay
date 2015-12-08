@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<ListConfig fetchSize="500" pageable="true" resultsHandle="PROC_ID" table="xxqt_quote_price_line_d" class="map" id="QuotePricing">
+    <Selection model="single" handle="reference_index"/>
+    <Column type="int" column="QT_PRICE_LINE_ID" property="qtPriceLineId">
+        <Presentation label="QT PRICE LINE ID" filterable="true" format="Default" visible="true" sortable="true"/>
+    </Column>
+    <Column type="String" column="SERIAL_NUMBER" property="serialNumber">
+        <Presentation label="SERIAL NUMBER" filterable="true" format="Default" visible="true" sortable="true"/>
+    </Column>
+    <Column type="String" column="PRODUCT_NUMBER" property="productNumber">
+        <Presentation label="PRODUCT NUMBER" filterable="true" format="Default" visible="true" sortable="true"/>
+    </Column>
+    <Column type="String" column="PRODUCT_SKU" property="productSku">
+        <Presentation label="PRODUCT SKU" filterable="true" format="Default" visible="true" sortable="true"/>
+    </Column>
+    <Column type="int" column="QUANTITY" property="quantity">
+        <Presentation label="QUANTITY" filterable="true" format="Default" visible="true" sortable="true"/>
+    </Column>
+    <Column type="Date" column="BEGIN_DATE" property="beginDate">
+        <Presentation label="BEGIN DATE" filterable="true" format="Default" visible="true" sortable="true"/>
+    </Column>
+    <Column type="Date" column="END_DATE" property="endDate">
+        <Presentation label="END DATE" filterable="true" format="Default" visible="true" sortable="true"/>
+    </Column>
+    <Column type="String" column="SERVICE_LEVEL" property="serviceLevel">
+        <Presentation label="SERVICE LEVEL" filterable="true" format="Default" visible="true" sortable="true"/>
+    </Column>
+    <Column type="String" column="INSTALLED_COUNTRY" property="installedCountry">
+        <Presentation label="INSTALLED COUNTRY" filterable="true" format="Default" visible="true" sortable="true"/>
+    </Column>
+    <Column type="String" column="INSTALLED_CITY" property="installedCity">
+        <Presentation label="INSTALLED CITY" filterable="true" format="Default" visible="true" sortable="true"/>
+    </Column>
+    <Column type="String" column="INSTALLED_STATE" property="installedState">
+        <Presentation label="INSTALLED STATE" filterable="true" format="Default" visible="true" sortable="true"/>
+    </Column>
+    <Column type="String" column="INSTALLED_ZIP" property="installedZip">
+        <Presentation label="INSTALLED ZIP" filterable="true" format="Default" visible="true" sortable="true"/>
+    </Column>
+    <Column type="int" column="SERVICE_INVENTORY_ITEM_ID" property="serviceInventoryItemId">
+        <Presentation label="SERVICE INVENTORY ITEM ID" filterable="true" format="Default" visible="true" sortable="true"/>
+    </Column>
+    <Column type="String" column="SERVICE_ITEM_TYPE" property="serviceItemType">
+        <Presentation label="SERVICE ITEM TYPE" filterable="true" format="Default" visible="true" sortable="true"/>
+    </Column>
+    <Column type="int" column="SERVICE_ORG_ID" property="serviceOrgId">
+        <Presentation label="SERVICE ORG ID" filterable="true" format="Default" visible="true" sortable="true"/>
+    </Column>
+    <Column type="String" column="SERVICE_UOM_CODE" property="serviceUomCode">
+        <Presentation label="SERVICE UOM CODE" filterable="true" format="Default" visible="true" sortable="true"/>
+    </Column>
+    <Column type="int" column="PRODUCT_INVENTORY_ITEM_ID" property="productInventoryItemId">
+        <Presentation label="PRODUCT INVENTORY ITEM ID" filterable="true" format="Default" visible="true" sortable="true"/>
+    </Column>
+    <Column type="String" column="PRODUCT_ITEM_TYPE" property="productItemType">
+        <Presentation label="PRODUCT ITEM TYPE" filterable="true" format="Default" visible="true" sortable="true"/>
+    </Column>
+    <Column type="int" column="PRODUCT_ORG_ID" property="productOrgId">
+        <Presentation label="PRODUCT ORG ID" filterable="true" format="Default" visible="true" sortable="true"/>
+    </Column>
+    <Column type="String" column="PRODUCT_UOM_CODE" property="productUomCode">
+        <Presentation label="PRODUCT UOM CODE" filterable="true" format="Default" visible="true" sortable="true"/>
+    </Column>
+    <Column type="BigDecimal" column="ANNUAL_LIST_PRICE" property="annualListPrice">
+        <Presentation label="ANNUAL LIST PRICE" filterable="true" format="Amount" visible="true" sortable="true"/>
+    </Column>
+    <Column type="BigDecimal" column="PRORATED_LIST_PRICE" property="proratedListPrice">
+        <Presentation label="PRORATED LIST PRICE" filterable="true" format="Amount" visible="true" sortable="true"/>
+    </Column>
+    <Column type="BigDecimal" column="AMOUNT" property="amount">
+        <Presentation label="AMOUNT" filterable="true" format="Amount" visible="true" sortable="true"/>
+    </Column>
+    <Column type="BigDecimal" column="DISTI_PRICE" property="distiPrice">
+        <Presentation label="DISTI PRICE" filterable="true" format="Amount" visible="true" sortable="true"/>
+    </Column>
+    <Column type="BigDecimal" column="RESELLER_PRICE" property="resellerPrice">
+        <Presentation label="RESELLER PRICE" filterable="true" format="Amount" visible="true" sortable="true"/>
+    </Column>
+</ListConfig>

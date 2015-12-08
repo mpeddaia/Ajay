@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UploadDefinition AbortOnError="false" allowCMjob="true" ID="MAT_ADD_UPDATE_DEPLOYBASE" HeaderRowsCount="1">
+   <Column Name="HOST_ID" AllowNull="true">
+        <DataType Type="String" Length="250" />
+    </Column>
+    <Column Name="HW_PID" AllowNull="true">
+        <DataType Type="String" Length="200" />
+    </Column>
+	<Column Name="HW_INSTANCE_NUMBER" AllowNull="true">
+        <DataType Type="String" Length="30" />
+    </Column>
+    <Column Name="SW_PAK" AllowNull="true">
+        <DataType Type="String" Length="250" />
+    </Column>
+	<Column Name="SW_PID" AllowNull="true">
+        <DataType Type="String" Length="40"/>
+    </Column>
+	<Column Name="SW_INSTANCE_NUMBER" AllowNull="true">
+        <DataType Type="String" Length="30" />
+    </Column>
+	<Column Name="SW_QTY" AllowNull="true">
+        <DataType Type="Integer" />
+    </Column>
+    <Column Name="START_DATE" AllowNull="true">
+        <DataType Type="Date"  />
+    </Column>
+	<Column Name="END_DATE" AllowNull="true">
+        <DataType Type="Date"  />
+    </Column>
+    <Column Name="TRANSACTION_TYPE" AllowNull="false">
+        <DataType Type="String" Length="50" />
+    </Column>
+	<Column Name="MIGRATED_FLAG" AllowNull="true">
+        <DataType Type="String" Length="25" />
+    </Column>
+	<Column Name="REASON_CODE" AllowNull="false">
+        <DataType Type="String" Length="40" />
+    </Column>
+    <Column Name="CS_CASE_NUMBER" AllowNull="false">
+        <DataType Type="String" Length="150" />
+    </Column>
+ </UploadDefinition>
+
+

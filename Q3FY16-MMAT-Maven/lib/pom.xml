@@ -1,0 +1,646 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>it.cvc.ciscocommerce.scm-mmat1.ys4mcm</groupId>
+	<packaging>pom</packaging>
+	<version>2014.11-SNAPSHOT</version>
+	<name>MMATLIB</name>
+	<url>http://maven.apache.org</url>
+	<!-- Repository Start -->
+	<repositories>
+		<!-- <repository> <id>Spring</id> <name>Spring Repository Switchboard</name> 
+			<layout>default</layout> <url>http://repo.spring.io/repo/</url> <snapshots> 
+			<enabled>true</enabled> </snapshots> </repository> -->
+		<!-- <repository> <id>central</id> <name>Maven Repository Switchboard</name> 
+			<layout>default</layout> <url>http://repo1.maven.org/maven2</url> <snapshots> 
+			<enabled>false</enabled> </snapshots> </repository> -->
+		<repository>
+			<id>ICWConfig</id>
+			<name>ICW Configuration-3rdParty</name>
+			<url>http://ccwconfig-prd-03.cisco.com:8080/nexus-2.0.2/content/repositories/ICWConfig
+			</url>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+				<checksumPolicy>warn</checksumPolicy>
+			</snapshots>
+		</repository>
+
+		<repository>
+			<id>cisco maven</id>
+			<name>Maven Repository Switchboard</name>
+			<layout>default</layout>
+			<url>http://repo-art.cisco.com/artifactory/repo/</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+
+	</repositories>
+	<!-- Repository Completed -->
+
+	<!-- Adding Dependency -->
+
+	<dependencies>
+
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>jsonrpc</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>struts_jar</artifactId>
+  <version>2.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>wsdl4j</artifactId>
+  <version>1.6.2</version>
+</dependency>
+
+
+
+
+	<dependency>
+	  <groupId>com.cisco.mmat_repo</groupId>
+	  <artifactId>access</artifactId>
+	  <version>1.0</version>
+	</dependency>
+
+    <dependency>
+	  <groupId>com.cisco.mmat_repo</groupId>
+	  <artifactId>activation</artifactId>
+	  <version>1.0</version>
+	</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>adoption-metrics_jar</artifactId>
+  <version>2.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>annogen</artifactId>
+  <version>0.1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>ant</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>aqapi</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>axiom-api</artifactId>
+  <version>1.2.5</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>axiom-dom</artifactId>
+  <version>1.2.5</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>axiom-impl</artifactId>
+  <version>1.2.5</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>axis2-codegen</artifactId>
+  <version>1.3</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>axis2-json</artifactId>
+  <version>1.3</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>axis2-kernel</artifactId>
+  <version>1.3</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>backport-util-concurrent</artifactId>
+  <version>2.2</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>CampCore</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>ciscosdf</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>classes12</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>commons-beanutils</artifactId>
+  <version>1.6</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>commons-codec</artifactId>
+  <version>1.3</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>commons-collections</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>commons-dcp_jar</artifactId>
+  <version>1.2.2</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>commons-dbcp</artifactId>
+  <version>1.3</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>commons-dbutils</artifactId>
+  <version>1.1</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>commons-digester</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>commons-fileupload</artifactId>
+  <version>1.1.1</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>commons-fileupload_jar</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>commons-httpclient</artifactId>
+  <version>3.0.1</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>commons-io</artifactId>
+  <version>1.2</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>commons-lang</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>commons-logging</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>commons-pool</artifactId>
+  <version>1.3</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>commons-validator</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>ConnPool</artifactId>
+  <version>1.0</version>
+</dependency>
+
+
+
+ <dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>crosstrack_jar-2.0</artifactId>
+  <version>2.0</version>
+  <scope>system</scope>
+  
+<systemPath>${project.basedir}/crosstrack_jar-2.0.jar</systemPath>
+</dependency>
+ 
+ 
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>daoservices</artifactId>
+  <version>2.4.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>dbconnect</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>eabase_2_7</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>framework</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>jakarta-oro</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>jdom</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>jettison</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>jms</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>jmscommon</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>json</artifactId>
+  <version>1</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>json-rpc</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>json-rpc</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>jstl</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>jxl</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>log4j</artifactId>
+  <version>1.2.8</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>login</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>mailapi</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>neethi</artifactId>
+  <version>2.0.2</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>offlineservlet</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>ojdbc</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>optional</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>ostermillerutils_1_04_03_for_java_1_4</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>poi-2.5.1-final-20050224</artifactId>
+  <version>2.5.1</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>progressbar</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>relaxngDatatype</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>scclient</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>selectors</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>servicesales_commons</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>servicesales_lists</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>servlet</artifactId>
+  <version>5.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>servlet-api</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>sis-list-framework</artifactId>
+  <version>2.0.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>spring</artifactId>
+  <version>2.0.2</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>ssfutils</artifactId>
+  <version>1.0</version>
+  </dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>ssf_common_jar</artifactId>
+  <version>2.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>ssm-il</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>sso</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>standard</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>stax-api</artifactId>
+  <version>1.0.1</version>
+</dependency>
+
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>struts</artifactId>
+  <version>1.1</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>struts-legacy</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>upload</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>uploadClient</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>uploadcommon</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>UploadFramework</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>userprefs</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>velocity</artifactId>
+  <version>1.4</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>woden-1.0-incubating-M7b</artifactId>
+  <version>1.0</version>
+  <classifier>M7b</classifier>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>wsdl4j</artifactId>
+  <version>1.6.2</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>wss4j</artifactId>
+  <version>1.5.3</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>wstx-asl</artifactId>
+  <version>3.2.1</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>xalan</artifactId>
+  <version>2.7.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>xbean</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>xercesImpl</artifactId>
+  <version>2.8.1</version>
+</dependency>
+
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>xml-apis_jar</artifactId>
+  <version>2.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>xml-apis</artifactId>
+  <version>1.3.03</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>xmlParserAPIs</artifactId>
+  <version>2.6.2</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>XmlSchema</artifactId>
+  <version>1.3.2</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>xmlsec</artifactId>
+  <version>1.4.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.cisco.mmat_repo</groupId>
+  <artifactId>xsdlib</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.11</version> 
+</dependency>
+
+	</dependencies>
+	<build>
+		<finalName>mcm</finalName>
+	</build>
+	<artifactId>MMATLIB</artifactId>
+</project>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<UploadDefinition AbortOnError="false" ID="SCM_AM_LINK" allowCMjob="true" HeaderRowsCount="1">
+    <Column Name="minor_instance_number" AllowNull="true" upldFileColName ="Standalone Instance Number">
+        <DataType Type="String" />
+    </Column>
+    <Column Name="minor_serial_number" AllowNull="true" upldFileColName ="Standalone Serial Number/PAK number">
+        <DataType Type="String"/>
+    </Column>
+     <Column Name="Standa_lone_Item_Name" AllowNull="true" upldFileColName ="Standalone Item Name">
+        <DataType Type="String"/>
+    </Column>
+     <Column Name="target_major_instance" AllowNull="true" upldFileColName ="New Parent - Instance Number">
+        <DataType Type="String"/>
+    </Column>
+	  <Column Name="target_serial_number" AllowNull="true" upldFileColName ="New Parent - Serial Number/PAK number">
+        <DataType Type="String"/>
+    </Column>
+	  <Column Name="New_Parent_Item_Name" AllowNull="true" upldFileColName ="New Parent - Item Name">
+        <DataType Type="String"/>
+    </Column>
+	<Column Name="CS_CASE_NUMBER" AllowNull="true" upldFileColName ="CS Case Number-Internal ">
+        <DataType Type="String"/>
+    </Column>
+</UploadDefinition>
+

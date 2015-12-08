@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>it.cvc.ciscocommerce.scm-mmat1.ys4mcm</groupId>
+	<artifactId>MMAT_Application</artifactId>
+	<version>2014.11-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>MMAT Project</name>
+	<description>Contains wrapper classes and methods for Core and Core Service Projects</description>
+	<url>http://maven.apache.org</url>
+	<modules>
+		<module>lib</module>
+		<module>war</module>
+		<module>ear</module>
+	</modules>
+
+	<dependencies>
+		<dependency>
+			<groupId>it.cvc.ciscocommerce.scm-mmat1.ys4mcm</groupId>
+			<artifactId>MMATLIB</artifactId>
+			<version>2014.11-SNAPSHOT</version>
+			<type>pom</type>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- <dependency> <groupId>javax.servlet</groupId> <artifactId>jsp-api</artifactId> 
+			<version>2.0</version> <scope>provided</scope> </dependency> <dependency> 
+			<groupId>javax.servlet</groupId> <artifactId>servlet-api</artifactId> <version>2.4</version> 
+			<scope>provided</scope> </dependency> -->
+
+		<dependency>
+			<groupId>org.apache.maven.surefire</groupId>
+			<artifactId>surefire-junit47</artifactId>
+			<version>2.12</version>
+		</dependency>
+
+	</dependencies>
+	<build>
+		<plugins>
+
+			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-compiler-plugin</artifactId> 
+				<version>3.1</version> <configuration> <packagingIncludes>**.jar</packagingIncludes> 
+				<source>1.5</source> <target>1.5</target> <compilerArguments> <bootclasspath>/apps/dftjenkins/local/java/jdk1.5.0_22/bin/java/jdk1.5.0_22/jre/lib/rt.jar</bootclasspath> 
+				</compilerArguments> </configuration> </plugin> -->
+			<plugin>
+
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+					<!-- Added to work with JDK 1.5 -->
+					<!-- <compilerArguments> <bootclasspath>/apps/dftjenkins/local/java/jdk1.5.0_22/bin/java/jdk1.5.0_22/jre/lib/rt.jar</bootclasspath> 
+						bootclasspath>/usr/lib/jvm/jdk1.5.0/</bootclasspath </compilerArguments> -->
+					<!-- Added to work with JDK 1.5 -->
+
+				</configuration>
+			</plugin>
+
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>2.2</version>
+			</plugin>
+
+
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<tasks>
+								<echo>[Ajay Malekar basedir]:${basedir}</echo>
+								<echo>[Ajay Malekar project.basedir]:${project.basedir}</echo>
+								<echo>[Ajay Malekar	project.build.directory]:${project.build.directory}</echo>
+							</tasks>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<!-- jenkins junit -->
+					<argLine>
+						${argLine}
+						-javaagent:${project.basedir}\..\WEB-INF\lib\jmockit-0.999.17.jar
+					</argLine>
+					<testFailureIgnore>true</testFailureIgnore>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+	<profiles>
+
+		<!-- Profile for ys1mcm -->
+		<!-- <profile> <id>ys1mcm</id> <activation> <activeByDefault>false</activeByDefault> 
+			</activation> <properties> <app.name>ys1mcm</app.name> <jvm.name>ys1mcm</jvm.name> 
+			<jvm.context>/YS1MCM/</jvm.context> <APP_ID>ys1mcm</APP_ID> <CONTEXT_ROOT>/YS1MCM/</CONTEXT_ROOT> 
+			<CERTIFICATE_PATH>/opt/httpd/root/apps/ys1mcm/conf/ca.crt.pem</CERTIFICATE_PATH> 
+			<IDENTITY_PATH>/opt/httpd/root/apps/ys1mcm/conf/xxys1mcm.p12</IDENTITY_PATH> 
+			</properties> </profile> -->
+
+		<!-- Profile for ys2mcm -->
+		<profile>
+			<id>ys4mcm</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<!-- <app.name>ys2mcm</app.name> -->
+				<jvm.name>ys4mcm</jvm.name>
+				<!-- <jvm.context>/YS2MCM/</jvm.context> -->
+				<APP_ID>ys4mcm</APP_ID>
+				<CONTEXT_ROOT>/YS4MCM/</CONTEXT_ROOT>
+				<CERTIFICATE_PATH>/opt/httpd/root/apps/ys4mcm/conf/ca.crt.pem</CERTIFICATE_PATH>
+				<IDENTITY_PATH>/opt/httpd/root/apps/ys4mcm/conf/xxys2mcm.p12</IDENTITY_PATH>
+			</properties>
+		</profile>
+
+
+		<!-- Profile for ys3mcm -->
+		<!-- <profile> <id>ys3mcm</id> <activation> <activeByDefault>false</activeByDefault> 
+			</activation> <properties> <app.name>ys3mcm</app.name> <jvm.name>ys3mcm</jvm.name> 
+			<jvm.context>/YS3MCM/</jvm.context> <APP_ID>ys3mcm</APP_ID> <CONTEXT_ROOT>/YS3MCM/</CONTEXT_ROOT> 
+			<CERTIFICATE_PATH>/opt/httpd/root/apps/ys3mcm/conf/ca.crt.pem</CERTIFICATE_PATH> 
+			<IDENTITY_PATH>/opt/httpd/root/apps/ys3mcm/conf/xxys3mcm.p12</IDENTITY_PATH> 
+			</properties> </profile> -->
+
+		<!-- Profile for mcm -->
+		<!-- <profile> <id>mcm</id> <activation> <activeByDefault>false</activeByDefault> 
+			</activation> <properties> <app.name>mcm</app.name> <jvm.name>mcm</jvm.name> 
+			<jvm.context>/MCM/</jvm.context> <APP_ID>mcm</APP_ID> <CONTEXT_ROOT>/MCM/</CONTEXT_ROOT> 
+			<CERTIFICATE_PATH>/opt/httpd/root/apps/mcm/conf/ca.crt.pem</CERTIFICATE_PATH> 
+			<IDENTITY_PATH>/opt/httpd/root/apps/mcm/conf/xxmcm.p12</IDENTITY_PATH> </properties> 
+			</profile> -->
+
+	</profiles>
+
+	<properties>
+		<sonar.dynamicAnalysis><![CDATA[false]]></sonar.dynamicAnalysis>
+	</properties>
+
+
+
+
+
+</project>

@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>it.cvc.ciscocommerce.scm-mmat1.ys4mcm</groupId>
+		<artifactId>MMAT_Application</artifactId>
+		<version>2014.11-SNAPSHOT</version>
+	</parent>
+	<groupId>it.cvc.ciscocommerce.scm-mmat1.ys4mcm</groupId>
+	<name>MMATEar</name>
+	<version>2014.11-SNAPSHOT</version>
+	<description>MMAT Ear Application</description>
+	<url>http://www.cisco.com</url>
+	<packaging>ear</packaging>
+	<repositories>
+		
+		<repository>
+			<id>ICWConfig</id>
+			<name>ICW Configuration-3rdParty</name>
+			<url>http://ccwconfig-prd-03.cisco.com:8080/nexus-2.0.2/content/repositories/ICWConfig
+			</url>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+				<checksumPolicy>warn</checksumPolicy>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>central</id>
+			<name>Maven Repository Switchboard</name>
+			<layout>default</layout>
+			<url>http://repo1.maven.org/maven2/</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<dependencies>
+		<dependency>
+			<groupId>it.cvc.ciscocommerce.scm-mmat1.ys4mcm</groupId>
+			<artifactId>MMATWar</artifactId>
+			<version>2014.11-SNAPSHOT</version>
+			<type>war</type>
+		</dependency> 
+	</dependencies>
+	<build>
+	
+ 	<resources>
+			<resource>
+				<directory>${basedir}/src/main/resources</directory>
+				<includes>
+					<include>**/*</include>
+				</includes>
+				<filtering>true</filtering>
+			</resource>
+		</resources> 
+		<plugins>
+			<!-- Java compiler -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+		    <compilerArguments>
+			<bootclasspath>/apps/dftjenkins/local/java/jdk1.5.0_22/bin/java/jdk1.5.0_22/jre/lib/rt.jar</bootclasspath>
+			</compilerArguments> 
+			 		<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin> 
+			
+			<!-- Copy file from one plave to another -->
+
+			 <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.5</version>
+				<executions>
+					<execution>
+						<phase>process-resources</phase>
+
+						<configuration>
+							<!-- <target>
+								<copy file="../war/src/main/webapp/WEB-INF/${jvm.name}-db-stage.txt"
+									tofile="${project.build.directory}/classes/META-INF/${jvm.name}-db-stage.txt" />
+								<copy file="../war/src/main/webapp/WEB-INF/${jvm.name}-db-dev.txt"
+									tofile="${project.build.directory}//classes/META-INF/${jvm.name}-db-dev.txt" />
+								<copy file="../war/src/main/webapp/WEB-INF/${jvm.name}-db-lt.txt"
+									tofile="${project.build.directory}//classes/META-INF/${jvm.name}-db-lt.txt" />
+							</target> -->
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin> 
+			
+			<!-- Add files -->
+	
+      <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>2.4.3</version>
+        <executions>
+          <execution>
+            <id>copy-resources</id>
+            <!-- here the phase you need -->
+            <phase>validate</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${basedir}/src/main/resources</outputDirectory>
+              <resources>          
+                <resource>
+                  <directory>src/non-packaged-resources</directory>
+                  <filtering>true</filtering>
+                </resource>
+              </resources>              
+            </configuration>            
+          </execution>
+        </executions>
+      </plugin>
+    <!--  run unit tests -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<skipTests>true</skipTests>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.5</version>
+				<executions>
+					 <execution>
+						<id>dev</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+						<phase>prepare-package</phase>
+						<configuration>
+							<finalName>cisco.dev</finalName>
+							<classesDirectory>${basedir}/conf/dev</classesDirectory>
+							<outputDirectory>${project.build.directory}/classes/META-INF</outputDirectory>
+							<archive>
+								<addMavenDescriptor>false</addMavenDescriptor>
+							</archive>
+						</configuration>
+					</execution>
+					<execution>
+						<id>lt</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+						<phase>prepare-package</phase>
+						<configuration>
+							<finalName>cisco.lt</finalName>
+							<classesDirectory>${basedir}/conf/lt</classesDirectory>
+							<outputDirectory>${project.build.directory}/classes/META-INF</outputDirectory>
+							<archive>  
+								<addMavenDescriptor>false</addMavenDescriptor>
+							</archive>
+						</configuration>
+					</execution>
+					<execution>
+						<id>prod</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+						<phase>prepare-package</phase>
+						<configuration>
+							<finalName>cisco.prod</finalName>
+							<classesDirectory>${basedir}/conf/prod</classesDirectory>
+							<outputDirectory>${project.build.directory}/classes/META-INF</outputDirectory>
+							<archive>
+								<addMavenDescriptor>false</addMavenDescriptor>
+							</archive>
+						</configuration>
+					</execution>
+					<execution>
+						<id>stage</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+						<phase>prepare-package</phase>
+						<configuration>
+							<finalName>cisco.stage</finalName>
+							<classesDirectory>${basedir}/conf/stage</classesDirectory>
+							<outputDirectory>${project.build.directory}/classes/META-INF</outputDirectory>
+							<archive>
+								<addMavenDescriptor>false</addMavenDescriptor>
+							</archive>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- Ear -->
+			 <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+			<!-- <finalName>${jvm.name}</finalName> -->
+			<finalName>mcm</finalName>
+					<earSourceDirectory>${project.build.directory}/classes</earSourceDirectory>
+					<packagingIncludes>META-INF/**</packagingIncludes>
+					 <archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+							<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+						</manifest>
+					</archive> 
+					 <!-- <applicationXml>${project.build.directory}/classes/META-INF/application.xml</applicationXml> -->
+					<version>1.4</version>
+					<modules>
+						<webModule>
+							<groupId>it.cvc.ciscocommerce.scm-mmat1.ys4mcm</groupId>
+							<artifactId>MMATWar</artifactId>
+						</webModule>
+					</modules>   
+				</configuration>
+			</plugin>
+					 
+		</plugins>
+		<!-- <finalName>${jvm.name}</finalName> -->
+		<finalName>mcm</finalName>
+	</build>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<sonar.dynamicAnalysis><![CDATA[false]]></sonar.dynamicAnalysis>
+	</properties>
+
+	<artifactId>was61</artifactId>
+</project>

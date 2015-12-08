@@ -1,0 +1,47 @@
+	<tr bgcolor="#FFFFFF">
+		<td>__belowHinavContent</td>
+		<td>optional</td>
+		<td>below navigation area</td>
+		<td>Identifies content to be displayed directly beneath the hinav component</td>
+	</tr>
+	<tr bgcolor="#FFFFFF">
+		<td>__gaSearchDomain</td>
+		<td>yes</td>
+		<td>navigation area</td>
+		<td>the domain name for searching within the current application scope.  This value should be enclosed within <b>option</b> open and close tags, with selected='true' within the open option tag</td>
+	</tr>
+	<tr bgcolor="#FFFFFF">
+		<td>__hinavContent</td>
+		<td>yes</td>
+		<td>navigation area</td>
+		<td>Identifies hinav content available within your web application.  For JSP developers, the value may be either
+			<UL>
+			<LI>a reference to an html file containing a static hinav, such as /WEB-INF/pages/contents/staticHinav.html</LI>
+			<LI>or in-line html hinav content </LI>
+			</UL>
+			For Velocity developers, the value of this attribute should refer to a static .html or .vm file
+		</td>
+	</tr>
+	<tr bgcolor="#FFFFFF">
+		<td>__hinavURI</td>
+		<td>yes</td>
+		<td>navigation area</td>
+		<td>Used together with __hinavXmlPath to dynamically retrieve hinav content from CEC.
+			This value represents the <b>uri</b> parameter used in the hinav generation script on CEC.
+			<font color="red">This attribute will not be used if __hinavContent is defined</font>.
+		</td>
+	</tr>
+	<tr bgcolor="#FFFFFF">
+		<td>__hinavXmlPath</td>
+		<td>yes</td>
+		<td>navigation area</td>
+		<td>Used together with __hinavURI as an additional attribute to dynamically retrieve hinav content from CEC.
+			This value represents the <b>xmlpath</b> parameter used in the hinav generation script on CEC.
+			This attribute will not be used if either
+			<UL>
+				<LI>__hinavContent is defined (presume local content overrides remote content)</LI>
+				<LI>or __hinavURI is not defined as both URI and xmlPath are required for hinav retrieval from CEC
+			</UL>
+			<font color="red">If this value is not provided, it will be set to the value of __hinavURI.</font>
+		</td>
+	</tr>

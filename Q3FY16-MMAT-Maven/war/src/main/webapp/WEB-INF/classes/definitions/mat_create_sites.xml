@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UploadDefinition AbortOnError="false"  allowCMjob="true" ID="MAT_CREATE_SITES" HeaderRowsCount="1">
+    <Column Name="CUSTOMER_ID" AllowNull="false">
+        <DataType Type="String" Length="200" />
+    </Column>
+    <Column Name="ADDRESS1" AllowNull="false">
+        <DataType Type="String" Length="240" />
+    </Column>
+    <Column Name="ADDRESS2" AllowNull="true">
+        <DataType Type="String" Length="240" />
+    </Column>
+        <Column Name="CITY" AllowNull="false">
+        <DataType Type="String" Length="60" />
+    </Column>
+    <Column Name="STATE" AllowNull="true">
+        <DataType Type="String" Length="60" />
+    </Column>
+    <Column Name="ZIP_CODE" AllowNull="true">
+        <DataType Type="String" Length="60"/>
+    </Column>
+    <Column Name="COUNTRY" AllowNull="false">
+        <DataType Type="String" Length="200"/>
+    </Column>
+    <!--
+		TD4846;nisaran;26-APR-2007;added address3  
+	-->
+    <Column Name="ADDRESS3" AllowNull="true">
+        <DataType Type="String" Length="240" />
+    </Column>
+	<!--
+		TD5609;nisaran;04-JUN-2007;added Province  
+	-->
+	<Column Name="PROVINCE" AllowNull="true">
+        <DataType Type="String" Length="60" />
+    </Column>
+<!--TD2492;saatmaku;16 oct 2007; added cs case number-->
+    <Column Name="CS_CASE_NUMBER" AllowNull="false">
+        <DataType Type="String" Length="10" />
+    </Column>
+</UploadDefinition>

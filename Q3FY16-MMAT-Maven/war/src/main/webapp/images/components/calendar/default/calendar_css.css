@@ -1,0 +1,89 @@
+.cal_base{
+	font-family: Helvetica, Arial, san-serif;
+	font-size: 12px;
+	border-top:1px solid #BBBBBB;
+	border-left:1px solid #BBBBBB;
+	border-right:1px solid #666666;
+	border-bottom:1px solid #666666;
+	color:#000000;
+	background-color: #FFFFFF;
+	width:162px;
+	text-align:center;
+}
+
+.cal_imageIcon{
+	border:0px;
+	cursor:pointer;
+}
+
+.cal_base .firstRow{
+	font-weight:bold;
+	color:#ffffff;
+	background-color:#339999;
+}
+
+.cal_base .firstRow td {
+	padding:1px 1px 2px 10px;
+    /* 10 px left padding to make up for
+	 * 10 px image to the right - so text
+	 * remains center aligned.
+     */
+}
+
+.cal_base .header{
+	font-weight:bold;
+}
+
+.cal_base .header td{
+	border-bottom:1px solid #339999;
+	padding:1px 1px 2px 1px;
+}
+
+.cal_base .lastRow{
+	color:#ffffff;
+	background-color:#339999;
+}
+
+.cal_base .lastRow td{
+	padding:1px;
+}
+
+.cal_base .lastRow td.backLinks{
+	text-align:left;
+}
+
+.cal_base .lastRow td.fwdLinks{
+	text-align:right;
+}
+
+.cal_base .dataRow td{
+	border:1px solid #eeeeee;
+	padding:1px 1px 2px 1px;
+	background-color:#dddddd;
+}
+
+.cal_base .dataRow td.selected{
+	border:1px solid #000000;
+	color:#800000;
+	background-color:#FFFFFF;
+	font-weight:bold;
+}
+
+.cal_base .dataRow td.disabled{
+	background-color:#dddddd;
+	color:#666666;
+}
+
+.cal_base .dataRow td.inactive{
+	border:1px solid #eeeeee;
+	background-color:#eeeeee;
+}
+
+.cal_base .dataRow a{
+	color:#000000;
+	text-decoration:none;
+}
+.cal_base .dataRow a:hover{
+	color:#990000;
+	text-decoration:underline;
+}

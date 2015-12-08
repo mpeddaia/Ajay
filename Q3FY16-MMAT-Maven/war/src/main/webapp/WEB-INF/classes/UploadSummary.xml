@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<ListConfig fetchSize="500" pageable="true" resultsHandle="CCO_USERID" table="CIB_MAT_ALL_UPLD_REQ_PARMS_VW" class="map" id="upload.summary">
+    <Selection model="single" handle="reference_index"/>
+    <Column type="int" column="UPLD_DEFINITION_ID" property="upldDefinitionId">
+        <Presentation label="UPLD DEFINITION ID" filterable="false" format="Default" visible="false" sortable="false"/>
+    </Column>
+    <Column type="String" column="UPLD_DEFINITION_NAME" property="upldDefinitionName">
+        <Presentation label="UPLD_DEFINITION_NAME" filterable="false" format="Default" visible="false" sortable="false"/>
+    </Column>
+    <Column type="String" column="DEF_ATTRIBUTE_C2" property="upldDefinitionDesc">
+        <Presentation label="upload.status.request.type" filterable="true" format="Default" visible="true" sortable="true"/>
+    </Column>
+    <Column type="String" column="INTERNAL_FILE_TYPE" property="internalFileType">
+        <Presentation label="INTERNAL FILE TYPE" filterable="false" format="Default" visible="false" sortable="false"/>
+    </Column>
+    <Column type="int" column="UPLD_REQUEST_ID" property="upldRequestId">
+        <Presentation label="upload.status.request.number" filterable="true" format="Default" visible="true" sortable="true"/>
+    </Column>
+    <Column type="String" column="CCO_USERID" property="ccoUserid">
+        <Presentation label="CCO USERID" filterable="false" format="Default" visible="false" sortable="false"/>
+    </Column>
+    <Column type="String" column="EMAIL" property="email">
+        <Presentation label="EMAIL" filterable="false" format="Default" visible="false" sortable="false"/>
+    </Column>
+    <Column type="String" column="BIZ_LATEST_STATUS" property="bizLatestStatus">
+        <Presentation label="upload.status.request.status" filterable="true" format="Default" visible="true" sortable="true"/>
+    </Column>
+    <Column type="String" column="BIZ_LATEST_MSG" property="bizLatestMsg">
+        <Presentation label="BIZ LATEST MSG" filterable="false" format="Default" visible="false" sortable="false"/>
+    </Column>
+    <Column type="String" column="LATEST_STATUS" property="latestStatus">
+        <Presentation label="LATEST STATUS" filterable="false" format="Default" visible="false" sortable="false"/>
+    </Column>
+    <Column type="String" column="LATEST_MSG" property="latestMsg">
+        <Presentation label="LATEST MSG" filterable="false" format="Default" visible="false" sortable="false"/>
+    </Column>
+    <Column type="int" column="CM_REQUEST_ID" property="cmRequestId">
+        <Presentation label="CM REQUEST ID" filterable="false" format="Default" visible="false" sortable="false"/>
+    </Column>
+    <Column type="String" column="UPLD_FILE_NAME" property="upldFileName">
+        <Presentation label="UPLD FILE NAME" filterable="false" format="Default" visible="false" sortable="false"/>
+    </Column>
+    <Column type="int" column="ROW_CNT_LOADED" property="rowCntLoaded">
+        <Presentation label="ROW CNT LOADED" filterable="false" format="Default" visible="false" sortable="false"/>
+    </Column>
+    <Column type="int" column="ROW_CNT_FAILED" property="rowCntFailed">
+        <Presentation label="ROW CNT FAILED" filterable="false" format="Default" visible="false" sortable="false"/>
+    </Column>
+    <Column type="Date" column="CREATED_DATE" property="requestDate">
+        <Presentation label="upload.status.request.date" filterable="true" format="Default" visible="true" sortable="true"/>
+    </Column>
+    <Column type="String" column="PARM_01_VALUE" property="requestName">
+        <Presentation label="upload.status.request.name" filterable="true" format="Default" visible="true" sortable="true"/>
+    </Column>
+    <Column type="String" column="VALIDATION_OVERRIDE_FLAG" property="validationOverrideFlag">
+      <Presentation label="VALIDATION OVERRIDE FLAG" filterable="false" format="Default" visible="false" sortable="false"/>
+    </Column>
+    <Column type="String" column="SPECIAL_REQUEST_FLAG" property="specialRequestFlag">
+      <Presentation label="SPECIAL REQUEST FLAG" filterable="false" format="Default" visible="false" sortable="false"/>
+    </Column>
+  <!--TD2492;saatmaku;23 oct 2007;Removal of Solcat ID --> 
+    <!-- TD5082;alonikar -->
+<!--  <Column type="String" column="SOLCAT_ID" property="solcatId">
+      <Presentation label="upload.status.request.solcatid"    filterable="true" format="Default" visible="true" sortable="true"/>
+    </Column> -->
+</ListConfig>

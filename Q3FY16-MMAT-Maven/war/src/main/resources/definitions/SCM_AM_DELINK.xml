@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<UploadDefinition AbortOnError="false" ID="SCM_AM_DELINK" allowCMjob="true" HeaderRowsCount="1">
+    <Column Name="source_major_instance" AllowNull="true"  upldFileColName ="Source Major Instance Number">
+        <DataType Type="String" />
+    </Column>
+    <Column Name="source_serial_number" AllowNull="true" upldFileColName ="Source Major Serial Number">
+        <DataType Type="String"/>
+    </Column>
+     <Column Name="Source_Major_Item_Name" AllowNull="true" upldFileColName ="Source Major Item Name">
+        <DataType Type="String"/>
+    </Column>
+     <Column Name="minor_instance_number" AllowNull="true" upldFileColName ="Source Minor Instance number">
+        <DataType Type="String"/>
+    </Column>
+	  <Column Name="minor_serial_number" AllowNull="true" upldFileColName ="Source Minor Serial Number/PAK Number">
+        <DataType Type="String"/>
+    </Column>
+	  <Column Name="Source_Minor_Item_Name" AllowNull="true" upldFileColName ="Source Minor Item Name ">
+        <DataType Type="String"/>
+    </Column>
+	<Column Name="CS_CASE_NUMBER" AllowNull="true" upldFileColName ="CS Case number-Internal">
+        <DataType Type="String"/>
+    </Column>
+</UploadDefinition>
+

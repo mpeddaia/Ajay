@@ -1,0 +1,446 @@
+
+body {
+font-family:verdana;
+font-size:15px;
+}
+
+#a {color:#333; text-decoration:none}
+a:hover {color:#ccc; text-decoration:none}
+
+#mask, #maskAlert {
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:9000;
+  background-color:#A4A4A4;
+  display:none;
+}
+  
+#boxes .window {
+  position:absolute;
+  left:0;
+  top:0;
+  width:200px;
+  height:auto;
+  display:none;
+  z-index:9999;
+ 
+}
+#boxes .windowquick{
+  position:absolute;
+  left:0;
+  top:0;
+  width:300px;
+  height:auto;
+  display:none;
+  z-index:9999;
+ 
+}
+#boxes .reminderwindow {
+  position:absolute;
+  left:0;
+  top:0;
+  width:800px;
+  height:auto;
+  display:none;
+  z-index:9999;
+ 
+}
+#boxes .ThresholdError {
+  position:absolute;
+  left:0;
+  top:0;
+  width:auto;
+  height:auto;
+  display:none;
+  z-index:9999;
+ 
+}
+
+#boxes #dialog {
+  width:375px; 
+  height:203px;
+  padding:10px;
+  background-color:#ffffff;
+}
+
+#boxes #ModalPopupDivQuote {
+  width:200px; 
+  height:auto;
+  background-color:#ffffff;
+}
+
+#boxes #resellerInfo {
+  width:200px; 
+  height:auto;
+  background-color:#ffffff;
+}
+
+
+#boxes #site {
+  width:200px; 
+  height:auto;
+  background-color:#ffffff;
+}
+#boxes #ModalPopupFilter {
+  width:300px; 
+  height:auto;
+  background-color:#ffffff;
+}
+
+#boxes #emailRequestPopOverQP {
+  width:300px; 
+  height:auto;
+  background-color:#ffffff;
+}
+
+#boxes #offlinePopOverQP {
+  width:300px; 
+  height:auto;
+  background-color:#ffffff;
+}
+
+#boxes #ModalPopupDivWaringDetail {
+  width:900px; 
+  height:auto;
+  background-color:#ffffff;
+}
+
+
+#boxes #ComparePriceDIV {
+  width:900px; 
+  height:auto;
+  background-color:#ffffff;
+}
+
+
+
+
+#boxes #ModalPopupDivSingleLineEdit {
+  width:200px; 
+  height:auto;
+  background-color:#ffffff;
+}
+
+#boxes #PricingAdjustDiv {
+ width:200px; 
+  height:auto;
+  position:absolute; 
+  z-index:10000;
+  background-color:#ffffff;
+}
+
+
+#boxes #PricingCompareDiv {
+ width:200px; 
+  height:auto;
+  position:absolute; 
+  z-index:10000;
+  background-color:#ffffff;
+}
+
+#boxes #PricingCompareResultDiv {
+ width:200px; 
+  height:auto;
+  position:absolute; 
+  z-index:10000;
+  background-color:#ffffff;
+}
+
+
+#boxes #NotifyDiv {
+ width:350px; 
+  height:auto;
+  position:absolute; 
+  z-index:10000;
+  background-color:#ffffff;
+}
+
+#boxes #NotifyDivQQ {
+ width:350px; 
+  height:auto;
+  position:absolute; 
+  z-index:10000;
+  background-color:#ffffff;
+}
+
+#boxes #colRowDiv {
+ width:800px; 
+  height:auto;
+  position:absolute; 
+  z-index:10000;
+  background-color:#ffffff;
+}
+
+#boxes #GrantRevoke {
+ width:350px; 
+  height:auto;
+  position:absolute; 
+  z-index:10000;
+  background-color:#ffffff;
+}
+
+
+#boxes #DUPQUOTE {
+ width:200px; 
+  height:auto;
+  position:absolute; 
+  z-index:10000;
+  background-color:#ffffff;
+}
+
+#boxes #COPYQUOTE {
+ width:200px; 
+  height:auto;
+  position:absolute; 
+  z-index:10000;
+  background-color:#ffffff;
+}
+
+#boxes #DeleteLine {
+ width:200px; 
+  height:auto;
+  position:absolute; 
+  z-index:10000;
+  background-color:#ffffff;
+}
+
+#boxes #CancelQuote {
+ width:300px; 
+  height:auto;
+  position:absolute; 
+  z-index:10000;
+  background-color:#ffffff;
+}
+
+#boxes #Addline {
+ width:250px; 
+  height:auto;
+  position:absolute; 
+  z-index:10000;
+  background-color:#ffffff;
+}
+
+#boxes #AddProduct {
+ width:270px; 
+  height:auto;
+  position:absolute; 
+  z-index:10000;
+  background-color:#ffffff;
+}
+
+#boxes #EnterProduct {
+ width:340px; 
+  height:auto;
+  position:absolute; 
+  z-index:10000;
+  background-color:#ffffff;
+}
+
+#boxes #AddlineImport {
+ width:250px; 
+  height:auto;
+  position:absolute; 
+  z-index:10000;
+  background-color:#ffffff;
+}
+
+#boxes #AddlineImport1 {
+ width:250px; 
+  height:auto;
+  position:absolute; 
+  z-index:10000;
+  background-color:#ffffff;
+}
+
+#boxes #LineEditSingle {
+ width:270px; 
+  height:auto;
+  position:absolute; 
+  z-index:10000;
+  background-color:#ffffff;
+}
+
+#boxes #dialog1 {
+  width:375px; 
+  height:203px;
+}
+
+#dialog1 .d-header {
+  background:url(images/login-header.png) no-repeat 0 0 transparent; 
+  width:375px; 
+  height:150px;
+}
+
+#dialog1 .d-header input {
+  position:relative;
+  top:60px;
+  left:100px;
+  border:3px solid #cccccc;
+  height:22px;
+  width:200px;
+  font-size:15px;
+  padding:5px;
+  margin-top:4px;
+}
+
+#dialog1 .d-blank {
+  float:left;
+  background:url(images/login-blank.png) no-repeat 0 0 transparent; 
+  width:267px; 
+  height:53px;
+}
+
+#dialog1 .d-login {
+  float:left;
+  width:108px; 
+  height:53px;
+}
+
+#boxes #dialog2 {
+  background:url(images/notice.png) no-repeat 0 0 transparent; 
+  width:326px; 
+  height:229px;
+  padding:50px 0 20px 25px;
+}
+
+#boxes #dialogProgress {
+font-family:verdana;
+  width:150px; 
+  height:73px;
+  padding:10px;
+  background-color:#ffffff;
+}
+
+
+#Added by raju
+
+  
+#boxes #EditSingle{
+font-family:verdana;
+  width:375px; 
+  height:203px;
+  padding:10px;
+  background-color:#ffffff;
+}
+
+#boxes #dialogEditSingle{
+font-family:verdana;
+  width:375px; 
+  height:203px;
+  padding:10px;
+  background-color:#ffffff;
+}
+
+
+
+#boxes #dialogEditMulti{
+font-family:verdana;
+  width:375px; 
+  height:203px;
+  padding:10px;
+  background-color:#ffffff;
+}
+
+#boxes #dialogMsg {
+font-family:verdana;
+  width:250px; 
+  height:100px;
+  padding:10px;
+  background-color:#ffffff;
+}
+
+#boxes #UploadFile {
+ width:250px; 
+  height:auto;
+  position:absolute; 
+  z-index:10000;
+  background-color:#ffffff;
+}
+
+#boxes #SAVEQUOTE {
+	width: 200px;
+	height: auto;
+	position: absolute;
+	z-index: 10000;
+	background-color: #ffffff;
+}
+#boxes #validateDiv {
+ width:300px; 
+ height:100px;
+ position:absolute; 
+ z-index:10000;
+ background-color:#ffffff;
+}
+#boxes #validateDivQQ{
+ width:500px; 
+ height:100px;
+ position:absolute; 
+ z-index:10000;
+ background-color:#ffffff;
+}
+
+#boxes #validateDivEdit{
+ width:300px;
+ height:100px;
+ position:absolute;
+ z-index:10000;
+ background-color:#ffffff;
+}
+
+
+#boxes #voluntaryDiv{
+width:350px; 
+height:auto;
+position:absolute; 
+z-index:10000;
+background-color:#ffffff;
+}
+
+<!--  	Start  Added by sigudiva for 2TNG Q3FY12 changes -->
+#boxes #EPromoDiv {
+  width:350px; 
+  height:auto;
+  position:absolute; 
+  z-index:10000;
+  background-color:#ffffff;
+}
+#boxes #ModalPopupDivCsccPopOver {
+  width:350px; 
+  height:auto;
+  z-index:10000;
+  background-color:#ffffff;
+}
+#boxes #ModalPopupDivCsccPopOver {
+  width:350px; 
+  height:auto;
+  z-index:10000;
+  background-color:#ffffff;
+}
+
+#boxes #EPromoContinueDiv {
+  width:350px; 
+  height:auto;
+  position:absolute; 
+  z-index:10000;
+  background-color:#ffffff;
+}
+<!--  	End  Added by sigudiva for 2TNG Q3FY12 changes -->
+
+<!--  	Start  Added by suresh for  Q3FY12  CR changes -->
+#boxes #shipMentInfoDiv {
+  width:400px; 
+  height:auto;
+  position:absolute; 
+  z-index:10000;
+  background-color:#ffffff;
+}
+
+#boxes #shipMentInfoDivEdit {
+font-family:verdana;
+  width:650px; 
+  height:203px;
+  padding:10px;
+  background-color:#ffffff;
+}
+<!--  End by suresh for  Q3FY12  CR changes -->

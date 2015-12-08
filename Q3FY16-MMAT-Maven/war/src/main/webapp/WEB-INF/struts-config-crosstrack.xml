@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+
+
+<!--
+
+     This is a blank Struts configuration file with an example
+
+     welcome action/page and other commented sample elements.
+
+
+
+     Tiles and the Struts Validator are configured using the factory defaults
+
+     and are ready-to-use.
+
+
+
+     NOTE: If you have a generator tool to create the corresponding Java classes
+
+     for you, you could include the details in the "form-bean" declarations.
+
+     Otherwise, you would only define the "form-bean" element itself, with the
+
+     corresponding "name" and "type" attributes, as shown here.
+
+-->
+
+
+
+
+
+<struts-config>
+
+
+
+<!-- ==================================== Data Source Configuration -->
+
+<!--
+
+ <data-sources>
+
+   <data-source>
+
+     <set-property
+
+        property="autoCommit"
+
+        value="false"/>
+
+     <set-property
+
+        property="description"
+
+        value="Example Data Source Configuration"/>
+
+     <set-property
+
+        property="driverClass"
+
+        value="org.postgresql.Driver"/>
+
+     <set-property
+
+        property="maxCount"
+
+        value="4"/>
+
+     <set-property
+
+        property="minCount"
+
+        value="2"/>
+
+     <set-property
+
+        property="password"
+
+        value="mypassword"/>
+
+     <set-property
+
+        property="url"
+
+        value="jdbc:postgresql://localhost/mydatabase"/>
+
+     <set-property
+
+        property="user"
+
+        value="myusername"/>
+
+   </data-source>
+
+ </data-sources>
+
+-->
+
+
+
+<!-- ======================================== Form Bean Definitions -->
+
+
+
+    <form-beans>
+        <form-bean name="landingForm" type="com.cisco.servicesales.form.LandingForm"/>
+        <form-bean name="listForm" type="com.cisco.servicesales.form.ListFrameworkForm"/>  
+    </form-beans>
+
+
+
+
+<!-- ================================= Global Exception Definitions -->
+
+
+
+    <global-exceptions>
+
+        <!-- sample exception handler
+
+        <exception
+
+            key="expired.password"
+
+            type="app.ExpiredPasswordException"
+
+            path="/changePassword.jsp"/>
+
+        end sample -->
+	    <exception handler="com.cisco.servicesales.struts.ExceptionHandler"
+         type="java.lang.Exception" key="errors.deadEnd" path="errorPageDef"/>
+
+        <exception handler="com.cisco.servicesales.exception.ExceptionHandler"
+         type="java.lang.RuntimeException" key="errors.deadEnd" path="errorPageDef"/>
+
+        <exception handler="com.cisco.servicesales.exception.ExceptionHandler"
+         type="com.cisco.servicesales.exception.BaseException" key="errors.deadEnd" path="errorPageDef"/>
+
+        <exception handler="com.cisco.servicesales.exception.ExceptionHandler"
+         type="com.cisco.servicesales.exception.BaseRuntimeException" key="errors.deadEnd" path="errorPageDef"/>
+    </global-exceptions>
+
+
+
+
+
+<!-- =================================== Global Forward Definitions -->
+
+
+
+    <global-forwards>
+
+        <!-- Default forward to "Welcome" action -->
+
+        <!-- Demonstrates using index.jsp to forward -->
+
+        <forward name="welcome" path="/Welcome.do"/>
+        <forward name="errorPage" path="errorPageDef"/>
+     </global-forwards>
+
+
+
+
+
+<!-- =================================== Action Mapping Definitions -->
+
+
+
+    <action-mappings>
+
+        <action
+            path="/Welcome"
+            type="org.apache.struts.actions.ForwardAction"
+            parameter="/WEB-INF/pages/Welcome.jsp"/>
+
+        <action
+           path="/WelcomeVM"
+           type="com.cisco.intranet.template.HomePageAction">
+           <forward name="success" path="/Welcome.vm?layout=2cLayout.vm"/>
+        </action>
+
+        <action
+           path="/WelcomeMixed"
+           type="com.cisco.intranet.template.HomePageAction">
+           <forward name="success" path="/WEB-INF/pages/WelcomeMixed.jsp"/>
+        </action>
+
+  <!--List Framework Actions-->
+		<action 
+	    	name="listForm" 
+	    	path="/LFTest" 
+	    	type="com.cisco.servicesales.list.ListFrameworkAction"
+	    	scope="session">
+			<forward name="success" path="/jsp/ListFramework.jsp"/>
+			<forward name="next" path="/jsp/ShowSelection.jsp"/>
+	    </action> 
+
+		<action 
+	    	path="/List" 
+	    	type="com.cisco.servicesales.list.ListPreferenceAction"
+	    	scope="session">
+			<forward name="success" path="/LFTest.do" redirect="true"/>
+			<forward name="reset" path="/jsp/ListPrefConfig.jsp"/>			
+	    </action>
+     <!--  SMC Help -->
+		<action
+			path="/smcHelpDispatchAction"
+			type="com.cisco.crosstrack.actions.SMCHelpDispatchAction"
+			name="smcHelpDispatchAction"	
+			scope="request"	parameter="methodName">
+			<forward name="CallHelp" path="/crosstrack/SMCHelp.jsp" />
+		</action>
+		     <!--  SMC Important links -->
+		<action
+			path="/smcImpLinksDispatchAction"
+			type="com.cisco.crosstrack.actions.SMCImpLinksDispatchAction"
+			name="smcImpLinksDispatchAction"	
+			scope="request"	parameter="methodName">
+			<forward name="onCallLinks" path="impLinksScreen" />
+		</action>
+
+
+		<action
+			path="/requestStatusDispatch"
+			type="com.cisco.crosstrack.actions.RequestStatusAction"
+			name="requestStatusDispatch"	
+			scope="request"	parameter="methodName">
+			<forward name="onRequestAction" path="requestStatusScreen" />
+			<forward name="requestStatusResults" path="/crosstrack/RequestStatusResults.jsp" />
+			<forward name="requestDefault" path="/crosstrack/RequestStatusPortlet.jsp" />
+			<forward name="dashboardDefault" path="/crosstrack/DashboardPortlet.jsp" />			
+			<forward name="onDashboardAction" path="dashboardScreen" />			
+		</action>
+		
+		<action
+			path="/requestDetailsDispatch"
+			type="com.cisco.crosstrack.actions.RequestDetailsAction"
+			name="requestDetailsDispatch"	
+			scope="request"	parameter="methodName">
+			<forward name="onshowRequestDetails" path="/crosstrack/RequestDetails.jsp" />	
+			<forward name="RequestDetailedResults" path="/crosstrack/RequestDetailsData.jsp" />	
+			<forward name="onshowDemoDetails" path="/crosstrack/request_det.jsp" />	
+			<forward name="DemoRequestDetails" path="/crosstrack/request_det_details.jsp" />
+			<forward name="onOnlineURL" path="/crosstrack/showURL.jsp" />
+			<forward name="EmailResponse" path="/crosstrack/emailResp.jsp" />
+			<forward name="onOutputReport" path="/crosstrack/outputReport.jsp" />
+		</action>
+
+<!-- Advanced Search page mappings -->
+	<action
+		path="/advancedSearch"
+		type="com.cisco.crosstrack.actions.AdvancedSearchAction"
+		name="advancedSearch"
+		scope="request"	parameter="methodName">			
+		<forward name="success" path="/crosstrack/crosstrackAdvancedSearch.jsp" />
+		<forward name="deletePopup" path="/crosstrack/crosstrackDeleteSet.jsp" />
+	</action>
+
+<!-- Delete Saved Set page mappings -->
+	<action
+		path="/deleteSavedSet"
+		type="com.cisco.crosstrack.filters.actions.DeleteSavedSetAction"
+		name="deleteSavedSet"
+		scope="request"	parameter="methodName">			
+		<forward name="success" path="/crosstrack/crosstrackAdvancedSearch.jsp" />
+		<forward name="deletePopup" path="/crosstrack/crosstrackDeleteSet.jsp" />
+	</action>
+	
+<!-- Report page mappings -->
+		<action
+			path="/reportsAction"
+			type="com.cisco.crosstrack.actions.ReportsAction"
+			name="reportsAction"
+			scope="request"	parameter="methodName">
+			<forward name="success" path="crosstrackReportsScreen" />
+		</action>
+
+    <!-- sample input and input submit actions
+
+
+        <action
+            path="/Input"
+            type="org.apache.struts.actions.ForwardAction"
+            parameter="/pages/Input.jsp"/>
+
+        <action
+            path="/InputSubmit"
+            type="app.InputAction"
+            name="inputForm"
+            scope="request"
+            validate="true"
+            input="/pages/Input.jsp"/>
+
+    end samples -->
+
+	   <!--List Framework Actions-->
+		<action 
+	    	name="listForm" 
+	    	path="/LFTest" 
+	    	type="com.cisco.servicesales.list.ListFrameworkAction"
+	    	scope="session">
+			<forward name="success" path="/jsp/ListFramework.jsp"/>
+			<forward name="next" path="/jsp/ShowSelection.jsp"/>
+	    </action> 
+
+		<action 
+	    	path="/List" 
+	    	type="com.cisco.servicesales.list.ListPreferenceAction"
+	    	scope="session">
+			<forward name="success" path="/LFTest.do" redirect="true"/>
+			<forward name="reset" path="/jsp/ListPrefConfig.jsp"/>			
+	    </action>
+	    
+	    <!--  Begin CustomerSelector Action Mapping -->
+	    
+ 		<action
+			path="/custSelectorDispatch"
+			type="com.cisco.crosstrack.selector.actions.CustomerSelectorDispatchAction"
+			scope="request"	
+			parameter="methodName">
+			<forward name="customerSelectorResults" path="/jsp/CustomerSelectorPopupResults.jsp" />
+			<forward name="popup" path="/jsp/cis_CROSS_tools_customer.jsp" />
+		</action>		
+		
+	    <!--  End CustomerSelector Action Mapping -->
+	    
+	     <!--  Begin SalesRegion Selector Action Mapping -->
+	     <action 
+	  	path="/salesRegionSelectorDispatch" 
+	  	type="com.cisco.crosstrack.selector.actions.SalesRegionSelectorDispatchAction" 
+	  	name="salesRegionSelectorDispatch" 
+	  	scope="request" 	  	
+	  	parameter="methodName"> 
+	  	<forward name="filterResults" path="/jsp/SalesRegionSelectorPopupFilterResults.jsp" />		 
+	  	<forward name="searchResults" path="/jsp/SalesRegionSelectorPopupSearchResults.jsp" />	
+	  	<forward name="popup" path="/jsp/SalesRegionSelectorPopup.jsp" />	 	 	  	
+	  		 	 	  	
+	  </action>
+	  		<action 
+			path="/testparent"
+			scope="request"
+			type="com.cisco.crosstrack.selector.actions.UIDSelectorAction">
+			<forward name="success" path="/jsp/TestParent.jsp"/>
+		</action>		
+		<action 
+			path="/useridpopup"
+			scope="request"
+			type="com.cisco.crosstrack.selector.actions.UIDSelectorAction">
+			<forward name="success" path="/jsp/UserIdPopup.jsp"/>
+		</action>
+		<action 
+			path="/userIdSelector"
+			scope="request"
+			parameter="methodName"
+			type="com.cisco.crosstrack.selector.actions.UserIdSelectorDispatchAction">
+			<forward name="popup" path="/jsp/UserIdPopup.jsp"/>
+			<forward name="success" path="/jsp/UserIdPopupTable.jsp"/>
+			<forward name="error" path="/jsp/PopupError.jsp"/>
+		</action>
+	     <!--  End Sales Region Selector Action Mapping -->
+
+	     <!-- Begin Bill to selector mappings -->
+	     
+	     <action 
+			path="/billtoselect"
+			scope="request"
+			type="com.cisco.crosstrack.selector.actions.BillToSelectDispatchAction"
+			parameter="methodName"> 
+			<forward name="filterResults" path="/jsp/BillToPopupFilterResults.jsp" />		 
+			<forward name="popup" path="/jsp/BillToSelectPopup.jsp" />
+		 </action>
+		
+		<action 
+	  	path="/contractSelectorDispatch" 
+	  	type="com.cisco.crosstrack.selector.actions.ContractSelectorDispatchAction" 
+	  	name="ContractSelectorDispatch" 
+	  	scope="request" 	  	
+	  	parameter="methodName"> 
+	  	<forward name="SearchResults" path="/jsp/ContractSelectorSearchResults.jsp" />	
+	  	<forward name="popup" path="/jsp/ContractSelectorPopup.jsp" />	 	 	  	
+	  </action>
+	     <!-- end of bill to selector action mappings -->
+	     
+	     <!--  29-OCt-2007 - as per TD 2417 Synergy WOF- Product Bill To Number - manas change starts -->
+
+		<action
+			path="/billtoselectNum"
+			scope="request"
+			type="com.cisco.crosstrack.selector.actions.BillToSelectDispatchAction"
+			parameter="methodName"> 
+			<forward name="filterResults" path="/jsp/ProductBillToPopupFilterResults.jsp" />
+			<forward name="popup" path="/jsp/ProductBillToSelectPopup.jsp" />
+		 </action>
+		 
+	     <!--  29-OCt-2007 - as per TD 2417 Synergy WOF- Product Ship To Number - manas change starts -->
+		 <action
+			path="/shiptoselect"
+			scope="request"
+			type="com.cisco.crosstrack.selector.actions.ShipToSelectDispatchAction"
+			parameter="methodName"> 
+			<forward name="filterResults" path="/jsp/ShipToPopupFilterResults.jsp" />
+			<forward name="popup" path="/jsp/ShipToSelectPopup.jsp" />
+		 </action>
+	    <!-- 24-OCt-2007 - as per TD 2417 Synergy WOF -  manas change ends -->
+	
+     <!-- Begin Manage Notes mappings -->
+	 <action 
+	  	path="/manageNotes" 
+	  	type="com.cisco.crosstrack.selector.actions.ManageNotesAction" 
+	  	name="manageNotes" 
+	  	scope="request" 	  	
+	  	parameter="methodName"> 
+	  	<forward name="SearchResults" path="/jsp/ManageNotesPopupResults.jsp" />
+	  	<forward name="popup" path="/jsp/ManageNotesPopup.jsp" />	  	
+	  </action>
+	  <!-- end Manage Notes action mappings -->
+	     	     
+	     <!-- Begin Install Site selector mappings -->
+   	  <action 
+	  	path="/installSiteSelector" 
+	  	type="com.cisco.crosstrack.selector.actions.InstallSiteSelectorAction" 
+	  	name="installSiteSelector" 
+	  	scope="request" 	  	
+	  	parameter="methodName">
+	  	<forward name="popup" path="/jsp/InstallSiteSelector.jsp" />	
+	  	<forward name="searchResults" path="/jsp/InstallSiteSelectorResults.jsp" />	
+	  </action>
+	     <!-- end of Install Site selector action mappings -->
+	    
+		<action
+			path="/productSelectorDispatch"
+			type="com.cisco.crosstrack.selector.actions.ProductSelectorDispatchAction"
+			name="productSelectorDispatch"	
+			scope="request"	parameter="methodName">
+			<forward name="SearchResults" path="/jsp/ProductSelResults.jsp" />
+			<forward name="allResultsData" path="/jsp/ProductAllResultData.jsp" />
+			<forward name="popup" path="/jsp/ProductSelPopup.jsp" />			
+		</action>
+		
+	     <!-- Begin Service level selector mappings -->
+   	  <action 
+	  	path="/serviceLevelSelector" 
+	  	type="com.cisco.crosstrack.selector.actions.ServiceLevelSelectorAction" 
+	  	name="serviceLevelSelector" 
+	  	scope="request"
+	  	parameter="methodName">
+	  	<forward name="popup" path="/jsp/ServiceLevelSelector.jsp" />	
+	  	<forward name="searchResults" path="/jsp/ServiceLevelSelectorResults.jsp" />	
+	  </action>
+	  
+	  <action 
+	    	path="/bannerPage" 
+	    	type="com.cisco.crosstrack.selector.actions.BannerAction"
+	    	parameter="methodName">
+			<forward name="success" path="/jsp/BannerPopup.jsp"/>
+			<forward name="seeAll" path="/jsp/BannerSeeAll.jsp"/>
+			<forward name="messages" path="bannerMessages"/>
+			<forward name="addEdit" path="/jsp/AddEditBannerMessage.jsp"/>	
+			<forward name="paginate" path="/jsp/BannerMessageResults.jsp"/>		
+			<forward name="help" path="helpMessages"/><!--//added by gkatchi for td20317	
+					
+	    --></action>
+	    
+	     <!-- End Service level selector mappings -->
+
+
+	<!-- abnj Added for LogOut May Scope Q4FY13 - TD78593 --> 
+			<action 
+                 path="/logOut"
+               	 scope="request" 	
+                 type="com.cisco.crosstrack.filter.LogOutAction">
+                 <forward name="logOut" path="/jsp/LogOut.jsp"/> 
+          </action>
+          <!-- End -->
+	
+
+    </action-mappings>
+
+ 
+
+
+
+<!-- ===================================== Controller Configuration -->
+
+
+
+    <!-- controller
+
+       processorClass="org.apache.struts.tiles.TilesRequestProcessor"/-->
+
+
+
+
+
+<!-- ================================ Message Resources Definitions -->
+
+
+
+    <message-resources parameter="resources.application"/>
+
+
+
+
+
+<!-- ======================================= Plug Ins Configuration -->
+
+
+  <!-- ========== Tiles plugin ===================  -->
+  <!--                        -->
+  <!--
+     This plugin initialize Tiles definition factory. This later can takes some
+   parameters explained here after. The plugin first read parameters from web.xml, then
+   overload them with parameters defined here. All parameters are optional.
+   The plugin should be declared in each struts-config file.
+       - definitions-config: (optional) 
+            Specify configuration file names. There can be several comma 
+        separated file names (default: ?? )
+       - moduleAware: (optional - struts1.1) 
+            Specify if the Tiles definition factory is module aware. If true (default), 
+      there will be one factory for each Struts module. 
+      If false, there will be one common factory for all module. In this later case, 
+      it is still needed to declare one plugin per module. The factory will be 
+      initialized with parameters found in the first initialized plugin (generally the
+      one associated with the default module).
+        true : One factory per module. (default)
+        false : one single shared factory for all modules
+     - definitions-parser-validate: (optional)
+          Specify if xml parser should validate the Tiles configuration file.
+        true : validate. DTD should be specified in file header. (default)
+        false : no validation
+        
+    Paths found in Tiles definitions are relative to the main context.
+  -->
+  <!-- comment following if struts1.0.x -->
+  
+  
+  <plug-in className="org.apache.struts.tiles.TilesPlugin" >
+    <set-property property="definitions-config" 
+                   value="/WEB-INF/tileDefinitions-crosstrack.xml" />
+    <set-property property="moduleAware" value="true" />
+    <set-property property="definitions-parser-validate" value="true" />
+  </plug-in>
+  
+  
+  <!-- end comment if struts1.0.x -->
+<!-- 
+  <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+    <set-property
+        property="pathnames"
+        value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+  </plug-in>
+-->
+</struts-config>
+

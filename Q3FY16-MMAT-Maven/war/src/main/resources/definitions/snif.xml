@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<UploadDefinition AbortOnError="false"  allowCMjob="true" ID="SNIF" HeaderRowsCount="1">
+    <Column Name="serial_number" AllowNull="false">
+        <DataType Type="String"/>
+    </Column>
+    <Column Name="product_number" AllowNull="true">
+        <DataType Type="String"/>
+    </Column>
+</UploadDefinition>
+

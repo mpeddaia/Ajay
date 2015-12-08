@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<ListConfig fetchSize="500" pageable="true" resultsHandle="PROC_ID" table="xxcss_ct_svclvl_sltr_data_v" class="map" rowSelectType="App" id="ServiceLevelSelector">
+  <Selection model="single" handle="PROC_ID"/>
+  <Column type="int" column="PROC_ID" userpreferencesId="" property="procId">
+    <Presentation label="PROC ID" filterable="true" format="Default" visible="true" sortable="true" unique="true"/>
+  </Column>
+  <Column type="int" column="REF_INDEX" userpreferencesId="" property="refIndex">
+    <Presentation label="REF INDEX" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="SVCLVL_CODE" userpreferencesId="" property="svclvlCode">
+    <Presentation label="SVCLVL CODE" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="SVCLVL_DESC" userpreferencesId="" property="svclvlDesc">
+    <Presentation label="SVCLVL DESC" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="SERVICE_PROGRAM" userpreferencesId="" property="serviceProgram">
+    <Presentation label="SERVICE PROGRAM" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="SERVICE_CATEGORY" userpreferencesId="" property="serviceCategory">
+    <Presentation label="SERVICE CATEGORY" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="HARDWARE_OR_SOFTWARE" userpreferencesId="" property="hardwareOrSoftware">
+    <Presentation label="HARDWARE OR SOFTWARE" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="SVCLVL_GROUP" userpreferencesId="" property="svclvlGroup">
+    <Presentation label="SVCLVL GROUP" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="BRAND_CODE" userpreferencesId="" property="brandCode">
+    <Presentation label="BRAND CODE" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="STATUS" userpreferencesId="" property="status">
+    <Presentation label="STATUS" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+</ListConfig>

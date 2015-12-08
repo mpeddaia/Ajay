@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UploadDefinition AbortOnError="false" allowCMjob="true" ID="MAT_ADD" HeaderRowsCount="1"  >
+    <Column Name="Contract_number" AllowNull="true">
+        <DataType Type="String" Length="120" />
+    </Column>
+     <Column Name="service_level" AllowNull="false" ErrorMsg="Service Level Error: Service Level must be Entered">
+        <DataType Type="String" Length="150" />
+    </Column>
+   <Column Name="Begin_Date" AllowNull="true">
+        <DataType Type="Date"/>
+    </Column>
+    <Column Name="End_Date" AllowNull="true">
+        <DataType Type="Date"/>
+    </Column>
+     <Column Name="Bill_to_id" AllowNull="true">
+        <DataType Type="String" Length="150" />
+    </Column>
+    <Column Name="PO_SO_Billing" AllowNull="true">
+        <DataType Type="String" Length="150" />
+    </Column>
+	<Column Name="Maintenance_PO" AllowNull="true">
+        <DataType Type="String" Length="150" />
+    </Column>
+    
+<!-- Added "Distributor_Bill_To_Id" by jjohnche for 2TNG, Q1FY12 -->
+
+    <Column Name="Disti_Bill_To_Id" AllowNull="true">
+        <DataType Type="String" Length="150" />
+    </Column>
+
+<!-- End of code changes by jjohnche for 2TNG, Q1FY12 -->
+    
+	<Column Name="Serial_Number" AllowNull="true">
+        <DataType Type="String" Length="30" />
+    </Column>
+	
+	<Column Name="ITEM_NAME" AllowNull="false">
+        <DataType Type="String" Length="40" />
+    </Column>
+    <Column Name="SITE_LOCATION" AllowNull="false">
+        <DataType Type="String" Length="40" />
+    </Column>
+    <Column Name="Instance_Number" AllowNull="true">
+        <DataType Type="String" Length="150" />
+    </Column>
+    <Column Name="Product_PO_So" AllowNull="true">
+        <DataType Type="String" Length="150" />
+    </Column>
+    
+   <!-- Modified Data type from Integer to String,added Length restriction to 10 Digits, and Error messsage  as part of T&C Q3FY12  by vibk -->  
+    <Column Name="QTY" AllowNull="false"  ErrorMsg="Quantity  greater than 10 digit value not allowed">
+       <DataType Type="String" Length="10" />
+    </Column>
+  <!-- End of code changes by vibk for T&C, Q3FY12 -->
+  
+    <Column Name="softline_flag" AllowNull="false">
+        <DataType Type="String" Length="3" />
+    </Column>
+	 <Column Name="Net_Factor" AllowNull="true">
+        <DataType Type="Integer"/>
+    </Column>
+   
+	<Column Name="MAC_ID" AllowNull="true">
+        <DataType Type="String" Length="240" />
+    </Column>
+	<!-- Start of code change for Q3FY15 -->
+	<Column Name="CARTON_ID" AllowNull="true">
+        <DataType Type="String" Length="40"  />
+    </Column>
+	<!-- End of code change for Q3FY15 -->
+    
+	 <Column Name="Ship_Date" AllowNull="true">
+        <DataType Type="Date" />
+    </Column>
+
+	<Column Name="Migrated_Flag" AllowNull="true">
+        <DataType Type="String" Length="3" />
+    </Column>
+	<Column Name="EXTERNAL_REFERENCE" AllowNull="true" >
+		<DataType Type="String" Length="100" />
+	</Column>
+	
+	 <Column Name="Reason_Code" AllowNull="false">
+        <DataType Type="String" Length="40" />
+    </Column>
+    
+   <Column Name="CS_Case_Number" AllowNull="false">
+        <DataType Type="String" Length="150" />
+    </Column>
+	
+</UploadDefinition>

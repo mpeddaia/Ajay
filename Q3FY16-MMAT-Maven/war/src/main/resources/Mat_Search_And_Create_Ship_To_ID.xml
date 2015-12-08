@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<ListConfig fetchSize="500" pageable="true" resultsHandle="UPLD_REQUEST_ID" table="XXCSS_MAT_SR_CR_all_V" class="map" id="MAT_BEST_SR_CR_SITES">
+  <Selection model="single" handle="reference_index"/>
+  <Column type="int" column="UPLD_REQUEST_ID" property="upldRequestId">
+    <Presentation label="UPLD REQUEST ID" filterable="false" format="Default" visible="false" sortable="false"/>
+  </Column>
+  <Column type="int" column="ORIG_ROW_NUMBER" property="origRowNumber">
+    <Presentation label="upload.mat.column.orig_row_number" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="SITE_ID" property="siteId">
+    <Presentation label="upload.mat.column.site_id" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="SITE_STATUS" property="siteStatus">
+    <Presentation label="upload.mat.column.site_status" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+ 
+  <Column type="String" column="CUSTOMER_NAME" property="customerName">
+    <Presentation label="upload.mat.column.custName" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="BILL_TO" property="billto">
+    <Presentation label="upload.mat.column.billTo" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="ADDRESS1" property="address1">
+    <Presentation label="upload.mat.column.address1" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="ADDRESS2" property="address2">
+    <Presentation label="upload.mat.column.address2" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="ADDRESS3" property="address3">
+    <Presentation label="upload.mat.column.address3" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="CITY" property="city">
+    <Presentation label="upload.mat.column.city" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="COUNTY" property="county">
+    <Presentation label="upload.mat.column.county" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="STATE" property="state">
+    <Presentation label="upload.mat.column.state" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="PROVINCE" property="province">
+    <Presentation label="upload.mat.column.province" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="ZIP_CODE" property="zipCode">
+    <Presentation label="upload.mat.column.zipcode" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="COUNTRY" property="country">
+    <Presentation label="upload.mat.column.country" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="CS_CASE_NUMBER" property="caseNumber">
+    <Presentation label="upload.mat.column.casenumber" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+   <Column type="String" column="USER_REFERENCE_NO" property="userReferenceNo">
+    <Presentation label="upload.mat.column.userReferenceNo" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+   </ListConfig>
+

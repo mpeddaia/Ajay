@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<ListConfig fetchSize="500" pageable="true" resultsHandle="REQUEST_ID" table="xxcss_ct_request_details_v" class="map" rowSelectType="App" id="RequestDetails">
+  <Selection model="single" handle="REQUEST_ID"/>
+  <Column type="int" column="REQUEST_DETAIL_ID" userpreferencesId="" property="requestDetailId">
+    <Presentation label="REQUEST DETAIL ID" filterable="true" format="Default" visible="true" sortable="true" unique="true"/>
+  </Column>
+  <Column type="int" column="REQUEST_ID" userpreferencesId="" property="requestId">
+    <Presentation label="REQUEST ID" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="REFERENCE_ID" userpreferencesId="" property="referenceId">
+    <Presentation label="REFERENCE ID" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="ACTION" userpreferencesId="" property="action">
+    <Presentation label="ACTION" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="START_DATE" userpreferencesId="" property="startDate">
+    <Presentation label="START DATE" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="START_TIME" userpreferencesId="" property="startTime">
+    <Presentation label="START TIME" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="COMPLETE_DATE" userpreferencesId="" property="completeDate">
+    <Presentation label="COMPLETE DATE" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="COMPLETE_TIME" userpreferencesId="" property="completeTime">
+    <Presentation label="COMPLETE TIME" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="STATUS" userpreferencesId="" property="status">
+    <Presentation label="STATUS" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+  <Column type="String" column="REASON" userpreferencesId="" property="reason">
+    <Presentation label="REASON" filterable="true" format="Default" visible="true" sortable="true" unique="false"/>
+  </Column>
+</ListConfig>

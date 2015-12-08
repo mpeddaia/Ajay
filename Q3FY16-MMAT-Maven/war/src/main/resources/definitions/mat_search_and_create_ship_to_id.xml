@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UploadDefinition AbortOnError="false" allowCMjob="true" ID="MAT_BEST_SR_CR_SITES" HeaderRowsCount="1">
+   <Column Name="CUSTOMER_NAME" AllowNull="false">
+        <DataType Type="String" Length="240" />
+    </Column>
+    <Column Name="BUSINESS_ENTITY" AllowNull="false">
+        <DataType Type="String" Length="200" />
+    </Column>
+	<Column Name="ADDRESS1" AllowNull="false">
+        <DataType Type="String" Length="240" />
+    </Column>
+    <Column Name="ADDRESS2" AllowNull="true">
+        <DataType Type="String" Length="240" />
+    </Column>
+    <Column Name="ADDRESS3" AllowNull="true">
+        <DataType Type="String" Length="240" />
+    </Column>
+    <Column Name="CITY" AllowNull="false">
+        <DataType Type="String" Length="60" />
+    </Column>
+     <Column Name="COUNTY" AllowNull="true">
+        <DataType Type="String" Length="200" />
+    </Column>
+    <Column Name="STATE" AllowNull="true">
+        <DataType Type="String" Length="60" />
+    </Column>
+     <Column Name="PROVINCE" AllowNull="true">
+        <DataType Type="String" Length="60" />
+    </Column>
+    <Column Name="ZIP_CODE" AllowNull="true">
+        <DataType Type="String" Length="60"/>
+    </Column>
+     <Column Name="COUNTRY" AllowNull="false">
+        <DataType Type="String" Length="200"/>
+    </Column>
+    <!-- ALLOW NULL CRITERIA CHANGED AS PART OF Q2FY13 -->
+    <Column Name="CS_CASE_NUMBER" AllowNull="true">
+        <DataType Type="String" Length="30" />
+    </Column>
+    <!--END OF CHANGES FOR Q2FY13 -->    
+        <Column Name="USER_REFERENCE_NO" AllowNull="true">
+        <DataType Type="String" Length="30" />
+    </Column>
+</UploadDefinition>

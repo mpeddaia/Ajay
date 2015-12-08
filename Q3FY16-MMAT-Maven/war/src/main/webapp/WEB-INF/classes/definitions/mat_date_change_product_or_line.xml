@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UploadDefinition AbortOnError="false" allowCMjob="true" ID="MAT_DATE_CHANGE_PRODUCT_LINE" HeaderRowsCount="1">
+    <Column Name="CONTRACT_NUMBER" AllowNull="false">
+        <DataType Type="String" Length="120" />
+    </Column>
+     <Column Name="SERIAL_NUMBER" AllowNull="true">
+        <DataType Type="String" Length="30" />
+    </Column>
+	 <Column Name="ITEM_NAME" AllowNull="false"> <!-- Product Id in excel -->
+        <DataType Type="String" Length="40" />
+    </Column>
+    <Column Name="CONTRACT_LINE_NUM" AllowNull="false">
+        <DataType Type="String" Length="120" />
+    </Column>
+  	<Column Name="CPL_START_DATE" AllowNull="false">
+        <DataType Type="Date"/>
+    </Column>
+  	 <Column Name="CPL_END_DATE" AllowNull="false">
+        <DataType Type="Date"/>
+    </Column>
+    <Column Name="INSTALLED_AT_SITE_ID" AllowNull="true">
+     <DataType Type="Integer"/>
+    </Column>
+  	<Column Name="REASON_CODE" AllowNull="false">
+        <DataType Type="String" Length="100" />
+    </Column>
+   	<Column Name="CS_CASE_NUMBER" AllowNull="false">
+        <DataType Type="String" Length="120" />
+    </Column>
+ </UploadDefinition>

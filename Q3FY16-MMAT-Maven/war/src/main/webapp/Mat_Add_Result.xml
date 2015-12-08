@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<ListConfig fetchSize="500" pageable="true" resultsHandle="UPLD_REQUEST_ID" table="xxcss_mat_add_results_v" class="map" rowSelectType="App" id="MAT_ADD_RES">
+  <Selection model="single" handle="reference_index"/>
+  <Column type="int" column="UPLD_REQUEST_ID" property="upldRequestId">
+    <Presentation label="UPLD REQUEST ID" filterable="false" format="Default" visible="false" sortable="false"/>
+  </Column>
+  <Column type="int" column="ORIG_ROW_NUMBER" property="origRowNumber">
+    <Presentation label="upload.mat.results.orig_row_number" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="STATUS" property="status">
+    <Presentation label="upload.mat.results.status" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="CONTRACT_NUMBER" property="contractNumber">
+    <Presentation label="upload.mat.results.contract_number" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="SERIAL_NUMBER" property="serialNumber">
+    <Presentation label="upload.mat.results.serial_number" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="SERVICE_LEVEL" property="serviceLevel">
+    <Presentation label="upload.mat.results.service_level" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="ITEM_NAME" property="itemName">
+    <Presentation label="upload.mat.results.item_name" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="SITE_LOCATION" property="siteLocation">
+    <Presentation label="upload.mat.results.site_location" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="PO_SO_BILLING" property="poSoBilling">
+    <Presentation label="upload.mat.results.po_so_billing" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="BEGIN_DATE" property="beginDate">
+    <Presentation label="upload.mat.results.begin_date" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="END_DATE" property="endDate">
+    <Presentation label="upload.mat.results.end_date" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="REASON_CODE" property="reasonCode">
+    <Presentation label="upload.mat.results.reason_code" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="BILL_TO_ID" property="billToId">
+    <Presentation label="upload.mat.results.bill_to_id" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="MAINTENANCE_PO" property="maintenancePo">
+    <Presentation label="upload.mat.results.maintenance_po" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+    <Column type="String" column="DISTI_BILL_TO_ID" property="distiBillToId">
+    <Presentation label="upload.mat.results.disti_bill_to_id" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="INSTANCE_NUMBER" property="instanceNumber">
+    <Presentation label="upload.mat.results.instance_number" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="PRODUCT_PO_SO" property="productPoSo">
+    <Presentation label="upload.mat.results.product_po_so" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="QTY" property="qty">
+    <Presentation label="upload.mat.results.qty" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="SOFTLINE_FLAG" property="softlineFlag">
+    <Presentation label="upload.mat.results.softline_flag" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="CS_CASE_NUMBER" property="csCaseNumber">
+    <Presentation label="upload.mat.results.cs_case_number" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="ERROR_CODE" property="errorCode">
+    <Presentation label="upload.mat.results.error_code" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+  <Column type="String" column="ERROR_MESSAGE" property="errorMessage">
+    <Presentation label="upload.mat.results.error_message" filterable="true" format="Default" visible="true" sortable="true"/>
+  </Column>
+</ListConfig>
